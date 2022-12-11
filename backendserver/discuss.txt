@@ -1,0 +1,42 @@
+//USerschema
+{
+    email:unique,req,string,
+    password:string,
+    message:[],
+    report:[{
+        exercise_name,image,muscle_name
+    },{
+        exercise_name,image,muscle_name
+    }],
+    userDetail:{h,w,dob}
+    photos:[]
+}
+
+//real Schema
+...........
+...........
+
+{
+    "email":"skraswraaas@gmail.com",
+    "password":"meri jaan su ho tum",
+    "userDetail":{
+        "height":2,
+        "weight":5,
+        "birth":{
+            "day":3,
+            "month":4,
+            "year":1990
+        },
+        "gender":"Male",
+        "units":true
+    },
+    "message":["sujee1t"],
+    "photos":["sujeet2","hello"],
+    "report":[{
+        "exercise_name":"1",
+        "image":"imag",
+        "muscle_name":"aaja"
+    }]
+    
+
+}
