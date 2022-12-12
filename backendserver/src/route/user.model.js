@@ -7,6 +7,7 @@ const userSchema=new mongoose.Schema({
     phone:{type:Number},
     email:{type:String,require:true,unique:true},
     password:{type:String,require:true},
+    ipAddress:{type:String}
 })
 
 const User=mongoose.model("user",userSchema)

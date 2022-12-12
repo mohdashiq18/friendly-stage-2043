@@ -1,5 +1,6 @@
 const express=require("express")
 const User=require("./user.model")
+const IP = require("ip")
 
 const app=express.Router()
 
@@ -41,16 +42,18 @@ app.delete("/:email", async (req, res) => {
 
 /* create a user */
 app.post("/", async (req, res) => {
-    const {email,userDetail,message,photos,report,password} = req.body
+    const {email,name,phone,password} = req.body
+    let ipAddress = IP.address()
+    
     try {
         let existing = await User.findOne({email})
         if(existing){
             res.status(404).send("User Existed")
         } else {
             let user = await User.create({
-                email,password,userDetail,message,photos,report
+                email,name,phone,password,ipAddress
             })
-            res.send({token: `${user._id}:${email}:muscleFit`})
+            res.send({token: `${user._id}:${email}:beautiqueen`})
         }
     } catch (e) {
         res.status(404).send(e.message)
