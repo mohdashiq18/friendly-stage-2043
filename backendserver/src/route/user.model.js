@@ -1,7 +1,7 @@
 const mongoose =require("mongoose")
 
 
-const userSchema=new mongoose.Schema({
+/* const userSchema=new mongoose.Schema({
     email:{type:String,require:true,unique:true},
     password:{type:String,default:Date.now()},
     userDetail:{
@@ -22,6 +22,14 @@ const userSchema=new mongoose.Schema({
         image:{type:String, default:""},
         muscle_name:{type:String, default:""}
     }]
+
+}) */
+
+const userSchema=new mongoose.Schema({
+    name:{type:String,require:true},
+    phone:{type:Number},
+    email:{type:String,require:true,unique:true},
+    password:{type:String,default:Date.now()},
 
 })
 
