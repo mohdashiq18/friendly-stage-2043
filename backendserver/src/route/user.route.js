@@ -1,6 +1,7 @@
 const express=require("express")
 const User=require("./user.model")
 const IP = require("ip")
+const { json } = require("express")
 
 const app=express.Router()
 
@@ -63,12 +64,13 @@ app.post("/", async (req, res) => {
 
 /* update user */
 app.patch("/", async (req, res) => {
-    const {email,userDetail,message,photos,report,password} = req.body
+    const {email,name,phone,password} = req.body
    /*  let id = req.params.id */
     try {
-        let existing = await User.findOneAndUpdate({email},{email,userDetail,message,photos,report,password})
+        let existing = await User.findOneAndUpdate({email},{email,name,phone,password},{new: true})
         if(existing){
-            res.send("User updated successfully")
+            res.send(JSON.stringify(existing))
+            
         } else {
             res.send("user not found")
         }
