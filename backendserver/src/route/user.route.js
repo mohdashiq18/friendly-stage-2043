@@ -63,14 +63,14 @@ app.post("/", async (req, res) => {
 })
 
 /* update user */
-app.patch("/", async (req, res) => {
-    const {email,name,phone,password} = req.body
+app.patch("/:email", async (req, res) => {
+    const {name,phone,password} = req.body
+    let email = req.params.email
    /*  let id = req.params.id */
     try {
-        let existing = await User.findOneAndUpdate({email},{email,name,phone,password},{new: true})
+        let existing = await User.findOneAndUpdate({email},{...req.body},{new: true})
         if(existing){
-            res.send(JSON.stringify(existing))
-            
+            res.send(JSON.stringify(existing))  
         } else {
             res.send("user not found")
         }
