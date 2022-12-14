@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <AllRoutes />
-      <SingUp />
+      {/* <SingUp /> */}
       {/* <Login/> */}
     </div>
   );
