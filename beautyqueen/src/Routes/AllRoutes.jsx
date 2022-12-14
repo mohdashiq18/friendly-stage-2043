@@ -1,10 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import PagenotFound from "../Pages/PagenotFound"
+import PagenotFound from "../Pages/PagenotFound";
+import Home from "../Pages/Home/Home";
 
 const AllRoutes = ()=>{
     return (
         <Routes>
-            <Route path="/" element={ <h1>Hello World</h1>} ></Route>
+            <Route path="/" element={ <Home/>} ></Route>
             <Route path="*" element={ <PagenotFound/> } ></Route>
            
         </Routes>
