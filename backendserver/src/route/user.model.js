@@ -7,7 +7,19 @@ const userSchema=new mongoose.Schema({
     phone:{type:Number,required:true},
     email:{type:String,required:true,unique:true},
     password:{type:String,required:true},
-    ipAddress:{type:String,required:true}
+    ipAddress:{type:String,required:true},
+    role:{type:String,enum:["user","admin","CEO"],default:"user"},
+    status:{type:String,enum:["active","ban"],default:"active"},
+    location:{
+        type:{
+            type:String,
+            default:"Point"
+        },
+        coordinates:{
+            type:[Number],
+            required: true
+        }
+    }
 },
 {
     versionKey: false,

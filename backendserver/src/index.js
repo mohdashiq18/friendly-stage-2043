@@ -10,7 +10,7 @@ app.use(cors())
 app.use("/users",userRouter)
 
 const connectMongo=async()=>{
-  return  mongoose.connect( process.env.REACT_APP_URL, {dbName: 'beautiqueen'}, {useNewUrlParser: true, useUnifiedTopology: true, strictQuery: true}, async(req,res) =>{
+  return  mongoose.connect( process.env.DB_URL, {dbName: 'beautiqueen'}, {useNewUrlParser: true, useUnifiedTopology: true, strictQuery: true}, async(req,res) =>{
         try {
             console.log("success")
         } catch (err) {
@@ -22,9 +22,8 @@ const connectMongo=async()=>{
 
 app.get("/",async(req,res)=>{
     try{
-        res.send("hi we start")
+        res.send("Server started successfully")
     }catch(e){
-        
         res.send("bad req")
     }
 })

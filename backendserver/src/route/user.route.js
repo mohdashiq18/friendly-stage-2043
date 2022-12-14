@@ -1,7 +1,7 @@
 const express=require("express")
 const User=require("./user.model")
 const IP = require("ip")
-const { json } = require("express")
+
 
 const app=express.Router()
 
@@ -64,7 +64,7 @@ app.post("/", async (req, res) => {
 
 /* update user */
 app.patch("/:email", async (req, res) => {
-    const {name,phone,password} = req.body
+    
     let email = req.params.email
    /*  let id = req.params.id */
     try {
