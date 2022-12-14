@@ -6,6 +6,7 @@ const AllRoutes = ()=>{
         <Routes>
             <Route path="/" element={ <h1>Hello World</h1>} ></Route>
             <Route path="*" element={ <PagenotFound/> } ></Route>
+           
         </Routes>
     )
 }

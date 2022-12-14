@@ -1,10 +1,16 @@
+import "./App.css";
+import Login from "./Components/Login/Login";
+import SingUp from "./Components/SignUp/SingUp";
 
-import './App.css';
-import AllRoutes from "./Routes/AllRoutes"
+import AllRoutes from "./Routes/AllRoutes";
 
 function App() {
   return (
-    <AllRoutes/>
+    <div>
+      <AllRoutes />
+      {/* <SingUp /> */}
+      {/* <Login/> */}
+    </div>
   );
 }
 
