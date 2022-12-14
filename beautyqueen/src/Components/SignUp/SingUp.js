@@ -38,7 +38,7 @@ export default function SingUp() {
                         <input type="text"/>
                 </div>
                 <div className='input_button'>
-                    <button>CREATE AN ACCOUNT</button>
+                    <button>CREATE AN ACCOUNT </button>
                 </div>
             </div>
         </div>
