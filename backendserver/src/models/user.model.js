@@ -10,11 +10,8 @@ const userSchema=new mongoose.Schema({
     ipAddress:{type:String,required:true},
     role:{type:String,enum:["user","admin","CEO"],default:"user"},
     status:{type:String,enum:["active","ban"],default:"active"},
+    logStatus: {type:Boolean, default:false},
     location:{
-        type:{
-            type:String,
-            default:"Point"
-        },
         coordinates:{
             type:[Number],
             required: true
