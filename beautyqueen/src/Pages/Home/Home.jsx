@@ -1,6 +1,40 @@
 import {Box, SimpleGrid, Wrap,Text,Image} from "@chakra-ui/react";
 import Hotdeals from "./Hotdeals";
+import {Images} from "./Data"
+import { useEffect, useState } from "react";
 const Home=()=>{
+
+    const [slide, setSlider] = useState(0)
+
+    const [next, setNext] = useState(slide+1)
+
+    if(next === Images.length-1 || next >= Images.length-1 ){
+        setSlider(0)
+        
+        setNext(slide+1)
+    }
+  
+
+    useEffect(()=>{
+       
+      const intervalId = setInterval(() => {
+
+        if (slide <= Images.length-1) {
+
+          
+          setSlider(next)
+          setNext(next + 1) 
+          
+
+        } else {
+          setSlider(0);
+              }
+        }, 1500);
+
+        return () => clearInterval(intervalId);
+        
+    },[slide])
+    console.log(Images)
     return (
         <>
         <br />
@@ -17,7 +51,7 @@ const Home=()=>{
                 <Box h="31px" paddingLeft="10px"><Text fontSize="17px">Ayurveda</Text></Box>
             </Box>
             <Box p="0.5px" margin="auto" width={["89%","73%","73%"]}  >
-                <Image src="https://www.beautybebo.com/pub/media/ads/home-slider/Mamaearth_banner_1-min.jpg"></Image>
+                <Image src={Images[slide]}></Image>
             </Box>
         </Box>
         <Hotdeals/>
