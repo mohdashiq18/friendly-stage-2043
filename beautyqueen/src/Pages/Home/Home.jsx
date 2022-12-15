@@ -2,33 +2,33 @@ import {Box, SimpleGrid, Wrap,Text,Image} from "@chakra-ui/react";
 import Hotdeals from "./Hotdeals";
 import {Images} from "./Data"
 import { useEffect, useState } from "react";
+import BestSeller from "./BestSeller";
 const Home=()=>{
 
     const [slide, setSlider] = useState(0)
 
     const [next, setNext] = useState(slide+1)
 
-    if(next === Images.length-1 || next >= Images.length-1 ){
+    if(next === Images.length-1 ){
         setSlider(0)
         
         setNext(slide+1)
     }
+    
   
 
     useEffect(()=>{
        
       const intervalId = setInterval(() => {
 
-        if (slide <= Images.length-1) {
+        if (slide >= Images.length-1) {
 
           
-          setSlider(next)
-          setNext(next + 1) 
-          
+          setSlider(0)
+          setNext(next+1 ) 
+        } 
+        setSlider((prev)=>prev+1)
 
-        } else {
-          setSlider(0);
-              }
         }, 1500);
 
         return () => clearInterval(intervalId);
@@ -55,6 +55,11 @@ const Home=()=>{
             </Box>
         </Box>
         <Hotdeals/>
+        <br />
+        <Box w="90%" m="auto">
+            <Image src="https://www.beautybebo.com/pub/media/ads/1599-Forent-banner-4.gif"></Image>
+
+        </Box>
         <br />  
         <Box w="91%" m="auto" display={["inline", "flex", "flex"]} justifyContent="space-between"  >
             <Box  margin="auto" width={["91%","49%","49%"]} >
@@ -64,9 +69,17 @@ const Home=()=>{
                 <Image src="https://www.beautybebo.com/pub/media/ads/lotus_banner.gif"></Image>
             </Box>
         </Box> 
+        <br/>
+        <BestSeller/>
         <br />
         <Box w="90%" m="auto">
             <Image src="https://www.beautybebo.com/pub/media/ads/Forent_Banner_5-min.jpg"></Image>
+
+        </Box>
+       
+        <br />
+        <Box w="90%" m="auto">
+            <Image src="https://www.beautybebo.com/pub/media/ads/Blue_heaven_Forent_3-min.jpg"></Image>
 
         </Box>
      
