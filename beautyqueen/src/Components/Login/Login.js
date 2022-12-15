@@ -1,6 +1,24 @@
-import React from 'react'
+import axios from 'axios'
+import React,{useState} from 'react'
 import "./Login.css"
 export default function Login() {
+    const [email,setEmail]=useState("")
+    const [password,setPassword]=useState("")
+    const pay={
+        email,
+        password
+    }
+   
+ const onLogin=()=>{
+    
+    if(email=="" || password==""){
+        alert("miss match password")
+    }else{
+        axios.post("http://localhost:8080/users/login",pay)
+    .then((res)=>console.log(res))
+    .catch((err)=>console.log(err.response?.data || err.massage))
+    }
+ }
   return (
     <div>
     <div className='input_div_main'>
@@ -11,17 +29,17 @@ export default function Login() {
            
             <div className='input_details'>
                     <label>Email<span> *</span></label><br/>
-                    <input type="email"/>
+                    <input type="email" onChange={(e)=>setEmail(e.target.value)} />
             </div>
             
             <div className='input_details'>
                     <label>Password<span> *</span></label><br/>
-                    <input type="text"/>
+                    <input type="password" onChange={(e)=>setPassword(e.target.value)} />
             </div>
             
             
             <div className='input_button'>
-                <button>SIGN IN</button>
+                <button onClick={onLogin}>SIGN IN</button>
                 <a href='#'>Forgot Your Password?</a>
             </div>
         </div>
@@ -30,7 +48,7 @@ export default function Login() {
             
             <div className='tit'>Creating an account has many benefits: check out faster, keep more than one address, track orders and more.</div>
             <div className='input_button'>
-                    <button>CREATE AN ACCOUNT</button>
+                    <button >CREATE AN ACCOUNT</button>
                 </div>
     </div>
     </div>
