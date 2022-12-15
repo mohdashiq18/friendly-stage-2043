@@ -1,12 +1,11 @@
 const User = require("../models/user.model")
 
 const banAuth = async (req, res, next) => {
-    if(!req?.headers.cookie){
+    if(!req?.cookies?._id){
         return next()
     }
-    const _id = req?.headers.cookie
-    let arr = _id.split("=")
-    const user = await User.findOne({_id:arr[1]})
+   
+    const user = await User.findOne({_id:req?.cookies?._id})
 
     if(user){
     if(user.status === "ban"){

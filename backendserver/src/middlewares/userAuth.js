@@ -1,14 +1,13 @@
 const User = require("../models/user.model")
 
 const userAuth = async (req, res, next) => {
-    if(!req?.headers.cookie){
+    if(!req?.cookies?._id){
         return res.status(401).send("user not authenticated")
     }
-    const _id = req?.headers.cookie
-    let arr = _id.split("=")
-    const user = await User.findOne({_id:arr[1]})
 
-    if(req?.headers.cookie && !user){
+    const user = await User.findOne({_id:req?.cookies?._id})
+
+    if(req?.cookies?._id && !user){
         return res.status(401).send("user not authenticated")
     }
 
