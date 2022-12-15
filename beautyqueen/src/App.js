@@ -7,8 +7,8 @@ import AllRoutes from "./Routes/AllRoutes";
 function App() {
   return (
     <div>
-      <AllRoutes />
-      {/* <SingUp /> */}
+      {/* <AllRoutes /> */}
+      <SingUp />
       {/* <Login/> */}
     </div>
   );
