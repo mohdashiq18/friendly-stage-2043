@@ -10,7 +10,7 @@ const banAuth = async (req, res, next) => {
 
     if(user){
     if(user.status === "ban"){
-       return res.status(404).send("you are ban from using our service")
+       return res.status(403).send("you are ban from using our service")
     } else {
        return next()
     }

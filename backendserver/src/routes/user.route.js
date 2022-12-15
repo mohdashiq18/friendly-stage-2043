@@ -17,7 +17,7 @@ app.get("/" ,adminAuth,  async(req,res)=>{
             res.send(JSON.stringify(users))
         }
         else{ 
-            res.send("no users found")
+            res.status(404).send("no users found")
         }
     } catch (error) {
         res.send(error.message)
@@ -26,6 +26,9 @@ app.get("/" ,adminAuth,  async(req,res)=>{
 
 app.get("/get",async(req,res)=>{
     try {
+        res.cookie("name", "raju jee")
+        res.cookie("you", "jj jee")
+        res.cookie("hh", "you jee")
         res.send(`hello  ${req?.headers.cookie}`)
     } catch (error) {
         res.send(error.message)
@@ -43,10 +46,10 @@ app.delete("/:email", adminAuth ,  async (req, res) => {
         if(existing){
             res.send(`User deleted successfully`)
         } else {
-            res.send("user not found")
+            res.status(404).send("user not found")
         }
     } catch (e) {
-        res.status(404).send(e.message)
+        res.send(e.message)
     }
    
 })
@@ -60,10 +63,10 @@ app.post("/changerole", adminAuth ,  async (req, res) => {
             await User.findOneAndUpdate({email},{role:role},{new:true})
             res.send(`User updated successfully`)
         } else {
-            res.send("user not found")
+            res.status(404).send("user not found")
         }
     } catch (e) {
-        res.status(404).send(e.message)
+        res.send(e.message)
     }
    
 })
@@ -73,7 +76,7 @@ app.post("/ban/:email", adminAuth ,  async (req, res) => {
     let email2 = req.mail2
     
     if(email===email2){
-       return res.send("you can't ban or unban yourself")
+       return res.status(403).send("you can't ban or unban yourself")
     }
     try {
         let existing = await User.findOne({email})
@@ -81,10 +84,10 @@ app.post("/ban/:email", adminAuth ,  async (req, res) => {
             await User.findOneAndUpdate({email},{status:"ban"},{new:true})
             res.send(`User ban successfully`)
         } else {
-            res.send("user not found")
+            res.status(404).send("user not found")
         }
     } catch (e) {
-        res.status(404).send(e.message)
+        res.send(e.message)
     }
    
 })
@@ -94,7 +97,7 @@ app.post("/unban/:email", adminAuth ,  async (req, res) => {
     let email2 = req.mail2
     
     if(email===email2){
-       return res.send("you can't ban or unban yourself")
+       return res.status(403).send("you can't ban or unban yourself")
     }
     try {
         let existing = await User.findOne({email})
@@ -102,10 +105,10 @@ app.post("/unban/:email", adminAuth ,  async (req, res) => {
             await User.findOneAndUpdate({email},{status:"active"},{new:true})
             res.send(`User unban successfully`)
         } else {
-            res.send("user not found")
+            res.status(404).send("user not found")
         }
     } catch (e) {
-        res.status(404).send(e.message)
+        res.send(e.message)
     }
    
 })
@@ -130,7 +133,7 @@ app.post("/signup", async (req, res) => {
             res.send({token: `${user._id}:${email}:beautiqueen:${Date.now()}`})
         }
     } catch (e) {
-        res.status(404).send(e.message)
+        res.send(e.message)
     }
 })
 
@@ -139,18 +142,22 @@ app.post("/signup", async (req, res) => {
 app.post("/login", async (req, res) => {
     const {email, password} = req.body
     const user = await User.findOne({email})
+try {
     if(user){
         if(user.email===email && user.password===password){
-           await User.findOneAndUpdate({email},{logStatus:true},{new:true})
-           res.cookie("_id", `${user._id}`)
-           res.send("user authentication successful")
+           let newUser = await User.findOneAndUpdate({email},{logStatus:true},{new:true})
+           res.cookie("_id", `${user?._id}`)
+           res.send(newUser)
         } else {
-            res.send("user email or password mismatch")
+            res.status(404).send("user email or password mismatch")
         }
 
     } else {
-        res.send(`User with ${email} not found`)
+        res.status(404).send(`User with ${email} not found`)
     }
+} catch (e) {
+    res.send(e.message)
+}
 })
 
 
@@ -163,10 +170,10 @@ app.post("/logout/:email", async (req, res) => {
             res.clearCookie("_id")
             res.send("logout successful")
         } else {
-            res.send("user not found")
+            res.status(404).send("user not found")
         }
     } catch (e) {
-        res.status(404).send(e.message)
+        res.send(e.message)
     }
 })
 
@@ -180,10 +187,10 @@ app.patch("/:email", async (req, res) => {
         if(existing){
             res.send(JSON.stringify(existing))  
         } else {
-            res.send("user not found")
+            res.status(404).send("user not found")
         }
     } catch (e) {
-        res.status(404).send(e.message)
+        res.send(e.message)
     }
    
 })
@@ -199,7 +206,7 @@ app.get("/:email",adminAuth,  async (req, res) => {
             res.status(404).send(`user ${email} not found`)
         }
     } catch (e) {
-        res.status(404).send(e.message)
+        res.send(e.message)
     }
 })
 
