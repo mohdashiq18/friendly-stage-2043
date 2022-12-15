@@ -106,7 +106,7 @@ const data=[
         price:230,
         ofPrice:470,
         quantity:15
-    },
+    }
 
 ]
 const Images=[
