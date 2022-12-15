@@ -113,7 +113,8 @@ const Images=[
     "https://www.beautybebo.com/pub/media/ads/home-slider/Ponds_Forent_Banner_6-min.jpg",
     "https://www.beautybebo.com/pub/media/ads/home-slider/Slider_banner_1-min.jpg",
     "https://www.beautybebo.com/pub/media/ads/home-slider/Mamaearth_banner_1-min.jpg",
-    "https://www.beautybebo.com/pub/media/mega-menu/hair_cata.jpg",
-    "https://www.beautybebo.com/pub/media/mega-menu/hair_cata.jpg",
+    
+    
+    
 ]
 export {data,Images}
