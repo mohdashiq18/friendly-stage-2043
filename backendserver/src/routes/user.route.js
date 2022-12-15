@@ -10,7 +10,7 @@ app.use(banAuth)
 
 /* only for Admin panel */
 /* get all users */
-app.get("/" ,adminAuth,  async(req,res)=>{
+app.get("/" , adminAuth,  async(req,res)=>{
     try {
         let users= await User.find().select("-password")
         if(users){
@@ -24,12 +24,9 @@ app.get("/" ,adminAuth,  async(req,res)=>{
     }
 })
 
-app.get("/get",async(req,res)=>{
+app.get("/getone",async(req,res)=>{
     try {
-        res.cookie("name", "raju jee")
-        res.cookie("you", "jj jee")
-        res.cookie("hh", "you jee")
-        res.send(`hello  ${req?.headers.cookie}`)
+        res.send(JSON.stringify(req?.cookies))
     } catch (error) {
         res.send(error.message)
     }
@@ -146,7 +143,7 @@ try {
     if(user){
         if(user.email===email && user.password===password){
            let newUser = await User.findOneAndUpdate({email},{logStatus:true},{new:true})
-           res.cookie("_id", `${user?._id}`)
+           res.cookie("_id", `${user?._id}` ,{httpOnly: true })
            res.send(newUser)
         } else {
             res.status(404).send("user email or password mismatch")
@@ -196,7 +193,7 @@ app.patch("/:email", async (req, res) => {
 })
 
 /* get single user */
-app.get("/:email",adminAuth,  async (req, res) => {
+app.get("/:email",  async (req, res) => {
     const email = req.params.email;
     try {
         let user = await User.findOne({email});
