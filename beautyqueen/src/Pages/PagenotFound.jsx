@@ -1,10 +1,10 @@
 import { Box, Button, Text } from "@chakra-ui/react"
 import { Link } from "react-router-dom";
-
+import axios from "axios"
 
 const PagenotFound = () => {
-
-
+    axios.get("http://localhost:8080/users/get").then((res)=>console.log(res.data)).then((e)=>console.log(e?.response?.data || e?.message))
+    console.log("sk")
     return (
         <Box w="full" h={"800px"} >
             <Text style={{ textAlign:"center",color:"red", fontSize:"200%"  }} mt="10%" >404 Page Not Found</Text>

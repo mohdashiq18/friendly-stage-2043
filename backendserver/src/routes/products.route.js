@@ -11,7 +11,7 @@ app.get("/", async (req, res) => {
         if(products){
             res.send(JSON.stringify(products))
         } else {
-            res.send("product not found")
+            res.status(404).send("product not found")
         }
     } catch (e) {
         res.send(e.message)
@@ -29,12 +29,12 @@ app.post("/", adminAuth , async (req, res) => {
            res.send("Product updated successfully")
         } else {
             let pro = await Product.create({
-                name, category, description, image, price, ofPrice, quantity
+                user:req.objId, name, category, description, image, price, ofPrice, quantity
             })
-            res.send("product added successfully")
+            res.send("Product added successfully")
         }
     } catch (e) {
-        res.status(404).send(e.message)
+        res.send(e.message)
     }
 })
 
