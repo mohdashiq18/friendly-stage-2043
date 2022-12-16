@@ -63,7 +63,7 @@ const Home=()=>{
             <Box border="1px solid teal" margin="auto"  width={["80%","27%","27%"]} >
                 <Box h="31px"  paddingLeft="10px"><Text fontSize="17px">Make Up</Text></Box>
                 <Box h="31px"   paddingLeft="10px"><Text fontSize="17px">Hair</Text></Box>
-                <Box h="31px"  paddingLeft="10px"><Text fontSize="17px">Skin</Text></Box>
+                <Box h="31px"  paddingLeft="10px"><Text fontSize="17px">Skin Care</Text></Box>
                 <Box h="31px" paddingLeft="10px"><Text fontSize="17px">Personal Care</Text></Box>
                 <Box h="31px" paddingLeft="10px"><Text fontSize="17px">Mom & Baby Care</Text></Box>
                 <Box h="31px" paddingLeft="10px"><Text fontSize="17px">Fragnance</Text></Box>
