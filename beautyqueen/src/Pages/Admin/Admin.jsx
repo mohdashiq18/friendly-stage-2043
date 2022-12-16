@@ -22,6 +22,17 @@ function remC(){
     cookie.remove("token")
 }
 
+
+function gg(){
+    axios.post("http://localhost:8080/users/signup",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+  }
+  function ggg(){
+    axios.post("http://localhost:8080/users/signup",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+  }
+  function ggggg(){
+    axios.post("http://localhost:8080/users/signup",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+  }
+
  /*  const data=[
     {
         name:"Bioderma Atoderm Huile De Douche 24h Hydration Ultra-Nourishing Anti-",
@@ -503,6 +514,8 @@ function remC(){
 
   /* axios.get("/users",{withCredentials: true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   axios.get("/products",{withCredentials: true}).then((res)=>console.log(res)).catch((e)=>console.log(e)) */
+  //hello world
+  
   return (
     <div style={{display:'flex'}} >Admin
       <button onClick={doIt} >sign It</button>
@@ -511,6 +524,14 @@ function remC(){
       <button onClick={check} >make It</button>
       <button onClick={get}> get one</button>
       <br/>
+      <button onClick={setC} >set</button><br/>
+      <button onClick={getC} >get</button><br/>
+      <button onClick={remC} >rem</button>
+
+      <button onClick={setC} >set</button><br/>
+      <button onClick={getC} >get</button><br/>
+      <button onClick={remC} >rem</button>
+
       <button onClick={setC} >set</button><br/>
       <button onClick={getC} >get</button><br/>
       <button onClick={remC} >rem</button>
