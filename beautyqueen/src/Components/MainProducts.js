@@ -1,5 +1,6 @@
 import { FaShoppingCart , FaRegBookmark , FaStar  } from 'react-icons/fa';
-export function Products(props){
+import "./Products/Products.css"
+export function MainProducts(props){
     return(
         <div className='productList'>
             <div key={props.id} className="productCard">
