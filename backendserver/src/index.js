@@ -13,9 +13,10 @@ const productRouter = require("./routes/products.route")
 
 app.use(express.json())
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://beautyqueen0.netlify.app"],
     credentials: true
 }))
+app.set("trust proxy", 1)
 app.use(cookieParser())
 app.use(banAuth)
 
