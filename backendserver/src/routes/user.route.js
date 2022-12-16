@@ -166,7 +166,8 @@ app.post("/logout/:email", async (req, res) => {
         let existing = await User.findOne({email})
         if(existing){
             await User.findOneAndUpdate({email},{logStatus:false},{new:true})
-            res.clearCookie("_id")
+            res.cookie("_id", `${existing?._id}` ,{httpOnly: true ,maxAge: 1,secure:true,sameSite:"none"})
+            res.cookie("name", `${existing?.name}` ,{httpOnly: true ,maxAge: 1,secure:true,sameSite:"none"})
             res.send("logout successful")
         } else {
             res.status(404).send("user not found")
