@@ -467,19 +467,19 @@ const Admin = () => {
 ] */
 
   function doIt(){
-    axios.post("https://beautiqueenbackend.onrender.com/users/signup",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+    axios.post("/users/signup",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
 
   function login(){
-    axios.post("https://beautiqueenbackend.onrender.com/users/login",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+    axios.post("/users/login",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
 
   function check(){
-    axios.get("https://beautiqueenbackend.onrender.com/products",{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+    axios.get("/products",{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
 
   function get(){
-    axios.get("https://beautiqueenbackend.onrender.com/users/getone",{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+    axios.get("/users/getone",{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
 
   /* async function make(){
