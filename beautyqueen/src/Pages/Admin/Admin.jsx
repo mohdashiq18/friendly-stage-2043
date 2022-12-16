@@ -6,6 +6,7 @@ const Admin = () => {
   // document.cookie = "firstName=Christopher";
   // console.log(document.cookie)
   axios.get("/users",{withCredentials: true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+  axios.get("/products",{withCredentials: true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   return (
     <div>Admin</div>
   )
