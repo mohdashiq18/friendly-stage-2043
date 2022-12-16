@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React from 'react'
+import cookie from "js-cookie"
 
 const Admin = () => {
   console.log("xxx")
@@ -11,6 +12,15 @@ const Admin = () => {
     phone:7261861074,
     password:"123456"
   }
+  function setC(){
+  cookie.set("token", "sujeet", {expires: 1/24})
+}
+function getC(){
+    console.log(cookie)
+}
+function remC(){
+    cookie.remove("token")
+}
 
  /*  const data=[
     {
@@ -496,6 +506,10 @@ const Admin = () => {
       <button onClick={login} >login It</button>
       <button onClick={check} >make It</button>
       <button onClick={get}> get one</button>
+      <br/>
+      <button onClick={setC} >set</button><br/>
+      <button onClick={getC} >get</button><br/>
+      <button onClick={remC} >rem</button>
     </div>
   )
 }
