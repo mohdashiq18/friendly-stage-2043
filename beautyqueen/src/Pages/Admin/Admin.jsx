@@ -478,6 +478,10 @@ const Admin = () => {
     axios.get("https://beautiqueenbackend.onrender.com/products",{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
 
+  function get(){
+    axios.get("https://beautiqueenbackend.onrender.com/users/getone",{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+  }
+
   /* async function make(){
     for(let i = 0; i<data.length; i++){
     axios.post("/products",data[i],{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
@@ -491,6 +495,7 @@ const Admin = () => {
       <button onClick={doIt} >sign It</button>
       <button onClick={login} >login It</button>
       <button onClick={check} >make It</button>
+      <button onClick={get}> get one</button>
     </div>
   )
 }

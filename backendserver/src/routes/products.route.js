@@ -5,7 +5,7 @@ const Product = require("../models/products.model")
 const app=express.Router()
 
 
-app.get("/", async (req, res) => {
+app.get("/", adminAuth, async (req, res) => {
     let products = await Product.find()
     try {
         if(products){
