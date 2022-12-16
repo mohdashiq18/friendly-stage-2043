@@ -16,7 +16,7 @@ const Admin = () => {
   cookie.set("token", "sujeet", {expires: 1/24})
 }
 function getC(){
-    console.log(cookie)
+    console.log(cookie.get("token"))
 }
 function remC(){
     cookie.remove("token")
@@ -483,6 +483,9 @@ function remC(){
   function login(){
     axios.post("http://localhost:8080/users/login",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
+  function logout(){
+    axios.post("http://localhost:8080/users/logout/639c6e57b8bb6e689374be9c",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+  }
 
   function check(){
     axios.get("http://localhost:8080/products",{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
@@ -504,6 +507,7 @@ function remC(){
     <div style={{display:'flex'}} >Admin
       <button onClick={doIt} >sign It</button>
       <button onClick={login} >login It</button>
+      <button onClick={logout} >log out</button>
       <button onClick={check} >make It</button>
       <button onClick={get}> get one</button>
       <br/>

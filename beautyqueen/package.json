@@ -2,7 +2,7 @@
   "name": "beautiqueen",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://beautyqueen0.netlify.app",
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.13",
     "@chakra-ui/react": "^2.4.3",
