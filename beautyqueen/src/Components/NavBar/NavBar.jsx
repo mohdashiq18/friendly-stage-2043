@@ -26,13 +26,13 @@ export default function Navbar ( ){
         isDesktop? <div className='NavMainDiv'>
         <NavLink to="/">
         <Box maxW='100%'  className='TopNav'>
-            <Image boxSize='100%' m='auto' src='https://www.beautybebo.com/pub/media/ads/ad-desktop.jpg'/>
+            <Image boxSize='100%' m='auto'  src='https://www.beautybebo.com/pub/media/ads/ad-desktop.jpg'/>
         </Box>
         </NavLink>
         <Box bg='white'>
             <Flex className='MiddleNavFlex' w={{base : '100%', md : '90%', lg : '90%'}} p='10px' bg='white'> 
            <Box  w={{base : '20%', md : '20%', lg : '20%'}}>
-                <Image ml="20px" w={{base : '100px', md : '100px' , lg : '120px'}} h={{base : '100px', md : '100px' , lg : '80px'}}  src="https://www.beautybebo.com/pub/media/logo/default/beautybebo_1.png"/>
+                <Image ml="20px" w={{base : '100px', md : '100px' , lg : '160px'}} h={{base : '100px', md : '100px' , lg : '55px'}}  src="https://www.beautybebo.com/pub/media/logo/default/beautybebo_1.png"/>
             </Box>
           
             <Flex w={{base : '50%', md : '50%' , lg : '55%'}} >

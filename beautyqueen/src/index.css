@@ -11,7 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-:root{
+/* :root{
   --color-grey-primary:#f0f0f0;
   --color--yellow-Pimary:goldenrod;
   --color-orange-primary:darkorange;
@@ -79,4 +79,4 @@ html{
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
+} */
