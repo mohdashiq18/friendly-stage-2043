@@ -114,7 +114,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be80db28058664152490_1.jpg",
         price:350,
         ofPrice:350,
-        quantity:1
+        quantity:12
     },
     {
         name:"Chicco Baby Moments Mild Bodywash Protect",
@@ -123,7 +123,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/0/8/088a1068058664152308_1.jpg",
         price:479,
         ofPrice:441,
-        quantity:1 
+        quantity:17 
     },
     {
         name:"Chicco Body Lotion",
@@ -132,7 +132,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/4/443d5b28058664152391-1.jpg",
         price:499,
         ofPrice:470,
-        quantity:1 
+        quantity:13 
     },
     {
         name:"Chicco Gentle Body Wash And Shampoo - 500ml",
@@ -141,7 +141,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/d/c/dc91b1e8058664152254_1.jpg",
         price:499,
         ofPrice:470,
-        quantity:1 
+        quantity:14
     },
     {
         name:"Chicco Natural Sensation Bath Shampoo - 300ml",
@@ -150,7 +150,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/7/c/7c213988058664066612_main_3_1.jpg",
         price:649,
         ofPrice:584,
-        quantity:1 
+        quantity:18 
     },
     {
         name:"Himalaya Gentle Baby Shampoo",
@@ -159,7 +159,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/u/n/untitled-46.jpg",
         price:320,
         ofPrice:320,
-        quantity:1 
+        quantity:15 
     },
     {
         name:"Cetaphil Baby Massage Oil With Shea Butter",
@@ -168,7 +168,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/c/0/c00c21e9318637043323_1.jpg",
         price:630,
         ofPrice:599,
-        quantity:1
+        quantity:12
     },
     {
         name:"Mamaearth Foaming Face Wash For Kids With Aloe Vera & Coconut For Gentle Cleansing",
@@ -177,7 +177,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/d/b/dbcab848906087778264_7.jpg",
         price:349,
         ofPrice:349,
-        quantity:1 
+        quantity:11 
     },
     {
         name:"Mamaearth Coco Soft Massage Oil For New Born With Coconut & Turmeric Oil",
@@ -186,7 +186,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/c/o/coco-oil.jpg",
         price:399,
         ofPrice:339,
-        quantity:1 
+        quantity:12 
     },
     {
         name:"Lotus Herbals Baby+ Gentle Cleansing Shampoo PH 5.5 Sulphate Free",
@@ -195,7 +195,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/e/z/ezgif-1-d79c0a9971.jpg",
         price:355,
         ofPrice:309,
-        quantity:1 
+        quantity:14
     },
     {
         name:"Lotus Herbals BABY LITTLE Bubbles Body Wash & Shampoo",
@@ -204,7 +204,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/e/z/ezgif-1-7bba281fb8.jpg",
         price:345,
         ofPrice:293,
-        quantity:1 
+        quantity:17 
     },
     {
         name:"Lotus Herbals Baby + Tender Touch Baby Body Lotion",
@@ -213,7 +213,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/e/z/ezgif-1-51694c1def.jpg",
         price:245,
         ofPrice:245,
-        quantity:1 
+        quantity:18 
     },
     {
         name:"Mamaearth Organic Bamboo Based Baby Wipes And Travel Pack",
@@ -222,7 +222,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/m/m/mmm199.jpg",
         price:348,
         ofPrice:290,
-        quantity:1 
+        quantity:12 
     },
     {
         name:"Chicco Baby Moment Gift Pack - Blue In",
@@ -231,7 +231,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/b/b/bbj0001888-1.jpg",
         price:1100,
         ofPrice:968,
-        quantity:1 
+        quantity:19 
     },
     {
         name:"KamaSutra Thrill Deodorant",
@@ -240,7 +240,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/u/n/untitled-1_6.jpg",
         price:440,
         ofPrice:396,
-        quantity:1
+        quantity:18
     },
     {
         name:"KamaSutra Blaze Deodorant - Pack Of 2",
@@ -249,7 +249,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/u/n/untitled-1_5.jpg",
         price:440,
         ofPrice:396,
-        quantity:1
+        quantity:14
     },
     {
         name:"KamaSutra Urge Power Series Perfume Spray- Pack Of 2",
@@ -258,7 +258,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/u/n/untitled-1_4_3.jpg",
         price:440,
         ofPrice:396,
-        quantity:1
+        quantity:12
     },
     {
         name:"KamaSutra Woman Sparkle Perfume Body Spray",
@@ -267,7 +267,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/u/n/untitled-1_4_1.jpg",
         price:398,
         ofPrice:398,
-        quantity:1
+        quantity:14
     },
     {
         name:"KamaSutra Woman Enigma Perfume Body Spray - Pack Of 2",
@@ -276,7 +276,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/u/n/untitled-1_2_1.jpg",
         price:398,
         ofPrice:398,
-        quantity:1
+        quantity:15
     },
     {
         name:"Plum Bodylovin' Feelin' So Rose Body Mist",
@@ -285,7 +285,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/5/5/55c1d29plumx00000130_5_1.jpg",
         price:525,
         ofPrice:457,
-        quantity:1
+        quantity:17
     },
     {
         name:"Plum Bodylovin' Orchid You Not Body Mist",
@@ -294,7 +294,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/2/6/266b211plumx00000054_1.jpg",
         price:525,
         ofPrice:473,
-        quantity:1
+        quantity:16
     },
     {
         name:"Mamaearth Eau De Parfum For A Fragrance As Unique As You",
@@ -303,7 +303,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/9/f/9fd2fca8906087777243__1_.jpg",
         price:699,
         ofPrice:629,
-        quantity:1
+        quantity:19
     },
     {
         name:"Mamaearth ME Deo For A Scent That's Unique To You",
@@ -312,7 +312,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/m/e/me-deodorant.jpg",
         price:299,
         ofPrice:299,
-        quantity:1
+        quantity:11
     },
     {
         name:"Calvin Klein Eternity For Men Eau De Parfum",
@@ -321,7 +321,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/s/8/s8.jpg",
         price:3650,
         ofPrice:3468,
-        quantity:1
+        quantity:12
     },
     {
         name:"Fogg Scent Xtremo Men Fragrance Body Spray",
@@ -330,7 +330,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/f/o/fo6.jpg",
         price:599,
         ofPrice:539,
-        quantity:1
+        quantity:17
     },
     {
         name:"Engage Yin Eau De Parfum For Men",
@@ -339,7 +339,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/e/5/e55.jpg",
         price:499,
         ofPrice:459,
-        quantity:1
+        quantity:19
     },
     {
         name:"Vaadi Herbals Aloe Vera Face Scrub",
@@ -348,7 +348,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/1/8/18_12_3.jpg",
         price:285,
         ofPrice:285,
-        quantity:1
+        quantity:17
     },
     {
         name:"Vaadi Herbals 24 Carat Gold Massage Gel With 24 Carat Gold Dust & Grape Seed Extract",
@@ -357,7 +357,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/1/7/17_14_4.jpg",
         price:320,
         ofPrice:320,
-        quantity:1
+        quantity:19
     },
     {
         name:"O3+ Volcano Scrub",
@@ -366,7 +366,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/o/4/o45.jpg",
         price:490,
         ofPrice:450,
-        quantity:1
+        quantity:12
     },
     {
         name:"O3+ Milk Scrub Dry Skin Dermal Zone",
@@ -375,7 +375,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/o/4/o41_1.jpg",
         price:490,
         ofPrice:431,
-        quantity:1
+        quantity:16
     },
     {
         name:"Himalaya Herbals Oil-Free Radiance Gel Cream",
@@ -384,7 +384,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/2/8/288.jpg",
         price:260,
         ofPrice:260,
-        quantity:1
+        quantity:18
     },
     {
         name:"Shahnaz Husain Shalocks Plus Ayurvedic Hair Oil",
@@ -393,7 +393,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/s/7/s7.jpg",
         price:710,
         ofPrice:640,
-        quantity:1
+        quantity:13
     },
     {
         name:"Shahnaz Husain Gold 2-In-1 Anti Ageing Gel",
@@ -402,7 +402,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/s/1/s1_1.jpg",
         price:1955,
         ofPrice:1857,
-        quantity:1
+        quantity:19
     },
     {
         name:"L'Oreal Paris Aura Perfect Scrub",
@@ -411,7 +411,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/4/1/41glllfrqml._sl1001_.jpg",
         price:400,
         ofPrice:400,
-        quantity:1
+        quantity:17
     },
     {
         name:"Biotique Bio Sea Weed Revitalizing Anti Fatigue Eye Gel",
@@ -420,7 +420,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/b/2/b28.jpg",
         price:199,
         ofPrice:199,
-        quantity:1
+        quantity:15
     },
     {
         name:"Cetaphil Sun SPF 30 Light Gel",
@@ -429,7 +429,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/c/1/c1.jpg",
         price:1150,
         ofPrice:1070,
-        quantity:1
+        quantity:13
     },
     {
         name:"Beeone Gold Facial Gel",
@@ -438,7 +438,7 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/b/e/be69.jpg",
         price:290,
         ofPrice:230,
-        quantity:1
+        quantity:12
     },
     {
         name:"Plum Ban The Tan Combo - SPF50 + Face Scrub + Face Mask",
@@ -447,7 +447,8 @@ const data=[
         image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/p/l/pl64.jpg",
         price:1385,
         ofPrice:1260,
-        quantity:1
+        quantity:11
+        
     },
 ]
 const Images=[

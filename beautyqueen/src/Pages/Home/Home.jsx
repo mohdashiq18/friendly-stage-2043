@@ -4,6 +4,7 @@ import {Images} from "./Data"
 import { useEffect, useState } from "react";
 import BestSeller from "./BestSeller";
 import axios from "axios";
+import React from "react" 
 const Home=()=>{
     const [data,setData]=useState([]);
 
@@ -17,10 +18,10 @@ const Home=()=>{
         .catch((er)=>console.log(er))
     }
 
-    useEffect(()=>{
-        getData()
+     useEffect(()=>{
+         getData()
 
-    },[])
+     },[])
 
     if(next === Images.length-1 ){
         setSlider(0)
@@ -46,8 +47,13 @@ const Home=()=>{
 
         return () => clearInterval(intervalId);
         
+        
     },[slide])
-    console.log("data------",data)
+    useEffect(()=>{
+        console.log("data------",data)
+
+    },[data])
+   
     return (
         <>
         <br />
@@ -100,4 +106,4 @@ const Home=()=>{
         </>
     )
 }
-export default Home
+export default React.memo(Home)
