@@ -467,11 +467,15 @@ const Admin = () => {
 ] */
 
   function doIt(){
-    axios.post("/users/signup",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+    axios.post("https://beautiqueenbackend.onrender.com/users/signup",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
 
   function login(){
-    axios.get("/products/skin",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+    axios.post("https://beautiqueenbackend.onrender.com/users/login",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+  }
+
+  function check(){
+    axios.get("https://beautiqueenbackend.onrender.com/products",{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
 
   /* async function make(){
@@ -486,7 +490,7 @@ const Admin = () => {
     <div style={{display:'flex'}} >Admin
       <button onClick={doIt} >sign It</button>
       <button onClick={login} >login It</button>
-      {/* <button onClick={make} >make It</button> */}
+      <button onClick={check} >make It</button>
     </div>
   )
 }
