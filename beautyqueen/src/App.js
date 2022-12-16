@@ -4,27 +4,19 @@ import { Products }  from "./Components/products";
 import SingUp from "./Components/SignUp/SingUp";
 import content from "./content";
 import AllRoutes from "./Routes/AllRoutes";
+import NavBar from "./Components/NavBar/NavBar";
+import Footer from "./Components/Footer/Footer";
+import Drop from "./Components/Dropcde/Drop"
+
 
 function App() {
   return (
     <div>
-    <div className="App">
-      {content.map(content=>(
-        <Products
-          key={content.id}
-          image={content.image}
-          name={content.name}
-          rating={content.rating}
-          price={content.price}
-          sale={content.sale}
-          discount={content.discount}
-          originalprice={content.originalprice}
-        />
-      ))}
-    </div>
+    <NavBar/>
+    <Drop/>
      <AllRoutes />
-      {/* <SingUp/> */}
-      <Login/>
+     <Footer/>
+      
     </div>
   );
 }

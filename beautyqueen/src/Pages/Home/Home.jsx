@@ -3,11 +3,24 @@ import Hotdeals from "./Hotdeals";
 import {Images} from "./Data"
 import { useEffect, useState } from "react";
 import BestSeller from "./BestSeller";
+import axios from "axios";
 const Home=()=>{
+    const [data,setData]=useState([]);
 
     const [slide, setSlider] = useState(0)
 
-    const [next, setNext] = useState(slide+1)
+    const [next, setNext] = useState(slide+1);
+
+    const getData=()=>{
+        axios.get("/products",{withCredentials:true})
+        .then((res)=>setData(res.data))
+        .catch((er)=>console.log(er))
+    }
+
+    useEffect(()=>{
+        getData()
+
+    },[])
 
     if(next === Images.length-1 ){
         setSlider(0)
@@ -34,7 +47,7 @@ const Home=()=>{
         return () => clearInterval(intervalId);
         
     },[slide])
-    console.log(Images)
+    console.log("data------",data)
     return (
         <>
         <br />

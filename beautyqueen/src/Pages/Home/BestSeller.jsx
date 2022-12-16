@@ -1,5 +1,7 @@
 import { Box, Text, Image, Button,Stack } from "@chakra-ui/react";
 
+import {IoIosHeartEmpty,IoIosHeart} from "react-icons/io";
+
 const BestSeller = () => {
     return (
         <div >
@@ -19,7 +21,7 @@ const BestSeller = () => {
                                     Add to Cart
                                 </Button>
                                 <Button w="40px" colorScheme='pink' size='sm'>
-                                    <Image  src="https://spng.pngfind.com/pngs/s/52-526635_heart-icon-black-heart-icon-png-transparent-png.png"></Image>
+                                    <  IoIosHeartEmpty></IoIosHeartEmpty>
                                 </Button>
                                 
                             </Stack>
@@ -40,7 +42,7 @@ const BestSeller = () => {
                                     Add to Cart
                                 </Button>
                                 <Button w="40px" colorScheme='pink' size='sm'>
-                                    <Image  src="https://spng.pngfind.com/pngs/s/52-526635_heart-icon-black-heart-icon-png-transparent-png.png"></Image>
+                                <IoIosHeart></IoIosHeart>
                                 </Button>
                                 
                             </Stack>
