@@ -18,6 +18,7 @@ app.get("/", async (req, res) => {
     }
 })
 
+
 app.get("/:category", async (req, res) => {
     const category = req.params.category
     let products = await Product.find({category})
