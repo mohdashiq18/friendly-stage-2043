@@ -484,7 +484,7 @@ function remC(){
     axios.post("http://localhost:8080/users/login",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
   function logout(){
-    axios.post("http://localhost:8080/users/logout/639c6e57b8bb6e689374be9c",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+    axios.post("http://localhost:8080/users/logout/sujeet@gmail.com",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
 
   function check(){
