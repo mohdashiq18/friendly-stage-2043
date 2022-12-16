@@ -28,7 +28,7 @@ const Best = () => {
                         <Box w="60%" paddingTop="21px">
                             <Text>{el.name}</Text>
                             <Image w="40%" src="https://static.vecteezy.com/system/resources/previews/004/256/658/original/five-star-customer-product-ratings-review-flat-icons-for-apps-and-websites-illustration-of-five-golden-yellow-stars-in-a-row-isolated-in-a-white-background-concepts-for-ratings-customers-review-free-vector.jpg"></Image>
-                            <Text>{el.price}/-</Text>
+                            <Text>{el.price} /-</Text>
                             <Stack mt="5px" spacing={2} direction='row' align='center'>
                                 <Button colorScheme='pink' size='sm'>
                                     Add to Cart
