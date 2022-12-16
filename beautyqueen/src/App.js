@@ -16,9 +16,9 @@ function App() {
     <div>
     {/* <NavBar/>
     <Drop/>
-     <AllRoutes/>
-     <Footer/> */}
-      <Products/>
+  <Footer/> */}
+  <AllRoutes/>
+      {/* <Products/> */}
     </div>
   );
 }
