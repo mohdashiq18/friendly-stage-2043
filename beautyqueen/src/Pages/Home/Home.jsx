@@ -4,6 +4,7 @@ import {Images} from "./Data"
 import { useEffect, useState } from "react";
 import BestSeller from "./BestSeller";
 import axios from "axios";
+import React from "react" 
 const Home=()=>{
     const [data,setData]=useState([]);
 
@@ -17,10 +18,10 @@ const Home=()=>{
         .catch((er)=>console.log(er))
     }
 
-    useEffect(()=>{
-        getData()
+     useEffect(()=>{
+         getData()
 
-    },[])
+     },[])
 
     if(next === Images.length-1 ){
         setSlider(0)
@@ -46,8 +47,13 @@ const Home=()=>{
 
         return () => clearInterval(intervalId);
         
+        
     },[slide])
-    console.log("data------",data)
+    useEffect(()=>{
+        console.log("data------",data)
+
+    },[data])
+   
     return (
         <>
         <br />
@@ -57,7 +63,7 @@ const Home=()=>{
             <Box border="1px solid teal" margin="auto"  width={["80%","27%","27%"]} >
                 <Box h="31px"  paddingLeft="10px"><Text fontSize="17px">Make Up</Text></Box>
                 <Box h="31px"   paddingLeft="10px"><Text fontSize="17px">Hair</Text></Box>
-                <Box h="31px"  paddingLeft="10px"><Text fontSize="17px">Skin</Text></Box>
+                <Box h="31px"  paddingLeft="10px"><Text fontSize="17px">Skin Care</Text></Box>
                 <Box h="31px" paddingLeft="10px"><Text fontSize="17px">Personal Care</Text></Box>
                 <Box h="31px" paddingLeft="10px"><Text fontSize="17px">Mom & Baby Care</Text></Box>
                 <Box h="31px" paddingLeft="10px"><Text fontSize="17px">Fragnance</Text></Box>
@@ -100,4 +106,4 @@ const Home=()=>{
         </>
     )
 }
-export default Home
+export default React.memo(Home)
