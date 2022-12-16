@@ -9,6 +9,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import Footer from "./Components/Footer/Footer";
 import Drop from "./Components/Dropcde/Drop"
 import { Products } from "./Components/Products/Products";
+import Admin from "./Pages/Admin/Admin";
 
 
 function App() {
@@ -17,8 +18,9 @@ function App() {
     {/* <NavBar/>
     <Drop/>
   <Footer/> */}
-  <AllRoutes/>
+  {/* <AllRoutes/> */}
       {/* <Products/> */}
+      <Admin/>
     </div>
   );
 }
