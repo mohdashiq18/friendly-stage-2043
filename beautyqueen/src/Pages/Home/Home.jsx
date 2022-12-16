@@ -4,6 +4,7 @@ import {Images} from "./Data"
 import { useEffect, useState } from "react";
 import BestSeller from "./BestSeller";
 import axios from "axios";
+import {IoIosMenu} from "react-icons/io"
 import React from "react" 
 const Home=()=>{
     const [data,setData]=useState([]);
@@ -13,7 +14,7 @@ const Home=()=>{
     const [next, setNext] = useState(slide+1);
 
     const getData=()=>{
-        axios.get("/products",{withCredentials:true})
+        axios.get("/products/?page=2&limit=1&category=skin",{withCredentials:true})
         .then((res)=>setData(res.data))
         .catch((er)=>console.log(er))
     }
@@ -59,21 +60,22 @@ const Home=()=>{
         <br />
         <br />
         
-        <Box w="90%" m="auto" display={["inline", "flex", "flex"]} justifyContent="space-between"  border="1px solid gray" >
-            <Box border="1px solid teal" margin="auto"  width={["80%","27%","27%"]} >
-                <Box h="31px"  paddingLeft="10px"><Text fontSize="17px">Make Up</Text></Box>
-                <Box h="31px"   paddingLeft="10px"><Text fontSize="17px">Hair</Text></Box>
-                <Box h="31px"  paddingLeft="10px"><Text fontSize="17px">Skin Care</Text></Box>
-                <Box h="31px" paddingLeft="10px"><Text fontSize="17px">Personal Care</Text></Box>
-                <Box h="31px" paddingLeft="10px"><Text fontSize="17px">Mom & Baby Care</Text></Box>
-                <Box h="31px" paddingLeft="10px"><Text fontSize="17px">Fragnance</Text></Box>
-                <Box h="31px" paddingLeft="10px"><Text fontSize="17px">Ayurveda</Text></Box>
+        <Box w="90%" m="auto" display={["inline", "flex", "flex"]} p="3px" justifyContent="space-between" border="0.3px solid grey" >
+            <Box    width={["80%","27%","27%"]} >
+            <Box  display="flex"  p="5px 11px"  ><IoIosMenu  size="29px"></IoIosMenu><Text marginLeft="5px" fontWeight="bold" fontSize="19px">ALL CATEGORIES</Text></Box>
+                <Box  display="flex"  p="5px 11px"  ><Image marginRight="5px" src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/makeup-small.png"/><Text fontSize="17px">Make Up</Text></Box>
+                <Box  display="flex" p="5px 11px"  paddingLeft="10px"><Image  marginRight="5px" src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/skin-small.png"/><Text fontSize="17px">Hair</Text></Box>
+                <Box  display="flex" p="5px 11px" paddingLeft="10px"><Image  marginRight="5px" src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/hair-small.png"/><Text fontSize="17px">Skin Care</Text></Box>
+                <Box  display="flex" p="5px 11px" paddingLeft="10px"> <Image  marginRight="5px" src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/personal-care-small.png"/><Text fontSize="17px">Personal Care</Text></Box>
+                <Box  display="flex" p="5px 11px" paddingLeft="10px"> <Image  marginRight="5px" src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/mom-baby-care-small.png"/><Text fontSize="17px">Mom & Baby Care</Text></Box>
+                <Box display="flex" p="5px 11px" paddingLeft="10px"> <Image  marginRight="5px" src="https://www.beautybebo.com/pub/media/fragrance.png"/><Text fontSize="17px">Fragnance</Text></Box>
+                <Box display="flex" p="5px 11px" paddingLeft="10px"> <Image  marginRight="5px" src="https://www.beautybebo.com/pub/media/ayurveda.png"/><Text fontSize="17px">Ayurveda</Text></Box>
             </Box>
-            <Box p="0.5px" margin="auto" width={["89%","73%","73%"]}  >
+            <Box  p="0.5px" margin="auto" width={["89%","73%","73%"]}  >
                 <Image src={Images[slide]}></Image>
             </Box>
         </Box>
-        <Hotdeals/>
+        <Hotdeals dt={data}/>
         <br />
         <Box w="90%" m="auto">
             <Image src="https://www.beautybebo.com/pub/media/ads/1599-Forent-banner-4.gif"></Image>
@@ -90,6 +92,8 @@ const Home=()=>{
         </Box> 
         <br/>
         <BestSeller/>
+        
+        
         <br />
         <Box w="90%" m="auto">
             <Image src="https://www.beautybebo.com/pub/media/ads/Forent_Banner_5-min.jpg"></Image>
