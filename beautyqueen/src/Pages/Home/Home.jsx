@@ -14,7 +14,7 @@ const Home=()=>{
     const [next, setNext] = useState(slide+1);
 
     const getData=()=>{
-        axios.get("/products/?page=2&limit=1&category=skin",{withCredentials:true})
+        axios.get("http://localhost:8080/products/?page=2&limit=1&category=skin",{withCredentials:true})
         .then((res)=>setData(res.data))
         .catch((er)=>console.log(er))
     }

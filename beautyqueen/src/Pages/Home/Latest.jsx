@@ -8,7 +8,7 @@ const Latest = () => {
 
 
     const getPro = () => {
-        axios.get("/products/Mom&BabyCare", { withCredentials: true })
+        axios.get("http://localhost:8080/products/Mom&BabyCare", { withCredentials: true })
             .then((res) => setPro(res.data))
             .catch((er) => console.log(er))
     }
