@@ -8,22 +8,9 @@ import content from "./content";
 function App() {
   return (
     <div>
-    <div className="App">
-      {content.map(content=>(
-        <Products
-          key={content.id}
-          image={content.image}
-          name={content.name}
-          rating={content.rating}
-          price={content.price}
-          sale={content.sale}
-          discount={content.discount}
-          originalprice={content.originalprice}
-        />
-      ))}
-    </div>
+    
      {/* <AllRoutes />*/}
-      {/* <SingUp/> */}
+      <SingUp/>
       <Login/>
     </div>
   );
