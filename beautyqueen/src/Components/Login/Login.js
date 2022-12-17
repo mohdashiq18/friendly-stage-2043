@@ -1,9 +1,14 @@
 import axios from 'axios'
 import React,{useState} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { login } from '../AuthReducer/Action'
 import "./Login.css"
 export default function Login() {
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
+    const dispatch=useDispatch()
+    const data=useSelector(state=>state.LogReducer)
+    console.log("Data.....",data)
     const pay={
         email,
         password
@@ -14,7 +19,7 @@ export default function Login() {
     if(email=="" || password==""){
         alert("miss match password")
     }else{
-        axios.post("http://localhost:8080/users/login",pay)
+        dispatch(login(pay))
     .then((res)=>console.log(res))
     .catch((err)=>console.log(err.response?.data || err.massage))
     }

@@ -13,7 +13,7 @@ const login = (payload) => (dispatch)=>{
     dispatch({type:types.LOGIN_REQUEST});
 
     return axios.post(`http://localhost:8080/users/login`,payload)
-    .then((res)=>dispatch({type:types.LOGIN_SUCCESS,payload:payload}))
+    .then((res)=>dispatch({type:types.LOGIN_SUCCESS,payload:res.data}))
     .catch((e)=>dispatch({type:types.LOGIN_FAILURE,payload:e}))
 
 }
