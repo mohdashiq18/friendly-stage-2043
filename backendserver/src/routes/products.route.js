@@ -5,8 +5,31 @@ const Product = require("../models/products.model")
 const app=express.Router()
 
 
-app.get("/", async (req, res) => {
-    let products = await Product.find()
+app.get("/",  async (req, res) => {
+    const {category} = req.query
+    let products;
+    if(category){
+        products = await Product.find({category})
+    } else {
+        products = await Product.find()
+    }
+    
+    try {
+        if(products){
+            res.send(JSON.stringify(products))
+        } else {
+            res.status(404).send("product not found")
+        }
+    } catch (e) {
+        res.send(e.message)
+    }
+})
+
+
+app.get("/:category", async (req, res) => {
+    const category = req.params.category
+    const {page=1, limit=12} = req.query
+    let products = await Product.find({category}).limit(limit).skip((page-1)*limit)
     try {
         if(products){
             res.send(JSON.stringify(products))
@@ -23,7 +46,7 @@ app.post("/", adminAuth , async (req, res) => {
     const {name, category, description, image, price, ofPrice, quantity} = req.body
     
     try {
-        let existing = await Product.findOne({name,image})
+        let existing = await Product.findOne({name})
         if(existing){
            let prod = await Product.findOneAndUpdate({name},{quantity:existing.quantity++},{new:true})
            res.send("Product updated successfully")
@@ -61,9 +84,9 @@ app.delete("/:_id", adminAuth ,  async (req, res) => {
     try {
         let existing = await Product.findOneAndDelete({_id})
         if(existing){
-            res.send(`User deleted successfully`)
+            res.send(`Product deleted successfully`)
         } else {
-            res.send("user not found")
+            res.send("Product not found")
         }
     } catch (e) {
         res.status(404).send(e.message)

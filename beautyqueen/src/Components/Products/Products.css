@@ -1,0 +1,70 @@
+/* :root{
+    --color-grey-primary:#f0f0f0;
+    --color--yellow-Pimary:goldenrod;
+    --color-orange-primary:darkorange;
+    --color-green-primary:mediumseagreen;
+  }
+  html{
+    font-size:62.5%;
+    font-family:Arial, Helvetica, sans-serif
+  }
+  .App{
+    display: grid;
+    grid-template-columns: 300px 300px 300px ;
+    justify-content: center;
+  }
+  .productList{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5rem;
+  }
+  .productCard{
+    position: relative;
+    background-color: white;
+    margin: 1 0 25rem;
+    max-width: 30rem;
+    max-height: 50rem;
+    transition: 0.2s;
+  }
+  .productRating{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .displayStack__1{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+  }
+  .productCard__cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .productCard__wishlist{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .productPrice{
+    font-size: 22px;
+    color:rgb(221,45,133)
+  }
+  .originalPrice{
+    text-decoration: line-through;
+    font-size: 18px;
+  }
+  .discount{
+    font-size: 16px;
+    color: rgb(28, 65, 47);
+  }
+  .displayStack__3{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+   */

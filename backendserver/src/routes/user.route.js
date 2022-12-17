@@ -143,7 +143,9 @@ try {
     if(user){
         if(user.email===email && user.password===password){
            let newUser = await User.findOneAndUpdate({email},{logStatus:true},{new:true})
-           res.cookie("_id", `${user?._id}` ,{httpOnly: true })
+           res.cookie("_id", `${user?._id}` ,{httpOnly: true ,maxAge: 86400000,secure:true,sameSite:"none"})
+           res.cookie("name", `${user?.name}` ,{httpOnly: true ,maxAge: 86400000,secure:true,sameSite:"none"})
+          /*  res.send(req.cookies) */
            res.send(newUser)
         } else {
             res.status(404).send("user email or password mismatch")
@@ -164,7 +166,8 @@ app.post("/logout/:email", async (req, res) => {
         let existing = await User.findOne({email})
         if(existing){
             await User.findOneAndUpdate({email},{logStatus:false},{new:true})
-            res.clearCookie("_id")
+            res.cookie("_id", `${existing?._id}` ,{httpOnly: true ,maxAge: 1,secure:true,sameSite:"none"})
+            res.cookie("name", `${existing?.name}` ,{httpOnly: true ,maxAge: 1,secure:true,sameSite:"none"})
             res.send("logout successful")
         } else {
             res.status(404).send("user not found")

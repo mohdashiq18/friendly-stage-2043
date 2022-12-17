@@ -1,0 +1,22 @@
+.list{
+    display: grid;
+    /* width: 100%; */
+    grid-template-columns: repeat(5,1fr);
+}
+.list2{
+    display: grid;
+    /* width: 100%; */
+    grid-template-columns: repeat(4,1fr);
+}
+.list3{
+    display: grid;
+    /* width: 100%; */
+    grid-template-columns: repeat(3,1fr);
+}
+.ul{
+    list-style-type: none;
+}
+.btn:hover{
+    background-color:rgb(87, 6, 87);
+    
+}
