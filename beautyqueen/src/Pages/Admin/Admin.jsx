@@ -483,18 +483,18 @@ function remC(){
   }
 
   function login(){
-    axios.post("https://beautiqueenbackend.onrender.com/users/login",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+    axios.post("http://localhost:8080/users/login",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
   function logout(){
-    axios.post("https://beautiqueenbackend.onrender.com/users/logout/sujeet@gmail.com",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+    axios.post("http://localhost:8080/users/logout/sujeet@gmail.com",sign,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
 
   function check(){
-    axios.get("https://beautiqueenbackend.onrender.com/products",{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+    axios.get("http://localhost:8080/products",{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
 
   function get(){
-    axios.get("https://beautiqueenbackend.onrender.com/users/getone",{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+    axios.get("http://localhost:8080/users/getone",{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
 
   /* async function make(){
