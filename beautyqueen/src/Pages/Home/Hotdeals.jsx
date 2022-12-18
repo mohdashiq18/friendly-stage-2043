@@ -2,10 +2,15 @@ import { Box, Image, SimpleGrid, Stack, Wrap,Text, Button } from '@chakra-ui/rea
 import { useEffect } from 'react'
 import React from "react";
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
+import axios from 'axios';
+import { dataUrl } from '../../share';
 const Hotdeals = ({dt}) => {
-   // console.log("hotdeals",dt)
+   
 
-   const handleCart=()=>{
+   const handleCart=(id)=>{
+    axios.post(`${dataUrl}/carts`,{product:id},{withCredentials:true})
+    .then((res)=>(console.log(res)))
+    .catch((er)=>(console.log(er)))
     
    }
 
@@ -43,7 +48,7 @@ const Hotdeals = ({dt}) => {
                                 
                                 <Box display="flex" m="auto" alignItems="center" justifyContent="center">
                                 
-                                <Button onClick={handleCart} colorScheme='pink' mr="5px"  size='sm'>
+                                <Button onClick={()=>handleCart(el._id)} colorScheme='pink' mr="5px"  size='sm'>
                                     Add to Cart
                                 </Button>
                                 <Button  colorScheme='pink' size='sm'>
