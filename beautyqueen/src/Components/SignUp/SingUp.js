@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./SignUp.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { signup } from "../AuthReducer/Action";
 
 export default function SingUp() {
@@ -36,11 +38,15 @@ export default function SingUp() {
   const onsubmit = (e) => {
     e.preventDefault()
     if(firstname=="" || lastname=="" || phone=="" || email=="" || password=="" || confirmpass=="" || password!==confirmpass){
-        alert("miss match password")
+        toast.error("Password not mathched!")
     }else{
         dispatch(signup(payload))
-    .then((res)=>console.log(res))
-    .catch((err)=>console.log(err))
+    .then((res)=>(
+        toast.success("SignUp succesfully")
+    ))
+    .catch((err)=>(
+        toast.error("User Already exist!")
+    ))
     }
   };
   return (
@@ -86,6 +92,8 @@ export default function SingUp() {
                 </form>
             </div>
         </div>
+        <ToastContainer position="top-center"
+            autoClose={3000}/>
     </div>
   )
 }

@@ -18,6 +18,12 @@ const Latest = () => {
         getPro()
 
     }, [])
+    const handleCart=(id)=>{
+        axios.post(`${dataUrl}/carts`,{product:id},{withCredentials:true})
+        .then((res)=>(console.log(res)))
+        .catch((er)=>(console.log(er)))
+        
+       }
     return (
         <div>
             {
@@ -32,7 +38,7 @@ const Latest = () => {
                             <Image w="40%" src="https://static.vecteezy.com/system/resources/previews/004/256/658/original/five-star-customer-product-ratings-review-flat-icons-for-apps-and-websites-illustration-of-five-golden-yellow-stars-in-a-row-isolated-in-a-white-background-concepts-for-ratings-customers-review-free-vector.jpg"></Image>
                             <Text fontWeight="semibold" fontSize={["15px","16px","16px"]} >{el.price} /-</Text>
                             <Stack mt="5px" spacing={2} direction='row' align='center'>
-                                <Button colorScheme='pink' size='sm'>
+                                <Button onClick={()=>handleCart(el._id)} colorScheme='pink' size='sm'>
                                     Add to Cart
                                 </Button>
                                 <Button  colorScheme='pink' size='sm'>

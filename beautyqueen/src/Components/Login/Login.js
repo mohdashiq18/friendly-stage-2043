@@ -3,11 +3,15 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { login } from "../AuthReducer/Action";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const navigate=useNavigate()
   const data = useSelector((state) => state.LogReducer);
   console.log("Data.....", data);
   const pay = {
@@ -17,11 +21,17 @@ export default function Login() {
 
   const onLogin = () => {
     if (email == "" || password == "") {
-      alert("miss match password");
+      toast.error("email or password not matched!")
     } else {
       dispatch(login(pay))
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err.response?.data || err.massage));
+        .then((res) => {
+          toast.success("Login succesfully")
+          navigate("/")
+          
+    })
+        .catch((err) => (
+          toast.error("something went wrong!")
+        ));
     }
   };
   return (
@@ -73,6 +83,8 @@ export default function Login() {
           </div>
         </div>
       </div>
+      <ToastContainer position="top-center"
+            autoClose={3000}/>
     </div>
   );
 }
