@@ -22,6 +22,22 @@ app.get("/",userAuth,  async (req, res) => {
     }
 })
 
+app.patch("/:_id" , async (req, res) => {
+    
+    let _id = req.params._id
+    try {
+        let existing = await Cart.findOneAndUpdate({_id},{approve:true},{new: true})
+        if(existing){
+            res.send("cart updated successfully")  
+        } else {
+            res.send("cart not found")
+        }
+    } catch (e) {
+        res.status(404).send(e.message)
+    }
+   
+})
+
 
 app.get("/allcarts", async (req, res) => {
     let carts;

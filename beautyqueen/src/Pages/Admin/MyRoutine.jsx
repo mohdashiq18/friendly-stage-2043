@@ -8,31 +8,6 @@ import { useEffect } from 'react'
 import UserComp from './Comp/UserComp'
 
 const MyRoutine = ({users=[],deleteFun,changeRole,userBan}) => {
-  
-  const toast = useToast()
-
-
-   
-    
-
-
-
-
-
-/* save profile button */
-    const saveData = async () => {
-      
-      toast({
-        title: "Data save successfully",
-        description: "Your all information updated successfully",
-        status: 'success',
-        duration: 6000,
-        isClosable: true,
-      })
-    }
-
-
-  
 
   return (
         <Box>
@@ -45,7 +20,6 @@ const MyRoutine = ({users=[],deleteFun,changeRole,userBan}) => {
               ))}
             </Box>
             
-            <Button onClick={saveData} ml={["30%","110px","125px"]} size="sm" bgColor="blue" >Save Settings</Button>
         </Box>
   )
 }
