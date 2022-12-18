@@ -4,7 +4,9 @@ import Home from "../Pages/Home/Home";
 import Admin from "../Pages/Admin/Admin";
 import Login from "../Components/Login/Login";
 import SingUp from "../Components/SignUp/SingUp";
+import {Profile} from "../Pages/Admin/Profile";
 import { Products } from "../Components/Products/Products";
+import Cart from "../Pages/Home/Cart";
 
 
 const AllRoutes = ()=>{
@@ -14,8 +16,10 @@ const AllRoutes = ()=>{
             <Route path="*" element={ <PagenotFound/> } ></Route>
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/signup" element={<SingUp/>}></Route>
-            <Route path="/admin" element={<Admin/> }></Route>
+            <Route path="/admin" element={< Profile/> }></Route>
             <Route path="/products" element={<Products/>}></Route>
+            <Route path="/test" element={<Admin/> }></Route>
+            <Route path="/cart" element={<Cart/> }></Route>
 
            
         </Routes>
