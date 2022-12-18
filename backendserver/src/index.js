@@ -9,6 +9,7 @@ const banAuth = require("./middlewares/banAuth");
 const app = express()
 const userRouter= require("./routes/user.route")
 const productRouter = require("./routes/products.route")
+const cartRouter = require("./routes/cart.route")
 
 
 app.use(express.json())
@@ -24,6 +25,7 @@ app.use(banAuth)
 
 app.use("/users", userRouter)
 app.use("/products", productRouter)
+app.use("/carts", cartRouter)
 
 
 

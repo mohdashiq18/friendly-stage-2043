@@ -13,6 +13,7 @@ const userAuth = async (req, res, next) => {
 
     if(user){
     if(user.logStatus == true && user.status === "active"){
+        req.user = req?.cookies?._id
        return next()
     } else {
         res.status(401).send("user has not permision for this opration")
