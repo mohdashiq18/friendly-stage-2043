@@ -8,6 +8,7 @@ const cartSchema = new mongoose.Schema({
         ref: "user",
         required: true
     },
+    approve:{type:String,default:false},
     product: {
         type: mongoose.Schema.ObjectId,
         ref: "product",

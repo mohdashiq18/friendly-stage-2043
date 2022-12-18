@@ -2,7 +2,7 @@ import { Box, Text } from '@chakra-ui/react'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-const Dashboard = ({users=[],admins=[],products=[]}) => {
+const Dashboard = ({users=[],admins=[],products=[],carts=[]}) => {
 
 
 
@@ -26,7 +26,7 @@ const Dashboard = ({users=[],admins=[],products=[]}) => {
 
         <Box style={{backgroundColor:"#9130c2",height:"100px",textAlign:"center",}} mb="15px">
         <Text>Total Orders</Text>
-            <Text>0</Text>
+            <Text>{carts.length} </Text>
         </Box>
     </Box>
   )

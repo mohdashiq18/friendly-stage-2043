@@ -8,35 +8,17 @@ import { useEffect } from 'react'
 import UserComp from './Comp/UserComp'
 
 const MyRoutine = ({users=[],deleteFun,changeRole,userBan}) => {
-  
-  const toast = useToast()
-
-
-   
-    
-
-
-
-
-
-/* save profile button */
-    const saveData = async () => {
-      
-      toast({
-        title: "Data save successfully",
-        description: "Your all information updated successfully",
-        status: 'success',
-        duration: 6000,
-        isClosable: true,
-      })
-    }
-
-
-  
 
   return (
         <Box>
             <Text>All Users</Text>
+            <Divider mt="3px" mb="3px"  orientation='horizontal' style={{color:"red",size:"20"}} />
+            <hr color="black" size="50px" />
+            <Box>
+              {users && users.map((el,index)=>(
+                <UserComp key={index} {...el} deleteFun={deleteFun} changeRole={changeRole} userBan={userBan} />
+              ))}
+            </Box>
             
         </Box>
   )

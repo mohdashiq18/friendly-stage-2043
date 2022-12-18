@@ -6,7 +6,8 @@ const productSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.ObjectId,
         ref: "user",
-        required: true
+        required: true,
+        default:"639c6e57b8bb6e689374be9c"
     },
     name:{type:String,required:true},
     category:{type:String,required:true},

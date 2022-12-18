@@ -1,30 +1,26 @@
-import { Box, Text, useStatStyles } from '@chakra-ui/react'
+import { Box, Button, Input, SimpleGrid, Text, useStatStyles } from '@chakra-ui/react'
 import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 /* import { AuthContext } from '../../context/AppContext' */
 
 const Exercises = () => {
-  const [newData,setNewData]=useState([])
-  const user = {
-    email:"sujeet@gmail.com",
-    exercise_name:"sk",
-    photoURL:"adsadf",
-    uid:"sdfsdf"
-  }
-
-  useEffect(()=>{
-    axios.get(`https://backendmusclefit.onrender.com/users/${user?.email}`)
-    .then(res=>setNewData(res.data.report))
-  },[newData])
-
+ 
   return (
-    <div >Exercises
-      <Box border="1px solid blue" style={{borderRadius:"15px"}}>
-      {newData?.map((el,i)=>(
-        <Text key={i}>{el.exercise_name} <span style={{color:"red"}} >{i+1}</span>  </Text>
-      ))}
+    <Box textAlign={"center"}>
+    <Text>Add Products</Text>
+    <Box>
+      <SimpleGrid columns={[1,2,2,2]} spacing={10}>
+        <Input variant='outline' placeholder='name'/>
+        <Input variant='outline' placeholder='email'/>
+        <Input variant='outline' placeholder='phone'/>
+        <Input variant='outline' placeholder='password'/>
+
+      </SimpleGrid>
+      <Box margin={"auto"}>
+      <Button colorScheme='pink' >Add</Button>
       </Box>
-    </div>
+    </Box>
+  </Box>
   )
 }
 
