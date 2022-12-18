@@ -7,63 +7,54 @@ import CartSingleCard from "./CartSingleCard"
 
 const Cart = () => {
     const [cartData, setPro] = useState([]);
+    const [total,setTotal]=useState(0);
+    const [dis,setDis]=useState(10);
+    const [sub,setSub]=useState(20);
+    const [changeone,setchangeone] = useState(0)
 
 
     const getPro = () => {
-        axios.get(`${dataUrl}/products/Fragrance?limit=3`, { withCredentials: true })
+
+        axios.get(`${dataUrl}/carts`, { withCredentials: true })
             .then((res) => setPro(res.data))
+            .catch((er) => console.log(er))
+    }
+    const delPro = (id) => {
+        axios.delete(`${dataUrl}/carts/${id}`, { withCredentials: true })
+            .then((res) => {console.log(res.data)
+                setchangeone((pre)=>pre+1)
+            })
             .catch((er) => console.log(er))
     }
 
     useEffect(() => {
         getPro()
 
-    }, [])
+    }, [changeone])
+    useEffect(()=>{
+        cartData && cartData.map((el,i)=>{
+            setTotal((prev)=>prev+el.product.price)
+        })
+
+    },[cartData])
     return (
         <div>
-            {/* <Box m="auto" w="90%" h="250px">
-                <Box marginBottom="20px">
-                    <Text>SHOPPING CART</Text>
-                </Box>
-                <Box display="flex">
-                    <Box display="flex" m="auto" w="65%" border="1px solid gray">
-                        <Box w="25%" border="1px solid gray">
-                            <Image w="100%" src="https://www.beautybebo.com/pub/media/catalog/product/cache/c9615af5e5a6f27d0b9239c1928d8610/1/_/1_210_4.jpg"></Image>
-                        </Box>
-                        <Box p="12px 11px">
-                            <Text>CLINIC PLUS STRONG & LONG HEALTH SHAMPOO</Text>
-                        </Box>
-                        <Box p="5px 9px" display="flex">
-                            <Box p="9px"  >
-                                <Text>473.00</Text>
-                            </Box>
-                            <Box h="40px" border="1px solid gray">
-                                <Text p="9px">1</Text>
-                            </Box>
-                            <Box p="9px" >
-                                <Text>473.00</Text>
-                            </Box>
-                        </Box>
-                    </Box>
-                    <Box m="auto" w="35%" h="350px" border="1px solid black" ></Box>
-                </Box>
-            </Box>
-            */}
+
             <VStack marginTop={{ base: "220px", md: "180px" }} justify="center" >
 
-                <Text fontSize="2xl" fontWeight="extrabold" >My Bag 1 item(S)</Text>
+                <Text fontSize="2xl" fontWeight="extrabold" >My Bag {cartData.length} item(S)</Text>
 
                 <Stack direction={{ base: "column", sm: "row" }} padding={10} spacing={50} >
 
                     <VStack spacing={5}   >
 
                         <HStack spacing={5} w="full" padding={3} bg="#fcffee" > <Image w={10} src='https://images.bewakoof.com/web/Red-truck.png' /> <Text>Yay! You get FREE delivery on this order</Text></HStack>
-                        {/* {
-                            cartData.map((el) => (
-                                <CartSingleCard el={el} />
+                        {
+                            cartData.map((el, i) => (
+                                <CartSingleCard key={i} el={el} del={delPro} />
                             ))
-                        } */}
-                        <CartSingleCard></CartSingleCard>
+                        }
+
 
                     </VStack>
 
@@ -88,31 +79,31 @@ const Cart = () => {
                         <VStack fontSize="16px" padding="5" w={{ base: 300, sm: 600 }} spacing={5} borderWidth='1px' overflow='hidden'  >
 
                             <HStack w="full" >
-                                <Text fontSize={{ base: "15px", md: "18px" }} >Total MRP (Incl. of taxes) </Text>
+                                <Text fontSize={{ base: "15px", md: "18px" }} >Total MRP  (Incl. of taxes) </Text>
                                 <Spacer />
-                                <Text fontWeight="bold" fontSize={{ base: "15px", md: "18px" }} > ₹ 13 </Text>
+                                <Text fontWeight="bold" fontSize={{ base: "15px", md: "18px" }} > ₹ {total}</Text>
                             </HStack>
 
                             <HStack w="full" >
                                 <Text fontSize={{ base: "15px", md: "18px" }} >Shipping Charges </Text>
                                 <Spacer />
-                                <Text fontWeight="bold" color="green.500" fontSize={{ base: "15px", md: "18px" }} > FREE </Text>
+                                <Text fontWeight="bold" color="green.500" fontSize={{ base: "15px", md: "18px" }} > ₹ 50 </Text>
                             </HStack>
 
                             <HStack w="full" >
                                 <Text fontSize={{ base: "15px", md: "18px" }} >Bag Discount  </Text>
                                 <Spacer />
-                                <Text fontWeight="bold" fontSize={{ base: "15px", md: "18px" }} > - ₹ 13 </Text>
+                                <Text fontWeight="bold" fontSize={{ base: "15px", md: "18px" }} > - ₹ {total/100*10} </Text>
                             </HStack>
 
                             <HStack w="full" >
                                 <Text fontSize={{ base: "15px", md: "18px" }} >Subtotal  </Text>
                                 <Spacer />
-                                <Text fontWeight="bold" fontSize={{ base: "15px", md: "18px" }} >  ₹ 2  </Text>
+                                <Text fontWeight="bold" fontSize={{ base: "15px", md: "18px" }} >  ₹ {total-(total/100*10)} </Text>
                             </HStack>
 
                             <Badge overflow="hidden" borderRadius="2xl" fontSize={{ base: "15px", md: "xl" }} padding="5px 20px" w="full" variant='subtle' color="gray.800" colorScheme='green'>
-                                You are saving ₹ 2 on this order
+                                You are saving ₹{total/100*10} on this order
                             </Badge>
 
                         </VStack>
@@ -120,7 +111,7 @@ const Cart = () => {
                         <Stack direction={{ base: "column", md: "row" }} w="full" padding="5" >
 
 
-                            <Text w={{ base: "full", md: "50%" }} fontSize="2xl" fontWeight="bold" >Total  ₹ 2</Text>
+                            <Text w={{ base: "full", md: "50%" }} fontSize="2xl" fontWeight="bold" >Total  ₹ {total-(total/100*10)+50}</Text>
 
                             <Divider w="10%" orientation='vertical' />
 
