@@ -6,6 +6,7 @@ import Login from "../Components/Login/Login";
 import SingUp from "../Components/SignUp/SingUp";
 import { Products } from "../Components/Products/Products";
 
+
 const AllRoutes = ()=>{
     return (
         <Routes>
@@ -15,6 +16,7 @@ const AllRoutes = ()=>{
             <Route path="/signup" element={<SingUp/>}></Route>
             <Route path="/admin" element={<Admin/> }></Route>
             <Route path="/products" element={<Products/>}></Route>
+
            
         </Routes>
     )

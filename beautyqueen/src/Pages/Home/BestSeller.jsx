@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
+import { dataUrl } from "../../share";
 import Best from "./Best";
 import Latest from "./Latest";
 import Most from "./Most";
@@ -13,7 +14,7 @@ const BestSeller = () => {
 
 
     const getPro = () => {
-        axios.get("/products/Ayurveda", { withCredentials: true })
+        axios.get(`${dataUrl}/products/Ayurveda`, { withCredentials: true })
             .then((res) => setPro(res.data))
             .catch((er) => console.log(er))
     }
@@ -24,10 +25,10 @@ const BestSeller = () => {
     }, [])
     return (
         <div >
-            <Box fontFamily="monospace" w="91%" m="auto" justifyContent="space-between" display={["inline", "flex", "flex"]}>
-                <Box w="32%" m="auto" h="510px" overflow="hidden" border=".1px solid gray">
-                    <Text fontSize={["16px", "19px", "19px"]}>BEST SELLER</Text>
-                    <Box h="161px" >
+            <Box fontFamily="monospace" w="91%" m="auto" justifyContent="space-between" display={["inline", "inline", "flex"]}>
+                <Box w={["80%","80%","32%"]} m="auto" h="auto"  border=".1px solid gray">
+                    <Text textDecoration="underline 2px #EB046D" fontWeight="black" fontSize={["16px", "19px", "19px"]}>BEST SELLER</Text>
+                    <Box marginBottom="20px" >
                        
                         <Best></Best>
                         
@@ -36,18 +37,18 @@ const BestSeller = () => {
 
 
                 </Box>
-                <Box w="32%" m="auto" h="510px" overflow="hidden" border=".1px solid gray">
-                    <Text fontSize={["16px", "19px", "19px"]}>LATEST PRODUCTS</Text>
-                    <Box h="161px" >
+                <Box w={["80%","80%","32%"]} m="auto" h="auto"  border=".1px solid gray">
+                    <Text textDecoration="underline 2px #EB046D" fontWeight="black" fontSize={["16px", "19px", "19px"]}>LATEST PRODUCTS</Text>
+                    <Box marginBottom="20px" >
                        
                         <Latest></Latest>
                         
 
                     </Box>
                 </Box>
-                <Box w="32%" m="auto" h="510px" overflow="hidden" border=".1px solid gray">
-                    <Text fontSize={["16px", "19px", "19px"]}>MOST VIEWED</Text>
-                    <Box h="161px" >
+                <Box w={["80%","80%","32%"]} m="auto"  h="auto"  border=".1px solid gray">
+                    <Text textDecoration="underline 2px #EB046D" fontWeight="black" fontSize={["16px", "19px", "19px"]}>MOST VIEWED</Text>
+                    <Box marginBottom="20px">
                        
                         <Most></Most>
                         
