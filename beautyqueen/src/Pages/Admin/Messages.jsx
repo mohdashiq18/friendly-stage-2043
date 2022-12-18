@@ -41,7 +41,24 @@ const Messages = () => {
 
   return (
     <Box>
-      
+      Messages
+      <Flex>
+        <Box w={"80%"}>
+        <Input onChange={(e)=>setUserMesssage(e.target.value)} placeholder='Please sync with jefit app before posting messages' />
+        </Box>
+        <Spacer/>
+        <Box>
+          <Button onClick={()=>saveMessage(userMessage)} size={"sm"} variant='outline' colorScheme='teal' >Post</Button><br/>
+          <Checkbox ><Text fontSize={"10px"} > Private</Text></Checkbox>
+          
+        </Box>
+
+      </Flex>
+      <Box border="1px solid blue" style={{borderRadius:"15px"}}>
+          {newData?.map((el,i)=>(
+            <Text fontSize={"lg"} /* border="1px solid yellow" */ style={{borderRadius:"15px",color:"#00ff2a"}}  key={i} >{el} </Text>
+          ))}
+      </Box>
 
     </Box>
   )

@@ -37,7 +37,15 @@ const MyRoutine = ({users=[],deleteFun,changeRole,userBan}) => {
   return (
         <Box>
             <Text>All Users</Text>
+            <Divider mt="3px" mb="3px"  orientation='horizontal' style={{color:"red",size:"20"}} />
+            <hr color="black" size="50px" />
+            <Box>
+              {users && users.map((el,index)=>(
+                <UserComp key={index} {...el} deleteFun={deleteFun} changeRole={changeRole} userBan={userBan} />
+              ))}
+            </Box>
             
+            <Button onClick={saveData} ml={["30%","110px","125px"]} size="sm" bgColor="blue" >Save Settings</Button>
         </Box>
   )
 }
