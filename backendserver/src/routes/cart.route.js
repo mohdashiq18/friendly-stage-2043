@@ -91,7 +91,7 @@ app.delete("/:product",  async (req, res) => {
    
 })
 
-app.delete("/deleteall",  async (req, res) => {
+app.delete("/deleteall/n",  async (req, res) => {
     
     try {
         let existing = await Cart.deleteMany({user:req?.cookies?._id})
