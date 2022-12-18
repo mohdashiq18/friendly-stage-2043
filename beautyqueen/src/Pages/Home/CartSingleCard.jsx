@@ -24,11 +24,11 @@ import { dataUrl } from '../../share';
 import axios from 'axios';
 
 
-const CartSingleCard = ({el,del}) => {
-  
+const CartSingleCard = ({ el, del }) => {
 
 
-  
+
+
 
 
 
@@ -46,56 +46,56 @@ const CartSingleCard = ({el,del}) => {
     <Wrap w={{ base: 320, md: 600 }} spacing={3} borderWidth='1px' borderRadius='lg' overflow='hidden' padding="5">
 
       <VStack w="full" >
-     
-              <Box>
+
+        <Box  w={["230px","350px","420px"]}>
 
 
-        <VStack align="revert-layer" spacing={4} >
-          
-              
-              <Text fontSize={{ base: "15px", md: "xl" }} color="gray.500" >{el.product.name}</Text>
+          <VStack align="revert-layer" spacing={4} >
+
+
+            <Text fontSize={{ base: "15px", md: "xl" }} color="gray.500" >{el.product.name}</Text>
 
 
 
-          <Stack>
+            <Stack>
 
-            <HStack alignContent="center">
-              <Text fontWeight="bold" fontSize="2xl" >₹{el.product.price}</Text>
+              <HStack alignContent="center">
+                <Text fontWeight="bold" fontSize="2xl" >₹{el.product.price}</Text>
 
-              <Text as="s" marginLeft={4} fontSize="l" >₹{el.product.ofPrice}</Text>
-            </HStack>
+                <Text as="s" marginLeft={4} fontSize="l" >₹{el.product.ofPrice}</Text>
+              </HStack>
 
-            <Stack direction={{ base: "column", md: "row" }} spacing={35} >
+              <Stack direction={{ base: "column", md: "row" }} spacing={35} >
 
 
-              <ButtonGroup size='sm' isAttached variant='outline'>
+                <ButtonGroup size='sm' isAttached variant='outline'>
 
-                <Button fontWeight="bold" fontSize="xl" onClick={() => handleChange(el.quantity, -1)} >-</Button>
+                  <Button fontWeight="bold" fontSize="xl" onClick={() => handleChange(el.quantity, -1)} >-</Button>
 
-                <Button>{el.quantity*el.product.price}</Button>
+                  <Button>{el.quantity * el.product.price}</Button>
 
-                <IconButton
-                  onClick={() => handleChange(el.quantity, 1)}
-                  aria-label='Add to friends' icon={<AddIcon w={3} h={3} />} />
-              </ButtonGroup>
+                  <IconButton
+                    onClick={() => handleChange(el.quantity, 1)}
+                    aria-label='Add to friends' icon={<AddIcon w={3} h={3} />} />
+                </ButtonGroup>
 
+
+              </Stack>
 
             </Stack>
 
+
+
+
+
+          </VStack>
+
+          <Spacer />
+
+          <Stack w={150}>
+            <Image src={el.product.image} style={{ borderRadius: "5px" }} />
+
           </Stack>
-         
-
-
-          
-
-        </VStack>
-
-        <Spacer />
-
-        <Stack w={150}>
-          <Image src={el.product.image} style={{ borderRadius: "5px" }}  />
-
-        </Stack>
         </Box>
 
 
@@ -106,9 +106,9 @@ const CartSingleCard = ({el,del}) => {
 
 
       <HStack w="full" spacing={5} >
-        <Button onClick={() => del(el.product._id)} w="40%" size='md' isAttached variant='outline'>REMOVE</Button>
+        <Button onClick={() => del(el.product._id)} w="40%" size='md'  colorScheme='teal' color="white" >REMOVE</Button>
         <Divider orientation='vertical' />
-        <Button w="full" size='md' isAttached variant='outline'>
+        <Button w="full" size='md'   colorScheme='pink' color="white" >
 
           <HStack spac ><AiOutlineHeart fontSize="25px" /> <Text>ADD TO WISHLIST</Text></HStack>
 

@@ -2,15 +2,27 @@ import { Box, Image, SimpleGrid, Stack, Wrap,Text, Button } from '@chakra-ui/rea
 import { useEffect } from 'react'
 import React from "react";
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+
 import { dataUrl } from '../../share';
 const Hotdeals = ({dt}) => {
    
 
    const handleCart=(id)=>{
     axios.post(`${dataUrl}/carts`,{product:id},{withCredentials:true})
-    .then((res)=>(console.log(res)))
-    .catch((er)=>(console.log(er)))
+    .then((res)=>(
+        toast.success("Item added to your Cart")
+
+   )
+  
+    
+    ) 
+    .catch((er)=>(
+        toast.error("something went wrong!")
+    ))
+
     
    }
 
@@ -39,8 +51,9 @@ const Hotdeals = ({dt}) => {
                                 <Box w="39%" margin="auto">
                                     <Image w="100%" src="https://static.vecteezy.com/system/resources/previews/004/256/658/original/five-star-customer-product-ratings-review-flat-icons-for-apps-and-websites-illustration-of-five-golden-yellow-stars-in-a-row-isolated-in-a-white-background-concepts-for-ratings-customers-review-free-vector.jpg"></Image>
                                     </Box>
-                                    <Box>
-                                    <Text color="#EB046D"  fontSize="17px">{el.price} /-</Text>
+                                    <Box display="flex" alignItems="center" justifyContent="center">
+                                    <Text color="#EB046D"  fontSize="17px">  ₹ {el.price} /-</Text>
+                                    <Text as="s" m="3px 4px" fontSize="14px"> ₹ {el.ofPrice}/-</Text>
                                     </Box>
                                 
 
@@ -59,12 +72,15 @@ const Hotdeals = ({dt}) => {
                           
                                 
                             </Box>
+                           
 
                         ))
                     }
                    
                 </SimpleGrid>
             </Wrap>
+            <ToastContainer position="top-center"
+            autoClose={3000}/>
 
         </div>
     )

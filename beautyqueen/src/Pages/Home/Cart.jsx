@@ -61,7 +61,7 @@ const Cart = () => {
 
                     <VStack spacing={5} >
 
-                        <HStack spacing={5} w="full" padding={3} bg="yellow.300" >  <Text fontWeight="bold" >Save extra ₹140 with TriBe</Text> <Spacer /> <ArrowRightIcon /> </HStack>
+                        <HStack spacing={5} w="full" padding={3} bg="#EB046D" >  <Text fontWeight="bold" color="white" >Save extra ₹140 with TriBe</Text> <Spacer /> <ArrowRightIcon /> </HStack>
 
                         <Box fontSize="16px" w={{ base: 300, sm: 600 }} spacing={3} borderWidth='1px' borderRadius='lg' overflow='hidden' padding="5" >Get Rs.200 instant discount on your First Purchase above Rs.999. Coupon code -NEW200
                         </Box>
@@ -87,23 +87,23 @@ const Cart = () => {
                             <HStack w="full" >
                                 <Text fontSize={{ base: "15px", md: "18px" }} >Shipping Charges </Text>
                                 <Spacer />
-                                <Text fontWeight="bold" color="green.500" fontSize={{ base: "15px", md: "18px" }} > ₹ 50 </Text>
+                                <Text fontWeight="bold" color="green.500" fontSize={{ base: "15px", md: "18px" }} > + ₹ 50 </Text>
                             </HStack>
 
                             <HStack w="full" >
                                 <Text fontSize={{ base: "15px", md: "18px" }} >Bag Discount  </Text>
                                 <Spacer />
-                                <Text fontWeight="bold" fontSize={{ base: "15px", md: "18px" }} > - ₹ {total/100*10} </Text>
+                                <Text fontWeight="bold" fontSize={{ base: "15px", md: "18px" }} > - ₹ {Math.floor(total/100*10)} </Text>
                             </HStack>
 
                             <HStack w="full" >
                                 <Text fontSize={{ base: "15px", md: "18px" }} >Subtotal  </Text>
                                 <Spacer />
-                                <Text fontWeight="bold" fontSize={{ base: "15px", md: "18px" }} >  ₹ {total-(total/100*10)} </Text>
+                                <Text fontWeight="bold" fontSize={{ base: "15px", md: "18px" }} >  ₹ {Math.floor(total-(total/100*10))+50} </Text>
                             </HStack>
 
                             <Badge overflow="hidden" borderRadius="2xl" fontSize={{ base: "15px", md: "xl" }} padding="5px 20px" w="full" variant='subtle' color="gray.800" colorScheme='green'>
-                                You are saving ₹{total/100*10} on this order
+                                You are saving ₹{Math.floor(total/100*10)} on this order
                             </Badge>
 
                         </VStack>
@@ -111,11 +111,11 @@ const Cart = () => {
                         <Stack direction={{ base: "column", md: "row" }} w="full" padding="5" >
 
 
-                            <Text w={{ base: "full", md: "50%" }} fontSize="2xl" fontWeight="bold" >Total  ₹ {total-(total/100*10)+50}</Text>
+                            <Text w={{ base: "full", md: "50%" }} fontSize="2xl" fontWeight="bold" >Total  ₹ {Math.floor(total-(total/100*10))+50}</Text>
 
                             <Divider w="10%" orientation='vertical' />
 
-                            <Button w="full" colorScheme='teal' color="white" size='lg'>
+                            <Button w="full" colorScheme='pink' color="white" size='lg'>
                                 CheckOut
                             </Button>
 

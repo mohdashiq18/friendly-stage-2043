@@ -21,7 +21,7 @@ const Home = () => {
 
   const getData = () => {
     axios
-      .get(`${dataUrl}/products/Fragrance?limit=8`, { withCredentials: true })
+      .get(`${dataUrl}/products/skin?limit=8`, { withCredentials: true })
       .then((res) => setData(res.data))
       .catch((er) => console.log(er));
   };
