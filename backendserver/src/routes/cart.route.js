@@ -40,13 +40,13 @@ app.get("/allcarts", async (req, res) => {
 
 
 app.post("/",  async (req, res) => {
-    const {product, quantity} = req.body
+    const {product} = req.body
     
     try {
         let existing = await Product.findOne({_id:product})
         if(existing){
             let carts = await Cart.create({
-                user:req?.cookies?._id,product, quantity
+                user:req?.cookies?._id,product
             })
             res.send("Cart added successfully")
         } else {
