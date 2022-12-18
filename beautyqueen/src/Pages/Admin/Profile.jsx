@@ -4,7 +4,8 @@ import {
   Flex,
   Image,
   Spacer,
-  Text
+  Text,
+  useToast
 } from "@chakra-ui/react";
 import { useMedia } from "../../MediaQuery/UseMedia";
 import { useEffect, useState } from "react";
@@ -19,6 +20,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Dashboard from "./Dashboard";
 import "./profile.css"
+import { dataUrl } from "../../share";
 
 
 
@@ -37,11 +39,32 @@ const init1 = {
 
 
 export const Profile = () => {
+
   const [change, setChange] = useState(0)
   const { smallScreen, mediumScreen } = useMedia();
   const [section, setSection] = useState({ ...init1, routines: true });
   const { routines, logs, reports, photos, exercises, messages } = section; 
   const [loading, setLoading] = useState(false);
+  const toast = useToast()
+
+  const printS =  (mess) => {
+    toast({
+      title: typeof mess == "string" ? mess : "Successful",
+      description: "Request successful",
+      status: 'success',
+      duration: 4000,
+      isClosable: true,
+    })
+  }
+  const printF =  (mess) => {
+    toast({
+      title: mess || "Failed",
+      description: "Request Failed",
+      status: 'error',
+      duration: 4000,
+      isClosable: true,
+    })
+  }
  
   
 
@@ -63,45 +86,84 @@ export const Profile = () => {
   const [users, setUsers] = useState([])
   const [admins, setAdmins] = useState([])
   const [products, setProducts] = useState([])
+  const [carts, setCarts] = useState([])
 
   const getUser = async () => {
-    axios.get(`http://localhost:8080/users`,{withCredentials:true}).then((res)=>{
+    axios.get(`${dataUrl}/users`,{withCredentials:true}).then((res)=>{
       setUsers(res.data)
-      /* setChange(change++) */
-    }).catch((e)=>console.log(e?.response?.data || e.message))
+    }).catch((e)=>printF(e?.response?.data || e.message))
   }
   const getProducts = async () => {
-    axios.get(`http://localhost:8080/products`,{withCredentials:true}).then((res)=>{
+    axios.get(`${dataUrl}/products`,{withCredentials:true}).then((res)=>{
       setProducts(res.data)
-      /* setChange(change++) */
-    }).catch((e)=>console.log(e?.response?.data || e.message))
+    }).catch((e)=>printF(e?.response?.data || e.message))
+  }
+  const getCart = async () => {
+    axios.get(`${dataUrl}/carts/allcarts`,{withCredentials:true}).then((res)=>{
+      setCarts(res.data)
+    }).catch((e)=>printF(e?.response?.data || e.message))
   }
 
+
+
+  /* user modal start */
   const deleteFun = async (email) => {
-    axios.delete(`http://localhost:8080/users/${email}`,{withCredentials:true}).then((res)=>{
+    axios.delete(`${dataUrl}/users/${email}`,{withCredentials:true}).then((res)=>{
         console.log(res.data)
+        printS(res.data)
         changeIt()
-    }).catch((e)=>console.log(e?.response?.data || e.message))
+    }).catch((e)=>printF(e?.response?.data || e.message))
   }
 
   const changeRole = async (email,role) => {
-    axios.post(`http://localhost:8080/users/changerole`,{email:email,role:role},{withCredentials:true}).then((res)=>{
+    axios.post(`${dataUrl}/users/changerole`,{email:email,role:role},{withCredentials:true}).then((res)=>{
         console.log(res.data)
+        printS(res.data)
         changeIt()
-    }).catch((e)=>console.log(e?.response?.data || e.message))
+    }).catch((e)=>printF(e?.response?.data || e.message))
   }
 
   const userBan = async (email,status) => {
-    axios.post(`http://localhost:8080/users/ban/${email}/${status}`,{withCredentials:true}).then((res)=>{
+    axios.post(`${dataUrl}/users/ban/${email}/${status}`,{withCredentials:true}).then((res)=>{
         console.log(res.data)
+        printS(res.data)
         changeIt()
-    }).catch((e)=>console.log(e?.response?.data || e.message))
+    }).catch((e)=>printF(e?.response?.data || e.message))
   }
+   /* user modal end */
+
+   /* ================== */
+
+    /* product modal start */
+    const deletePro = async (id) => {
+      axios.delete(`${dataUrl}/products/${id}`,{withCredentials:true}).then((res)=>{
+          console.log(res.data)
+          printS(res.data)
+          changeIt()
+      }).catch((e)=>printF(e?.response?.data || e.message))
+    }
+
+
+    /* product modal end */
+
+    /* ================ */
+
+    /* cart modal start */
+    const cartChange = async (id) => {
+      axios.patch(`${dataUrl}/carts/${id}`,{withCredentials:true}).then((res)=>{
+          console.log(res.data)
+          printS(res.data)
+          changeIt()
+      }).catch((e)=>printF(e?.response?.data || e.message))
+    }
+   
+
 
 useEffect(()=>{
   let newId = setTimeout(()=>{
     getUser()
     getProducts()
+    getCart()
   },1000)
 },[change]) 
 
@@ -192,8 +254,8 @@ useEffect(()=>{
           >
             {loading && <Loading />}
             {routines && <MyRoutine deleteFun={deleteFun} users={users} changeRole={changeRole} userBan={userBan} />}
-            {logs && <LogsPage />}
-            {reports && <Reports />}
+            {logs && <LogsPage products={products} deletePro={deletePro} />}
+            {reports && <Reports carts={carts} cartChange={cartChange} />}
             {photos && <Photos />}
             {exercises && <Exercises />}
             {messages && <Messages />}
@@ -202,7 +264,7 @@ useEffect(()=>{
           {/* third */}
               <Spacer />
               <Box textAlign="center"  w={["95%","95%","20%","20%"]} mt="50px">
-                <Dashboard users={users} admins={admins} products={products} />
+                <Dashboard users={users} admins={admins} products={products} carts={carts} />
               </Box>
   
         </Flex>
