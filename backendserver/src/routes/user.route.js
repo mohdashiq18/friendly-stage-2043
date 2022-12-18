@@ -6,7 +6,7 @@ const banAuth = require("../middlewares/banAuth")
 
 
 const app=express.Router()
-app.use(banAuth)
+
 
 /* only for Admin panel */
 /* get all users */
@@ -68,8 +68,9 @@ app.post("/changerole", adminAuth ,  async (req, res) => {
    
 })
 
-app.post("/ban/:email", adminAuth ,  async (req, res) => {
+app.post("/ban/:email/:status",  async (req, res) => {
     let email = req.params.email
+    let status = req.params.status
     let email2 = req.mail2
     
     if(email===email2){
@@ -78,7 +79,7 @@ app.post("/ban/:email", adminAuth ,  async (req, res) => {
     try {
         let existing = await User.findOne({email})
         if(existing){
-            await User.findOneAndUpdate({email},{status:"ban"},{new:true})
+            await User.findOneAndUpdate({email},{status},{new:true})
             res.send(`User ban successfully`)
         } else {
             res.status(404).send("user not found")
