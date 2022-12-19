@@ -4,13 +4,14 @@ import { BiSearch } from "react-icons/bi";
 import { MdFavorite } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const MiddleLogoDiv = () => {
     const [loginDropDown, seloginDropDown] = useState(false);
     return (
         <div id="middle_logo_div">
             <div id="logo_div">
-                <img src={logo} alt="" />
+               <Link to="/"> <img src={logo} alt="" /></Link>
             </div>
 
             <div id="search_div">
@@ -44,9 +45,11 @@ export const MiddleLogoDiv = () => {
                     {
                         loginDropDown ?
                             <>
-                                <div id="content_dropdown">
-                                    <div id="login_dropdown">Login</div>
-                                    <div id="register_dropdown">Register</div>
+                                <div id="content_dropdown"  >
+                                    <Link to="/login"><div id="login_dropdown">Login</div></Link>
+                                    <Link to="/signup"><div id="register_dropdown">Register</div></Link>
+                                    <Link to="/admin"> <div id="register_dropdown">Admin</div></Link>
+                                   
                                 </div>
                             </>:null
                     }

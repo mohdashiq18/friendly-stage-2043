@@ -42,9 +42,10 @@ export default function SingUp() {
         toast.error("Password not mathched!")
     }else{
         dispatch(signup(payload))
-    .then((res)=>(
+    .then((res)=>{
         toast.success("SignUp succesfully")
-    ))
+        navigate('/login')
+    })
     .catch((err)=>(
         toast.error("User Already exist!")
     ))

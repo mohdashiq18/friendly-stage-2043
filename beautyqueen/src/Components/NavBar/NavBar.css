@@ -167,6 +167,7 @@
     text-align: left;
     background-color: white;
     color: #232323;
+   
     box-shadow: rgba(0,0,0,0.15)0px 3px 3px 0px;
 }
 #login_dropdown{
@@ -241,8 +242,9 @@
     left: 15%;
     display: flex;
     box-shadow: rgba(176, 176, 176, 0.15)0px 0px 3px 0px;
-    /* background-color: white; */
+    background-color: white;
     margin-top: 1px;
+    padding-bottom: 10px;
 }
 span{
     font-size: 80%;
