@@ -39,7 +39,7 @@ const Hotdeals = ({dt}) => {
 
                 <SimpleGrid w="90%" spacing={3} columns={[2, 4]} >
                     {
-                        dt.map((el,i)=>(
+                        dt && dt.map((el,i)=>(
                             <Box  w="100%" textAlign="center">
                                 <Box w="70%" m="auto">
                                 <Image w="100%" src={el.image}></Image>

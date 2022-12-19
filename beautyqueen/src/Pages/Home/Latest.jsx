@@ -27,7 +27,7 @@ const Latest = () => {
     return (
         <div>
             {
-                pro.map((el, i) => (
+                pro && pro.map((el, i) => (
                     <Box pt="5px" display="flex">
                         <Box w="40%">
                             <Image w="100%" src={el.image}></Image>

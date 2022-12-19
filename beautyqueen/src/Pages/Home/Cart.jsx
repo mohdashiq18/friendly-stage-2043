@@ -50,7 +50,7 @@ const Cart = () => {
 
                         <HStack spacing={5} w="full" padding={3} bg="#fcffee" > <Image w={10} src='https://images.bewakoof.com/web/Red-truck.png' /> <Text>Yay! You get FREE delivery on this order</Text></HStack>
                         {
-                            cartData.map((el, i) => (
+                            cartData && cartData.map((el, i) => (
                                 <CartSingleCard key={i} el={el} del={delPro} />
                             ))
                         }
