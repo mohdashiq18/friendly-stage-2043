@@ -39,7 +39,7 @@ app.patch("/:_id" , async (req, res) => {
 })
 
 
-app.get("/allcarts", async (req, res) => {
+app.get("/allcarts/n", async (req, res) => {
     let carts;
         carts = await Cart.find().populate(["user","product"])
     
