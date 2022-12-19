@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { signup } from "../AuthReducer/Action";
 
 export default function SingUp() {
+  
     const data=useSelector(store=>store)
     const [firstname,setFirstname]=useState("")
     const [lastname,setLastname]=useState("")

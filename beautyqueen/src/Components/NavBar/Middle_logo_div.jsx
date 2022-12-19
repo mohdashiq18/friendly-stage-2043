@@ -1,4 +1,4 @@
-import "./navbar.css";
+import "./NavBar.css";
 import logo from "./beautybebo_logo.png";
 import { BiSearch } from "react-icons/bi";
 import { MdFavorite } from "react-icons/md";

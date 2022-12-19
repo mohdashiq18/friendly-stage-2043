@@ -1,4 +1,4 @@
-import "./navbar.css";
+import "./NavBar.css";
 import topimage from "./ad-desktop.jpg";
 
 export const TopImageDiv=()=>{
