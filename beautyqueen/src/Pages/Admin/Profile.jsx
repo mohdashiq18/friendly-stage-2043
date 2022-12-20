@@ -99,7 +99,8 @@ export const Profile = () => {
     }).catch((e)=>printF(e?.response?.data || e.message))
   }
   const getCart = async () => {
-    axios.get(`${dataUrl}/carts/allcarts`,{withCredentials:true}).then((res)=>{
+    axios.get(`${dataUrl}/carts/allcarts/sujeet`,{withCredentials:true}).then((res)=>{
+      console.log(res.data)
       setCarts(res.data)
     }).catch((e)=>printF(e?.response?.data || e.message))
   }
