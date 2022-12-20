@@ -7,7 +7,7 @@ const productSchema = new mongoose.Schema({
         type: mongoose.Schema.ObjectId,
         ref: "user",
         required: true,
-        default:"639c6e57b8bb6e689374be9c"
+        default:"63a17a7347b83253f79ad94b"
     },
     name:{type:String,required:true},
     category:{type:String,required:true},
