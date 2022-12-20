@@ -1,5 +1,6 @@
 import { Box, SimpleGrid, Wrap, Text, Image } from "@chakra-ui/react";
 import Hotdeals from "./Hotdeals";
+import { NavLink } from "react-router-dom";
 
 import { Images } from "./Data";
 import { useEffect, useState } from "react";
@@ -59,70 +60,105 @@ const Home = () => {
       <Box
         w="90%"
         m="auto"
+        mt="40px"
         display={["inline", "flex", "flex"]}
-        p="3px"
+        p="2px"
         justifyContent="space-between"
         border="0.3px solid grey"
       >
-        <Box width={["80%", "27%", "27%"]}>
-          <Box display="flex" p="5px 11px">
-            <IoIosMenu size="29px"></IoIosMenu>
-            <Text marginLeft="5px" fontWeight="bold" fontSize="19px">
+        <Box ml={["16px","0px","0px"]} width={["80%", "35%", "27%"]}>
+          <Box display="flex" p={["5px 10px", "2px 2px", "2px 9px"]}>
+            <Box  >
+            <IoIosMenu size="24px"></IoIosMenu>
+            </Box>
+            <Box>
+            <Text marginLeft="3px" pt={["2px","3px","0px"]} fontWeight="bold" fontSize={["13px","12px","16px"]}>
               ALL CATEGORIES
             </Text>
+            </Box>
           </Box>
-          <Box display="flex" p="5px 11px">
-            <Image
+          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]} >
+            
+            <Box>
+            <Image width={["69%", "68%", "78%"]}
               marginRight="5px"
               src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/makeup-small.png"
             />
-            <Text fontSize="17px">Make Up</Text>
+            </Box>
+            <NavLink to="/skin">
+            <Box>
+           
+            <Text fontSize={["12px","12px","15px"]}>Make Up</Text>
+           
+            </Box>
+            </NavLink>
+           
           </Box>
-          <Box display="flex" p="5px 11px" paddingLeft="10px">
-            <Image
+          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]} >
+            <Box>
+            <Image width={["69%", "68%", "78%"]}
               marginRight="5px"
               src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/skin-small.png"
             />
-            <Text fontSize="17px">Hair</Text>
+            </Box>
+            <NavLink to="/skin">
+            <Box>
+            <Text fontSize={["12px","12px","15px"]}>Hair</Text>
+            </Box>
+            </NavLink>
           </Box>
-          <Box display="flex" p="5px 11px" paddingLeft="10px">
-            <Image
+          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]} >
+            <Box>
+            <Image width={["69%", "68%", "78%"]}
               marginRight="5px"
               src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/hair-small.png"
             />
-            <Text fontSize="17px">Skin Care</Text>
+            </Box>
+            <NavLink to="/skin">
+            <Box>
+            <Text fontSize={["12px","12px","15px"]}>Skin Care</Text>
+            </Box>
+            </NavLink>
           </Box>
-          <Box display="flex" p="5px 11px" paddingLeft="10px">
-            {" "}
-            <Image
+          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]} >
+           <Box>
+            <Image width={["69%", "68%", "78%"]}
               marginRight="5px"
               src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/personal-care-small.png"
             />
-            <Text fontSize="17px">Personal Care</Text>
+            </Box>
+            <NavLink to="/skin">
+            <Box>
+            <Text fontSize={["12px","12px","15px"]}>Personal Care</Text>
+            </Box>
+            </NavLink>
           </Box>
-          <Box display="flex" p="5px 11px" paddingLeft="10px">
-            {" "}
-            <Image
-              marginRight="5px"
-              src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/mom-baby-care-small.png"
-            />
-            <Text fontSize="17px">Mom & Baby Care</Text>
-          </Box>
-          <Box display="flex" p="5px 11px" paddingLeft="10px">
-            {" "}
-            <Image
+          
+          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]} >
+            <Box>
+            <Image width={["69%", "68%", "78%"]}
               marginRight="5px"
               src="https://www.beautybebo.com/pub/media/fragrance.png"
             />
-            <Text fontSize="17px">Fragnance</Text>
+            </Box>
+            <NavLink to="/skin">
+            <Box>
+            <Text fontSize={["12px","12px","15px"]}>Fragnance</Text>
+            </Box>
+            </NavLink>
           </Box>
-          <Box display="flex" p="5px 11px" paddingLeft="10px">
-            {" "}
-            <Image
+          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]} >
+           <Box>
+            <Image width={["69%", "68%", "78%"]}
               marginRight="5px"
               src="https://www.beautybebo.com/pub/media/ayurveda.png"
             />
-            <Text fontSize="17px">Ayurveda</Text>
+            </Box>
+            <NavLink to="/skin">
+            <Box>
+            <Text fontSize={["12px","12px","15px"]}>Ayurveda</Text>
+            </Box>
+            </NavLink>
           </Box>
         </Box>
         <Box p="0.5px" margin="auto" width={["89%", "73%", "73%"]}>

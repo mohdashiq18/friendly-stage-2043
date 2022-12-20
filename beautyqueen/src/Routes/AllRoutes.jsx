@@ -7,6 +7,7 @@ import SingUp from "../Components/SignUp/SingUp";
 import {Profile} from "../Pages/Admin/Profile";
 import { Products } from "../Components/Products/Products";
 import Cart from "../Pages/Home/Cart";
+import Skin from "../Pages/Home/Skin";
 
 
 const AllRoutes = ()=>{
@@ -20,6 +21,7 @@ const AllRoutes = ()=>{
             <Route path="/products" element={<Products/>}></Route>
             <Route path="/test" element={<Admin/> }></Route>
             <Route path="/cart" element={<Cart/> }></Route>
+            <Route path="/skin" element={<Skin/> }></Route>
 
            
         </Routes>
