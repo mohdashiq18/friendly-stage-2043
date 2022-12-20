@@ -38,8 +38,9 @@
 #logo_div{
     /* border: 1px solid black; */
     /* height: 64px; */
-    width: 23%;
+    /* width: 23%; */
     cursor: pointer;
+    
 }
 #logo_div img{
     width: 100%;
