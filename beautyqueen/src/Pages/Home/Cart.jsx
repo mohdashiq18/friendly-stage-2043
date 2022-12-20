@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { dataUrl } from '../../share';
 import CartSingleCard from "./CartSingleCard"
-
+import { ToastContainer, toast } from 'react-toastify';
 const Cart = () => {
     const [cartData, setPro] = useState([]);
     const [total,setTotal]=useState(0);
@@ -21,7 +21,16 @@ const Cart = () => {
     }
     const delPro = (id) => {
         axios.delete(`${dataUrl}/carts/${id}`, { withCredentials: true })
+            .then((res)=>{
+                toast.success("Remove successfully")
+                setchangeone((pre)=>pre+1)
+            })
+            .catch((er) => console.log(er))
+    }
+    const cheakout = () => {
+        axios.delete(`${dataUrl}/carts/deleteall/n`, { withCredentials: true })
             .then((res) => {console.log(res.data)
+                toast.success("Order Suceccesfull")
                 setchangeone((pre)=>pre+1)
             })
             .catch((er) => console.log(er))
@@ -32,6 +41,7 @@ const Cart = () => {
 
     }, [changeone])
     useEffect(()=>{
+        setTotal(0)
         cartData && cartData.map((el,i)=>{
             setTotal((prev)=>prev+el.product.price)
         })
@@ -50,7 +60,7 @@ const Cart = () => {
 
                         <HStack spacing={5} w="full" padding={3} bg="#fcffee" > <Image w={10} src='https://images.bewakoof.com/web/Red-truck.png' /> <Text>Yay! You get FREE delivery on this order</Text></HStack>
                         {
-                            cartData.map((el, i) => (
+                            cartData && cartData.map((el, i) => (
                                 <CartSingleCard key={i} el={el} del={delPro} />
                             ))
                         }
@@ -87,7 +97,7 @@ const Cart = () => {
                             <HStack w="full" >
                                 <Text fontSize={{ base: "15px", md: "18px" }} >Shipping Charges </Text>
                                 <Spacer />
-                                <Text fontWeight="bold" color="green.500" fontSize={{ base: "15px", md: "18px" }} > + ₹ 50 </Text>
+                                <Text fontWeight="bold" color="green.500" fontSize={{ base: "15px", md: "18px" }} > + ₹ 0 </Text>
                             </HStack>
 
                             <HStack w="full" >
@@ -99,7 +109,7 @@ const Cart = () => {
                             <HStack w="full" >
                                 <Text fontSize={{ base: "15px", md: "18px" }} >Subtotal  </Text>
                                 <Spacer />
-                                <Text fontWeight="bold" fontSize={{ base: "15px", md: "18px" }} >  ₹ {Math.floor(total-(total/100*10))+50} </Text>
+                                <Text fontWeight="bold" fontSize={{ base: "15px", md: "18px" }} >  ₹ {Math.floor(total-(total/100*10))} </Text>
                             </HStack>
 
                             <Badge overflow="hidden" borderRadius="2xl" fontSize={{ base: "15px", md: "xl" }} padding="5px 20px" w="full" variant='subtle' color="gray.800" colorScheme='green'>
@@ -111,11 +121,11 @@ const Cart = () => {
                         <Stack direction={{ base: "column", md: "row" }} w="full" padding="5" >
 
 
-                            <Text w={{ base: "full", md: "50%" }} fontSize="2xl" fontWeight="bold" >Total  ₹ {Math.floor(total-(total/100*10))+50}</Text>
+                            <Text w={{ base: "full", md: "50%" }} fontSize="2xl" fontWeight="bold" >Total  ₹ {Math.floor(total-(total/100*10))}</Text>
 
                             <Divider w="10%" orientation='vertical' />
 
-                            <Button w="full" colorScheme='pink' color="white" size='lg'>
+                            <Button w="full" colorScheme='pink' color="white" size='lg' onClick={()=>cheakout()}>
                                 CheckOut
                             </Button>
 
@@ -135,7 +145,8 @@ const Cart = () => {
 
 
             </VStack>
-
+            <ToastContainer position="top-center"
+            autoClose={3000}/>
         </div>
     )
 }

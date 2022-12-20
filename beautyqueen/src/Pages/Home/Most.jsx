@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Box, Text, Image, Button, Stack } from "@chakra-ui/react";
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
 import { dataUrl } from "../../share";
-
+import { ToastContainer, toast } from 'react-toastify';
 const Most = () => {
     const [pro, setPro] = useState([]);
 
@@ -20,14 +20,14 @@ const Most = () => {
     }, [])
     const handleCart=(id)=>{
         axios.post(`${dataUrl}/carts`,{product:id},{withCredentials:true})
-        .then((res)=>(console.log(res)))
+        .then((res)=>(toast.success("Item added to your Cart")))
         .catch((er)=>(console.log(er)))
         
        }
     return (
         <div>
             {
-                pro.map((el, i) => (
+                pro && pro.map((el, i) => (
                     <Box pt="5px" display="flex">
                         <Box w="40%">
                             <Image w="100%" src={el.image}></Image>
@@ -50,6 +50,8 @@ const Most = () => {
                     </Box>
                 ))
             }
+            <ToastContainer position="top-center"
+            autoClose={3000}/>
         </div>
     )
 }

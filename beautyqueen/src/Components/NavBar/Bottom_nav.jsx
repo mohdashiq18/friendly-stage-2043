@@ -2,6 +2,7 @@ import { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { GiShoppingBag } from "react-icons/gi";
 import { NavSingle } from "./navSingle";
+import { Link } from "react-router-dom";
 
 export const BottomNav = () => {
     const [navDropDown, setnavDropDown] = useState(false);
@@ -57,7 +58,7 @@ export const BottomNav = () => {
                 <div onMouseEnter={() => { setnavDropDown(true); setMakeup(false); setSkin(false); setHair(false); setPcare(false); setmom(false); setAyurveda(false); setBrand(false); setFrag(true) }} onMouseLeave={() => { setnavDropDown(false) }}>FRAGRANCE <IoIosArrowDown /></div>
                 <div onMouseEnter={() => { setnavDropDown(true); setMakeup(false); setSkin(false); setHair(false); setPcare(false); setmom(false); setFrag(false); setBrand(false); setAyurveda(true) }} onMouseLeave={() => { setnavDropDown(false) }}>AYURVEDA <IoIosArrowDown /></div>
                 <div onMouseEnter={() => { setnavDropDown(true); setMakeup(false); setSkin(false); setHair(false); setPcare(false); setmom(false); setFrag(false); setAyurveda(false); setBrand(true) }} onMouseLeave={() => { setnavDropDown(false) }}>BRANDS <IoIosArrowDown /></div>
-                <div><GiShoppingBag></GiShoppingBag> MY CART<span>-₹0.00</span> </div>
+                <Link to="/cart"><div><GiShoppingBag></GiShoppingBag> MY CART<span>-₹0.00</span> </div></Link>
             </div>
             {
                 navDropDown ? <>

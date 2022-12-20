@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { signup } from "../AuthReducer/Action";
 
 export default function SingUp() {
+  
     const data=useSelector(store=>store)
     const [firstname,setFirstname]=useState("")
     const [lastname,setLastname]=useState("")
@@ -41,9 +42,10 @@ export default function SingUp() {
         toast.error("Password not mathched!")
     }else{
         dispatch(signup(payload))
-    .then((res)=>(
+    .then((res)=>{
         toast.success("SignUp succesfully")
-    ))
+        navigate('/login')
+    })
     .catch((err)=>(
         toast.error("User Already exist!")
     ))
