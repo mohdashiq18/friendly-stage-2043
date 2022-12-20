@@ -1,6 +1,11 @@
+import { HamburgerIcon } from "@chakra-ui/icons";
+import { Box, Button, Flex, IconButton, Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import "./App.css";
 import Drop from "./Components/Dropcde/Drop";
 import Footer from "./Components/Footer/Footer";
+import Navdar from "./Components/My_Account/Navdar";
+import Topnavbar from "./Components/My_Account/Topnavbar";
 
 import {Navbar} from "./Components/NavBar/NavBar";
 import { useMedia } from "./MediaQuery/UseMedia";
@@ -13,11 +18,37 @@ function App() {
 
 
     <div className="App">
+      <Topnavbar/>
+      { mediumScreen && <Navdar/>}
       
-     <Navbar/>
-      {/* <Drop/> */}
+    { mediumScreen &&  <Navbar/>}
+    { !mediumScreen &&
+      <Flex style={{position:"sticky",top:"0px",zIndex:12}} bgColor={"pink.500"} w="100%" justifyContent={"space-between"} p={"5px 5%"}>
+        <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label='Options'
+              icon={<HamburgerIcon />}
+               variant='outline'
+              />
+            <MenuList>
+              <MenuItem /* onClick={()=>toggleClick("home")} */ > Home</MenuItem>
+              <MenuItem /* onClick={()=>toggleClick("about")} */ /* bgColor={yellow} */>Login</MenuItem>
+              <MenuItem /* onClick={()=>toggleClick("skills")} */ >Signup</MenuItem>
+              <MenuItem /* onClick={()=>toggleClick("projects")} */ /* bgColor={yellow} */>Admin</MenuItem>
+              <MenuItem /* onClick={()=>toggleClick("contact")} */ > Cart</MenuItem>
+            
+            </MenuList>
+          </Menu>
+              <Box  >
+                <Button  colorScheme="#dd0285" border={"1px solid white"} color="black" >
+                <Link to="/cart" ><Text>My Cart</Text> </Link> 
+                </Button>
+              </Box>
+      </Flex>
+    }
     <AllRoutes/>
-    {mediumScreen && <Footer/> }
+    <Footer/>
     </div>
   );
 }

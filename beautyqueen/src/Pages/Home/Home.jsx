@@ -54,8 +54,7 @@ const Home = () => {
 
   return (
     <>
-      <br />
-      <br />
+     
 
       <Box
         w="90%"

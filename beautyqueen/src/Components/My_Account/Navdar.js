@@ -1,15 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FiSearch } from "react-icons/fi";
 import "./Responsive.css"
 import { BsSuitHeartFill, BsPersonFill } from "react-icons/bs";
+import { Link } from 'react-router-dom';
+import logo1 from "../NavBar/beautybebo_logo.png"
 export default function Navdar() {
+  const [loginDropDown, seloginDropDown] = useState(false);
+  const [loginDropDown2, seloginDropDown2] = useState(false);
+  const doIt = ()=> {
+    seloginDropDown(false)
+    seloginDropDown2(false)
+  }
   return (
     <div className='mid_nav_main'>
        <div className='mid_nav_mid'>
         <div className='mid_nav_first'>
+            <div style={{width:"30%",paddingLeft:"5%"}} >
+           <img style={{width:"100%"}} src={logo1}/> </div>
           <div className='logo_div' >
-           <img style={{width:"100%"}} src="https://www.beautybebo.com/pub/media/logo/default/beautybebo_1.png"/>
-           <div className="user"><BsPersonFill/></div>
+           <div className="user" onMouseOver={()=>seloginDropDown2(true)} onMouseOut={doIt}><BsPersonFill/></div>
+           {
+                        loginDropDown2 ?
+                            <>
+                                <div id="content_dropdown2"  >
+                                    <Link to="/login"><div id="login_dropdown">Login</div></Link>
+                                    <Link to="/signup"><div id="register_dropdown">Register</div></Link>
+                                    <Link to="/admin"> <div id="register_dropdown">Admin</div></Link>
+                                   
+                                </div>
+                            </>:null
+                    }
           </div>
           <div className='search_div'>
            <select className='select' >
@@ -40,7 +60,18 @@ export default function Navdar() {
             <BsSuitHeartFill/>
           </div>
           <div style={{display:"flex"}} >
-          <div className="user_div"><BsPersonFill/></div>
+          <div className="user_div" onMouseOver={()=>seloginDropDown(true)} onClick={() => { seloginDropDown(!loginDropDown)}} onMouseOut={doIt}><BsPersonFill/></div>
+          {
+                        loginDropDown ?
+                            <>
+                                <div id="content_dropdown"  >
+                                    <Link to="/login"><div id="login_dropdown">Login</div></Link>
+                                    <Link to="/signup"><div id="register_dropdown">Register</div></Link>
+                                    <Link to="/admin"> <div id="register_dropdown">Admin</div></Link>
+                                   
+                                </div>
+                            </>:null
+                    }
             <div className='text' style={{marginTop:"9px",marginLeft:"9px"}}>My Account</div>
           </div>
         </div>
@@ -48,3 +79,16 @@ export default function Navdar() {
     </div>
   )
 }
+{/* <div id="content" onClick={() => { seloginDropDown(!loginDropDown)}}>My Account</div>
+                    {
+                        loginDropDown ?
+                            <>
+                                <div id="content_dropdown"  >
+                                    <Link to="/login"><div id="login_dropdown">Login</div></Link>
+                                    <Link to="/signup"><div id="register_dropdown">Register</div></Link>
+                                    <Link to="/admin"> <div id="register_dropdown">Admin</div></Link>
+                                   
+                                </div>
+                            </>:null
+                    }
+                </div> */}

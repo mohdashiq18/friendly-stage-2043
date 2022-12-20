@@ -7,8 +7,6 @@ import { TopImageDiv } from "./Top_image"
 export const Navbar = () => {
     return (
         <>
-           <Topnavbar/>
-            <Navdar/>
             <BottomNav></BottomNav>
         </>
     )

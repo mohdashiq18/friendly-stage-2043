@@ -4,11 +4,19 @@
 .logo_div{
     display: flex;
     width:"30%";
+    margin-left: -13%;
     justify-content: space-between;
 
 }
 .user{
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    padding: 8px;
+    font-size: 30px;
+    display: none;
+    border-radius: 3px;
+    margin-top: 35px;
+}
+.user2{
     padding: 8px;
     font-size: 20px;
     display: none;
@@ -18,7 +26,8 @@
     display: flex;
     gap: 8%;
     padding: 0px 8px 0px 8px;
-    /* width: 70%; */
+    width: 70%;
+    justify-content: space-between;
     
 }
 .mid_nav_mid{
@@ -48,8 +57,8 @@
     align-items: center;
     border: 1px solid black;
     height: 40px;
-    margin-top: 18px;
-    width: 70%;
+    margin-top: 12px;
+    width: 50%;
    
 }
 /* input{
