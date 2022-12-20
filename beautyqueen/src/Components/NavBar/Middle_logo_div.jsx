@@ -10,8 +10,8 @@ export const MiddleLogoDiv = () => {
     const [loginDropDown, seloginDropDown] = useState(false);
     return (
         <div id="middle_logo_div">
-            <div id="logo_div">
-               <Link to="/"> <img src={logo} alt="" /></Link>
+            <div id="logo_div" >
+               <Link to="/"> <img style={{height:"50px",marginTop:"-15px"}} src={logo} alt="" /></Link>
             </div>
 
             <div id="search_div">

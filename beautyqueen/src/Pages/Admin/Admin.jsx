@@ -25,315 +25,117 @@ function remC(){
 
 
 
-/*    const data=[
+   const data=[
     {
-        name:"Tresemme Pro Pure Damage Recovery Shampoo & Mask Combo",
-        category:"hair",
-        description:"TRESemme Pro Pure Moisture Boost Shampoo is designed to gently cleanse and help moisturize dry and dull hair. Infused with the goodness of Aloe Essence - it helps retain the moisture of the hair, preserving and nourishing it from roots up to tip and gives your hair a hydrated and healthier look. Enriched with the goodness of the wondrous aloe plant which is known to work as a conditioner and detangling agent as well, it ensures gentle protection for your hair while making sure it doesn’t lose its shine.", 
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/f/6/f658864trese00000061_1.jpg",
-        price:1200,
-        ofPrice:1116,
-        quantity:1
-    },
-    {
-        name:"Boroplus Aloe Vera Gel With Green Tea",
-        category:"hair",
-        description:"BoroPlus 100% Organic Aloe Vera Gel with Green Tea has an ultra-light texture to keep your skin hydrated and soft, every single day. It is the natural solution for your skin, without all the nasties like parabens, sulphates and mineral oil. It helps reduce pimples, moisturiser dry skin and acts as a natural sunscreen, to help soothe sunburns.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/9/f/9f5a0dd8901248154192_1.jpg",
-        price:360,
-        ofPrice:360,
-        quantity:1
-    },
-    {
-        name:"Bioderma Node DS+ Shampooing Anti-Dandruff Intense Shampoo",
-        category:"hair",
-        description:"Bioderma Node-Creme Shampoo Anti Flakes can be used in severe dandruff and itching.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/a14a2e6f570c727e7b2d241a9eba897f/9/3/93d343en_3401344957253-01.jpg",
-        price:1607,
-        ofPrice:1527,
-        quantity:1
-    },
-    {
-        name:"Tresemme Pro Pure Damage Recovery Shampoo & Mask Combo",
-        category:"hair",
-        description:"TRESemme Pro Pure Moisture Boost Shampoo is designed to gently cleanse and help moisturize dry and dull hair. Infused with the goodness of Aloe Essence - it helps retain the moisture of the hair, preserving and nourishing it from roots up to tip and gives your hair a hydrated and healthier look. Enriched with the goodness of the wondrous aloe plant which is known to work as a conditioner and detangling agent as well, it ensures gentle protection for your hair while making sure it doesn’t lose its shine.", 
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/f/6/f658864trese00000061_1.jpg",
-        price:1688,
-        ofPrice:1400,
-        quantity:1
-    },
-    {
-        name:"Tresemme Pro Pure Damage Recovery Shampoo & Mask Combo",
-        category:"hair",
-        description:"TRESemme Pro Pure Moisture Boost Shampoo is designed to gently cleanse and help moisturize dry and dull hair. Infused with the goodness of Aloe Essence - it helps retain the moisture of the hair, preserving and nourishing it from roots up to tip and gives your hair a hydrated and healthier look. Enriched with the goodness of the wondrous aloe plant which is known to work as a conditioner and detangling agent as well, it ensures gentle protection for your hair while making sure it doesn’t lose its shine.", 
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/f/6/f658864trese00000061_1.jpg",
-        price:1400,
-        ofPrice:1400,
-        quantity:1
-    },
-    {
-        name:"TRESemme Pro Pure Moisture Boost Serum With Aloe Essence Sulphate Free & Paraben Free",
-        category:"hair",
-        description:"TRESemme Pro Pure Moisture Boost Hair Serum, comes loaded with the goodness of Aloe Essence that provides an instant shine and gives your hair a salon-finish, smoother and shinier look. It gives a professional quality vibrancy and shine to your hair. Enriched with the goodness of hydrating ingredients like the wondrous aloe plant, it is known to help condition and nourish hair and ensure gentle protection for your hair. Get the smoothness, moisture and shine you need. ",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/f/d/fd3cfb5trese00000046_1.jpg",
-        price:400,
-        ofPrice:400,
-        quantity:1
-    },
-    {
-        name:"TRESemme Pro Pure Moisture Boost Mask With Aloe Essence Sulphate Free & Paraben Free",
-        category:"hair",
-        description:"TRESemme Moisture Boost Hair Mask is designed to provide vibrant shine, a boost of moisture and help nourish hair from roots up to tip. It comes with the goodness of Aloe Essence which is known to be rich in anti-oxidants and moisturize your hair. It helps keep your hair hydrated, smooth and shiny. Enriched with the goodness of the wondrous aloe plant which is known to help condition and nourish hair , it ensures gentle protection for your hair while making it look shiny - Get the smoothness, moisture and shine you need ! It has 0% Parabens, 0% Mineral Oil, 0% Sulphates and 0% Dyes. TRESemme - Professionals love it. Your hair will too! Do I use instead of Conditioner? Yes, once a week.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/0/a/0a37fb5trese00000047_1.jpg",
-        price:700,
-        ofPrice:651,
-        quantity:1
-    },
-    {
-        name:"TRESemme Pro Pure Moisture Boost Conditioner With Aloe Essence Sulphate Free & Paraben Free",
-        category:"hair",
-        description:"TRESemme Pro Pure Moisture Boost Conditioner is designed to gently condition and help moisturize dry, dull hair. Infused with the goodness of Aloe Essence , it is known to be rich in anti-oxidants and moisturize your hair, giving it a much-needed refreshed and hydrated look. Enriched with the goodness of the wondrous aloe plant which is known to work as a conditioner and detangling agent as well, it ensures gentle protection for your hair while making sure it doesn’t lose its shine. ",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/9/c/9cc7fb5trese00000045_1.jpg",
-        price:500,
-        ofPrice:465,
-        quantity:1
-    },
-    {
-        name:"TRESemme Pro Pure Moisture Boost Shampoo With Aloe Essence Sulphate Free & Paraben Free",
-        category:"hair",
-        description:"TRESemme Pro Pure Moisture Boost Shampoo is designed to gently cleanse and help moisturize dry and dull hair. Infused with the goodness of Aloe Essence - it helps retain the moisture of the hair, preserving and nourishing it from roots up to tip and gives your hair a hydrated and healthier look. Enriched with the goodness of the wondrous aloe plant which is known to work as a conditioner and detangling agent as well, it ensures gentle protection for your hair while making sure it doesn’t lose its shine. ",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/6/6/6644a8ctrese00000044_1.jpg",
-        price:500,
-        ofPrice:456,
-        quantity:1
-    },
-    {
-        name:"Tresemme Keratin Smooth Hair Serum",
-        category:"hair",
-        description:"TRESemmé Keratin Smooth Hair Serum helps your hair restore its keratin leaving them visibly straight and smoother. Infused with the goodness of Camellia Oil, this professional serum nourishes each strand of your hair making them silky smooth and easier to manage. This unique combination of Keratin and Camellia Oil conditions and strengthen your hair and provides them hydration and elasticity. With its dual action, TRESemmé Keratin Smooth Hair Serum helps you get up to 100% smoother hair with more shine.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/3/0/30cb3d88901030871252_1.jpg",
-        price:350,
-        ofPrice:350,
-        quantity:1
-    },
-    {
-        name:"TRESemme Pro Pure Damage Recovery Serum With Fermented Rice Water Sulphate Free & Paraben Free",
-        category:"hair",
-        description:"TRESemme Pro Pure Damage Recovery Hair Serum helps repair damaged hair and lends lustre to your dull locks. It is infused with the goodness of Rice Essence which helps your hair recover from early signs of damage. It provides a professional quality vibrancy and shine to your hair so that you can flaunt those gorgeous locks.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/e/9/e91dfb5trese00000042_1.jpg",
-        price:400,
-        ofPrice:400,
-        quantity:1
-    },
-    {
-        name:"Sunsilk Almond & Honey Shampoo",
-        category:"hair",
-        description:"Does your hair feel rough and dry? Do you desire smooth, frizz protected and moisturized hair? Look no further! Sunsilk naturals range presents the all New Almond & Honey Smoothness Hair shampoo. It is infused with the goodness of natural ingredients like almond & honey. Our exclusive formula deeply nourishes your hair making it beautifully Smooth & Soft, moisturizes it and protects it from frizz. Sunsilk , combined with the goodness of these natural ingredients, created a shampoo that helps make hair smooth, moisturized and frizz protected. Honey has been popular for centuries for its nourishing properties.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/3/c/3cabc5a8901030805080_2.jpg",
-        price:315,
-        ofPrice:315,
-        quantity:1
-    }, 
-    {
-        name:"Indulekha Bringha Hair Strengthening Lepam",
-        category:"hair",
-        description:"Indulekha Bringha Hair Strengthening Lepam is an Ayurvedic Proprietary Product. This lepam (hair mask) is made with 6 precious herbs that nourish and strengthen hair, which helps in reducing hair fall. Indulekha bringha hair strengthening lepam gives non greasy feel post wash. ",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/8/c/8c9c39226479_s1-8901030897429.jpg",
-        price:648,
-        ofPrice:648,
-        quantity:1
-    },
-    {
-        name:"Livon Super Styler Hair Serum For Women & Men For Hair Straightening",
-        category:"hair",
-        description:"There isn’t a style in the world that perfectly straight hair doesn’t go with, and now achieving it is easier than ever, with Livon Hair Straightening Serum. Crafted for hair styling, the Livon Straightening Serum enables you to straighten your hair at home instantly. With Livon Hair Straightening Serum, get super-straight, super smooth, frizz free hair for up to 12 hours! Applying Livon Hair Straightening Serum is a gift that keeps on giving. Not only does it make your hair straighter with every application, it also protects every strand and reduces hair breakage by five times, breakage that is common when you use a straightener. No need to shampoo before using this hair serum.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/7/a/7ab36558901088159562_7.jpeg",
-        price:375,
-        ofPrice:375,
-        quantity:1
-    },
-    {
-        name:"Head & Shoulders Cool Menthol Anti-Dandruff Shampoo",
-        category:"hair",
-        description:"With a shot of tingly menthol for revitalizing freshness. Head & Shoulders Cool Menthol Shampoo leaves hair up to 100% dandruff free. This formula with menthol cools and cleanses scalp and hair, for a cool refreshing wash.Formulated with Head & Shoulders anti-dandruff fresh scent technology featuring enhanced fragrance notes for an improved in-shower scent experience",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/4/9/4902430773829_2__1_1_1.jpg",
-        price:315,
+        name:"Bioderma Atoderm Huile De Douche 24h Hydration Ultra-Nourishing Anti-",
+        category:"skin",
+        description:"Bestow the gift of glow to your skin with FACES Bath N Body Milk & Honey Body Scrub, crafted with organically sourced ingredients to keep the skin naturally nourished and radiant. One of the truly luxurious palette of personal care products", 
+        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/9/7/974e43ebiode00000007-01.jpg",
+        price:200,
         ofPrice:300,
-        quantity:1
+        quantity:10
     },
     {
-        name:"Shahnaz Husain Hair Touch-Up Plus - Brown",
-        category:"hair",
-        description:"Enriched with natural oils, the Shahnaz Hussain Hair Touch-Up Plus is a herbal formula specially developed to touch up the hair and conceal gray hair instantly. With the effect lasting only till the next shampoo, it provides safety from the harmful effects of chemical hair dyes. Leaves the hair looking naturally lustrous.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/8/c/8c2e07e205000000436877.jpg",
-        price:335,
-        ofPrice:302,
-        quantity:1
-    },
-    {
-        name:"Indulekha Bringha Hair Strengthening Serum",
-        category:"hair",
-        description:"Enriched with Bringharaj and 10 other herbs, this 100% Ayurvedic oil revives your roots to grow new hair. It's unique and easy to apply straight to the scalp selfie comb allows oil to penetrate deep inside the scalp directly, without getting your hands oily.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/2/3/23e539226478_s1-8901030897436.jpg",
-        price:756,
-        ofPrice:718,
-        quantity:1
-    },
-    {
-        name:"Tresemme Pro Pure Damage Recovery Shampoo & Mask Combo",
-        category:"hair",
-        description:"TRESemme Pro Pure Moisture Boost Shampoo is designed to gently cleanse and help moisturize dry and dull hair. Infused with the goodness of Aloe Essence - it helps retain the moisture of the hair, preserving and nourishing it from roots up to tip and gives your hair a hydrated and healthier look. Enriched with the goodness of the wondrous aloe plant which is known to work as a conditioner and detangling agent as well, it ensures gentle protection for your hair while making sure it doesn’t lose its shine.", 
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/f/6/f658864trese00000061_1.jpg",
-        price:1200,
-        ofPrice:1116,
-        quantity:1
-    },
-    {
-        name:"Boroplus Aloe Vera Gel With Green Tea",
-        category:"hair",
-        description:"BoroPlus 100% Organic Aloe Vera Gel with Green Tea has an ultra-light texture to keep your skin hydrated and soft, every single day. It is the natural solution for your skin, without all the nasties like parabens, sulphates and mineral oil. It helps reduce pimples, moisturiser dry skin and acts as a natural sunscreen, to help soothe sunburns.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/9/f/9f5a0dd8901248154192_1.jpg",
-        price:360,
-        ofPrice:360,
-        quantity:1
-    },
-    {
-        name:"Bioderma Node DS+ Shampooing Anti-Dandruff Intense Shampoo",
-        category:"hair",
-        description:"Bioderma Node-Creme Shampoo Anti Flakes can be used in severe dandruff and itching.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/a14a2e6f570c727e7b2d241a9eba897f/9/3/93d343en_3401344957253-01.jpg",
-        price:1607,
-        ofPrice:1527,
-        quantity:1
-    },
-    {
-        name:"Tresemme Pro Pure Damage Recovery Shampoo & Mask Combo",
-        category:"hair",
-        description:"TRESemme Pro Pure Moisture Boost Shampoo is designed to gently cleanse and help moisturize dry and dull hair. Infused with the goodness of Aloe Essence - it helps retain the moisture of the hair, preserving and nourishing it from roots up to tip and gives your hair a hydrated and healthier look. Enriched with the goodness of the wondrous aloe plant which is known to work as a conditioner and detangling agent as well, it ensures gentle protection for your hair while making sure it doesn’t lose its shine.", 
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/f/6/f658864trese00000061_1.jpg",
-        price:1688,
-        ofPrice:1400,
-        quantity:1
-    },
-    {
-        name:"Tresemme Pro Pure Damage Recovery Shampoo & Mask Combo",
-        category:"hair",
-        description:"TRESemme Pro Pure Moisture Boost Shampoo is designed to gently cleanse and help moisturize dry and dull hair. Infused with the goodness of Aloe Essence - it helps retain the moisture of the hair, preserving and nourishing it from roots up to tip and gives your hair a hydrated and healthier look. Enriched with the goodness of the wondrous aloe plant which is known to work as a conditioner and detangling agent as well, it ensures gentle protection for your hair while making sure it doesn’t lose its shine.", 
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/f/6/f658864trese00000061_1.jpg",
-        price:1400,
-        ofPrice:1400,
-        quantity:1
-    },
-    {
-        name:"TRESemme Pro Pure Moisture Boost Serum With Aloe Essence Sulphate Free & Paraben Free",
-        category:"hair",
-        description:"TRESemme Pro Pure Moisture Boost Hair Serum, comes loaded with the goodness of Aloe Essence that provides an instant shine and gives your hair a salon-finish, smoother and shinier look. It gives a professional quality vibrancy and shine to your hair. Enriched with the goodness of hydrating ingredients like the wondrous aloe plant, it is known to help condition and nourish hair and ensure gentle protection for your hair. Get the smoothness, moisture and shine you need. ",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/f/d/fd3cfb5trese00000046_1.jpg",
-        price:400,
-        ofPrice:400,
-        quantity:1
-    },
-    {
-        name:"TRESemme Pro Pure Moisture Boost Mask With Aloe Essence Sulphate Free & Paraben Free",
-        category:"hair",
-        description:"TRESemme Moisture Boost Hair Mask is designed to provide vibrant shine, a boost of moisture and help nourish hair from roots up to tip. It comes with the goodness of Aloe Essence which is known to be rich in anti-oxidants and moisturize your hair. It helps keep your hair hydrated, smooth and shiny. Enriched with the goodness of the wondrous aloe plant which is known to help condition and nourish hair , it ensures gentle protection for your hair while making it look shiny - Get the smoothness, moisture and shine you need ! It has 0% Parabens, 0% Mineral Oil, 0% Sulphates and 0% Dyes. TRESemme - Professionals love it. Your hair will too! Do I use instead of Conditioner? Yes, once a week.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/0/a/0a37fb5trese00000047_1.jpg",
-        price:700,
-        ofPrice:651,
-        quantity:1
-    },
-    {
-        name:"TRESemme Pro Pure Moisture Boost Conditioner With Aloe Essence Sulphate Free & Paraben Free",
-        category:"hair",
-        description:"TRESemme Pro Pure Moisture Boost Conditioner is designed to gently condition and help moisturize dry, dull hair. Infused with the goodness of Aloe Essence , it is known to be rich in anti-oxidants and moisturize your hair, giving it a much-needed refreshed and hydrated look. Enriched with the goodness of the wondrous aloe plant which is known to work as a conditioner and detangling agent as well, it ensures gentle protection for your hair while making sure it doesn’t lose its shine. ",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/9/c/9cc7fb5trese00000045_1.jpg",
-        price:500,
-        ofPrice:465,
-        quantity:1
-    },
-    {
-        name:"TRESemme Pro Pure Moisture Boost Shampoo With Aloe Essence Sulphate Free & Paraben Free",
-        category:"hair",
-        description:"TRESemme Pro Pure Moisture Boost Shampoo is designed to gently cleanse and help moisturize dry and dull hair. Infused with the goodness of Aloe Essence - it helps retain the moisture of the hair, preserving and nourishing it from roots up to tip and gives your hair a hydrated and healthier look. Enriched with the goodness of the wondrous aloe plant which is known to work as a conditioner and detangling agent as well, it ensures gentle protection for your hair while making sure it doesn’t lose its shine. ",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/6/6/6644a8ctrese00000044_1.jpg",
-        price:500,
-        ofPrice:456,
-        quantity:1
-    },
-    {
-        name:"Tresemme Keratin Smooth Hair Serum",
-        category:"hair",
-        description:"TRESemmé Keratin Smooth Hair Serum helps your hair restore its keratin leaving them visibly straight and smoother. Infused with the goodness of Camellia Oil, this professional serum nourishes each strand of your hair making them silky smooth and easier to manage. This unique combination of Keratin and Camellia Oil conditions and strengthen your hair and provides them hydration and elasticity. With its dual action, TRESemmé Keratin Smooth Hair Serum helps you get up to 100% smoother hair with more shine.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/3/0/30cb3d88901030871252_1.jpg",
-        price:350,
+        name:"Plum BodyLovin' Vanilla Vibes Body Oil",
+        category:"skin",
+        description:" Plum is inspired by the goodness in nature, and driven by the desire to be good and do good. Designed in a London studio, Plum products are always 100% vegan and cruelty-free. No parabens, phthalates or other doubtful - in any product. Marrying science and product expertise with innate love for nature, welcome to plum. Take in the goodness!", 
+        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/6/2/62446568906118410798_1.jpg",
+        price:209,
         ofPrice:350,
-        quantity:1
+        quantity:11
     },
     {
-        name:"TRESemme Pro Pure Damage Recovery Serum With Fermented Rice Water Sulphate Free & Paraben Free",
-        category:"hair",
-        description:"TRESemme Pro Pure Damage Recovery Hair Serum helps repair damaged hair and lends lustre to your dull locks. It is infused with the goodness of Rice Essence which helps your hair recover from early signs of damage. It provides a professional quality vibrancy and shine to your hair so that you can flaunt those gorgeous locks.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/e/9/e91dfb5trese00000042_1.jpg",
-        price:400,
-        ofPrice:400,
-        quantity:1
-    },
-    {
-        name:"Sunsilk Almond & Honey Shampoo",
-        category:"hair",
-        description:"Does your hair feel rough and dry? Do you desire smooth, frizz protected and moisturized hair? Look no further! Sunsilk naturals range presents the all New Almond & Honey Smoothness Hair shampoo. It is infused with the goodness of natural ingredients like almond & honey. Our exclusive formula deeply nourishes your hair making it beautifully Smooth & Soft, moisturizes it and protects it from frizz. Sunsilk , combined with the goodness of these natural ingredients, created a shampoo that helps make hair smooth, moisturized and frizz protected. Honey has been popular for centuries for its nourishing properties.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/3/c/3cabc5a8901030805080_2.jpg",
-        price:315,
-        ofPrice:315,
-        quantity:1
-    }, 
-    {
-        name:"Indulekha Bringha Hair Strengthening Lepam",
-        category:"hair",
-        description:"Indulekha Bringha Hair Strengthening Lepam is an Ayurvedic Proprietary Product. This lepam (hair mask) is made with 6 precious herbs that nourish and strengthen hair, which helps in reducing hair fall. Indulekha bringha hair strengthening lepam gives non greasy feel post wash. ",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/8/c/8c9c39226479_s1-8901030897429.jpg",
-        price:648,
-        ofPrice:648,
-        quantity:1
-    },
-    {
-        name:"Livon Super Styler Hair Serum For Women & Men For Hair Straightening",
-        category:"hair",
-        description:"There isn’t a style in the world that perfectly straight hair doesn’t go with, and now achieving it is easier than ever, with Livon Hair Straightening Serum. Crafted for hair styling, the Livon Straightening Serum enables you to straighten your hair at home instantly. With Livon Hair Straightening Serum, get super-straight, super smooth, frizz free hair for up to 12 hours! Applying Livon Hair Straightening Serum is a gift that keeps on giving. Not only does it make your hair straighter with every application, it also protects every strand and reduces hair breakage by five times, breakage that is common when you use a straightener. No need to shampoo before using this hair serum.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/7/a/7ab36558901088159562_7.jpeg",
-        price:375,
-        ofPrice:375,
-        quantity:1
-    },
-    {
-        name:"Head & Shoulders Cool Menthol Anti-Dandruff Shampoo",
-        category:"hair",
-        description:"With a shot of tingly menthol for revitalizing freshness. Head & Shoulders Cool Menthol Shampoo leaves hair up to 100% dandruff free. This formula with menthol cools and cleanses scalp and hair, for a cool refreshing wash.Formulated with Head & Shoulders anti-dandruff fresh scent technology featuring enhanced fragrance notes for an improved in-shower scent experience",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/4/9/4902430773829_2__1_1_1.jpg",
-        price:315,
+        name:"Dove Body Love Pro Age Body Butter, For Mature Skin, Paraben Free",
+        category:"skin",
+        description:"Dove loves your body unconditionally. Dove knows that mature skin can be tricky and it’s not always easy to keep your skin feeling and looking its best. Mature Skin losses moisture faster & becomes dry & dull fast. Your Skin needs a specially crafted body lotion for superior care that works on the skin from inside as well as outside Presenting Dove Body Love Pro Age Body Butter. A unique solution to manage your mature skin. ", 
+        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/3/d/3dd79e8dovex00000087_new_4.jpg",
+        price:200,
         ofPrice:300,
-        quantity:1
+        quantity:10
     },
     {
-        name:"Shahnaz Husain Hair Touch-Up Plus - Brown",
-        category:"hair",
-        description:"Enriched with natural oils, the Shahnaz Hussain Hair Touch-Up Plus is a herbal formula specially developed to touch up the hair and conceal gray hair instantly. With the effect lasting only till the next shampoo, it provides safety from the harmful effects of chemical hair dyes. Leaves the hair looking naturally lustrous.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/8/c/8c2e07e205000000436877.jpg",
-        price:335,
-        ofPrice:302,
-        quantity:1
+        name:"Bioderma Atoderm Huile De Douche 24h Hydration Ultra-Nourishing Anti-",
+        category:"skin",
+        description:"Bestow the gift of glow to your skin with FACES Bath N Body Milk & Honey Body Scrub, crafted with organically sourced ingredients to keep the skin naturally nourished and radiant. One of the truly luxurious palette of personal care products", 
+        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/9/7/974e43ebiode00000007-01.jpg",
+        price:200,
+        ofPrice:300,
+        quantity:10
     },
     {
-        name:"Indulekha Bringha Hair Strengthening Serum",
-        category:"hair",
-        description:"Enriched with Bringharaj and 10 other herbs, this 100% Ayurvedic oil revives your roots to grow new hair. It's unique and easy to apply straight to the scalp selfie comb allows oil to penetrate deep inside the scalp directly, without getting your hands oily.",
-        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/2/3/23e539226478_s1-8901030897436.jpg",
-        price:756,
-        ofPrice:718,
-        quantity:1
+        name:"Mamaearth Vitamin C Underarm Scrub With Vitamin C And Turmeric For Brighter Underarms",
+        category:"skin",
+        description:"Worried about pigmented underarms? Now’s the time to put your arms up and celebrate because Mamaearth Vitamin C Underarm Scrub is here. Made with volcanic clay beads, the scrub exfoliates your underarm skin and helps get rid of dark spots and blemishes.", 
+        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/9/e/9e8384e8906087778424_8.jpg",
+        price:270,
+        ofPrice:390,
+        quantity:13
     },
+    {
+        name:"Biotique Bio Apricot Refreshing Body Wash - 800ml",
+        category:"skin",
+        description:"Apricot is one of the most nutritious, centuries-old fruits, rich in vitamins, especially vitamin E and A, linoleic acid, oleic acid, and minerals known for their revitalizing powers. Its light, absorbent nature makes it an ideal moisturizer and anti-aging agent to improve elasticity, skin clarity and suppleness, It improves skin complexion and reduces dark circles.It has antioxidant properties.", 
+        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/f/ffa10fb8906009452111_1.jpg",
+        price:200,
+        ofPrice:300,
+        quantity:15
+    },
+    {
+        name:"Olay Ultra Moisture Body Wash With Avocado Oil",
+        category:"skin",
+        description:"Reveal beautiful, healthy-looking skin with Olay Ultra Moisture Body Wash with Avocado Oil. Now formulated with Olay’s Vitamin B3 Complex, it hydrates to plump surface skin cells, locking in natural moisture. The advanced formula, with avocado oil and Olay moisturizers, wraps your skin in a lush fragrance and leaves skin hydrated and silky smooth to the touch. A hydrating shower gel that moisturizes your skin gently and cleanses like no other!", 
+        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/9/e/9eb2e2d37000524090.jpg",
+        price:200,
+        ofPrice:300,
+        quantity:13
+    },
+    {
+        name:"Aroma Magic Mineral Glow Scrub (All Skin Types)",
+        category:"skin",
+        description:"The Aroma Magic Mineral Glow Scrub is quite a must-have! Its triple action scrub formula, made of natural exfoliators of Cornflower and grain Almond meal, gently buffs away dry skin and dead cells resulting in fresh, young, energized and healthy skin. Rice bran oil and aqua minerals remineralizer and enrich your skin reducing fine lines effectively.", 
+        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/9afc37bdf46fae888adf23d57cf627ad/a/r/aroma_magic_mineral_glow_scrub_2000x.jpg",
+        price:390,
+        ofPrice:500,
+        quantity:19
+    },
+    {
+        name:"WOW Skin Science Ubtan Body Wash",
+        category:"skin",
+        description:"Ubtan - the beauty secret of the queens, courtesans, ladies and brides of yore – is a paste made with herbs, oils, natural powders and extracts. Ubtans are traditional ayurvedic beauty and wellness recipes meant to rejuvenate skin, body and mind. In the olden days, applying Ubtan was ritualistic. ", 
+        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/c/dcc62fd8904311902386_1.jpg",
+        price:450,
+        ofPrice:780,
+        quantity:17
+    },
+    {
+        name:"Lotus Professional Retemin Plant Retinol & Vitamin C Brightening Boost Night Cream",
+        category:"skin",
+        description:"Lotus Professional Retimen Plant Retinol + Vitamin-C Brightening Boost Night Cream with natural vitamin C derived from kakadu plum and bakuchiol extracts (plant retinol) helps charge your skin to let you take on your day with confidence. It locks moisture into your skin to let you wake up with fresh skin that glows from within. ", 
+        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/3/b/3b741delotaa00000044_nv1.jpg",
+        price:450,
+        ofPrice:710,
+        quantity:11
+    },
+    {
+        name:"O3+ Derma Cult Resurfacing Energy Facial Peel For Instant Brightening + Adaptogen",
+        category:"skin",
+        description:"O3+ Derma Cult Resurfacing Energy Facial Peel is a gentle exfoliater that is enriched with adaptogens like ginseng and goji berry which is backed by Eastern medicine and Ayurveda for over 5000 years. This facial peel is an instant brightening solution for every type of skin.", 
+        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/e/4e33271o3-0951_7_.jpg",
+        price:450,
+        ofPrice:780,
+        quantity:12
+    },
+    {
+        name:"O3+ Sara Ayurveda Kumkumadi Brightness Facial Kit For Bridal Glow",
+        category:"skin",
+        description:"The kumkumadi oil blended in this facial is known as kumkumadi tailam, it is a creation of many different herbs which all come together and work as a mystic method to cure skin issues. The oil, which can also be used as a moisturizer is suitable for almost all skin types specifically for sensitive or dry flaky skin.", 
+        image:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/c/6/c6f2409o3xxx00000114_0.jpg",
+        price:230,
+        ofPrice:470,
+        quantity:15
+    }
 ] 
- */
+ 
   
 
 function doIt(){
@@ -355,11 +157,11 @@ function doIt(){
     axios.get(`${dataUrl}/users/getone`,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
 
- /*  async function make(){
+  async function make(){
     for(let i = 0; i<data.length; i++){
     axios.post(`${dataUrl}/products`,data[i],{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
     }
-  } */
+  }
 
   /* axios.get("/users",{withCredentials: true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
   axios.get("/products",{withCredentials: true}).then((res)=>console.log(res)).catch((e)=>console.log(e)) */
@@ -370,7 +172,7 @@ function doIt(){
       <button onClick={doIt} >sign It</button>
       <button onClick={login} >login It</button>
       <button onClick={logout} >log out</button>
-      <button onClick={check} >make It</button>
+      <button onClick={make} >make It</button>
       <button onClick={get}> get one</button>
       <br/>
       <button onClick={setC} >set</button><br/>
