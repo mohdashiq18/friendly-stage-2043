@@ -6,9 +6,9 @@ A cosmetic items selling website with own Backend server
     <ul>
         <li><a href="https://github.com/sujeetcoder">Sujeet Kumar</a></li>
         <li><a href="https://github.com/Rahulzhp">Rahul Das</a></li>
-        <li><a href="#">@</a></li>
-        <li><a href="#">@</a></li>
-        <li><a href="#">@</a></li>
+        <li><a href="https://github.com/mohdashiq18">Mohd Ashique</a></li>
+        <li><a href="https://github.com/praneeth516">Praneeth K</a></li>
+        <li><a href="https://github.com/Nilesh2697">Nilesh Prajapati</a></li>
     </ul>
 
 <h1>Fron-End</h1>
@@ -16,18 +16,26 @@ Summary:- In our website a user can purchase Beauty products and can view produc
 
 ### Live deployed URL: https://beautyqueen0.netlify.app/
 
- <h2>Landing Page</h2>
-    <img src="#" />
+  <h2>Landing Page</h2>
+    <img src="https://github.com/sujeetcoder/friendly-stage-2043/blob/master/beautyqueen/src/img/pro1.png" />
+    <img src="https://github.com/sujeetcoder/friendly-stage-2043/blob/master/beautyqueen/src/img/pro2.png" />
+    <img src="https://github.com/sujeetcoder/friendly-stage-2043/blob/master/beautyqueen/src/img/pro6.png" />
     <h2>Footer Sitemap</h2>
-     <img src="#" />
+     <img src="https://github.com/sujeetcoder/friendly-stage-2043/blob/master/beautyqueen/src/img/pro8.png" />
   <h2>Sign-up/Sign-in Page</h2>
-    <img src="#" />
-    <img src="#" />
-       <h2>Product Listing</h2>
-    <img src="#" />
-        <h2>Cart Page</h2>
-    <img src="#" />
-      <h2>Payment page</h2>
+    <img src="https://github.com/sujeetcoder/friendly-stage-2043/blob/master/beautyqueen/src/img/por3.png" />
+    <img src="https://github.com/sujeetcoder/friendly-stage-2043/blob/master/beautyqueen/src/img/pro4.png" />
+  <h2>Product Listing</h2>
+    <img src="https://github.com/sujeetcoder/friendly-stage-2043/blob/master/beautyqueen/src/img/pro5.png" />
+    <img src="https://github.com/sujeetcoder/friendly-stage-2043/blob/master/beautyqueen/src/img/pro7.png" />
+  <h2>Cart Page</h2>
+    <img src="https://github.com/sujeetcoder/friendly-stage-2043/blob/master/beautyqueen/src/img/pro9.png" />
+    <img src="https://github.com/sujeetcoder/friendly-stage-2043/blob/master/beautyqueen/src/img/pro10.png" />
+    <img src="https://github.com/sujeetcoder/friendly-stage-2043/blob/master/beautyqueen/src/img/pro11.png" />
+  <h2>Admin Page</h2>
+    <img src="https://github.com/sujeetcoder/friendly-stage-2043/blob/master/beautyqueen/src/img/pro13.png" />
+    <img src="https://github.com/sujeetcoder/friendly-stage-2043/blob/master/beautyqueen/src/img/pro15.png" />
+    <img src="https://github.com/sujeetcoder/friendly-stage-2043/blob/master/beautyqueen/src/img/pro16.png" />
     <img src="#" />
     <h1>[Getting Started]</h1>
     <h3>Execution</h3>
