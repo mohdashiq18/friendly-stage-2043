@@ -114,7 +114,7 @@ const CartSingleCard = ({ el, del }) => {
 
         </Button>
       </HStack>
-
+      
     </Wrap>
   )
 }
