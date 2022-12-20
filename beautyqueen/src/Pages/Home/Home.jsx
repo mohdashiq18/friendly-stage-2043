@@ -65,7 +65,7 @@ const Home = () => {
         justifyContent="space-between"
         border="0.3px solid grey"
       >
-        <Box ml={["16px","0px","0px"]} width={["80%", "35%", "27%"]}>
+        <Box ml={["16px","0px","0px"]} display={["none","block",null,null,null]} width={["80%", "35%", "27%"]}>
           <Box display="flex" p={["5px 10px", "2px 2px", "2px 9px"]}>
             <Box  >
             <IoIosMenu size="24px"></IoIosMenu>
