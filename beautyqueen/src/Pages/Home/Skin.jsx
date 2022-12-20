@@ -36,7 +36,7 @@ const Skin=()=>{
        }
     return (
         <div>
-            <Text textAlign="center" fontSize="21px" textDecoration="underline 2px #EB046D" fontWeight="semibold" margin="15px">Hot Deals</Text>
+            <Text textAlign="center" fontSize="21px" textDecoration="underline 2px #EB046D" fontWeight="semibold" margin="15px">Skin Products</Text>
             
             <Wrap justify="center">
             

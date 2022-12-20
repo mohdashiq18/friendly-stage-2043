@@ -32,11 +32,11 @@ function App() {
                variant='outline'
               />
             <MenuList>
-              <MenuItem /* onClick={()=>toggleClick("home")} */ > Home</MenuItem>
-              <MenuItem /* onClick={()=>toggleClick("about")} */ /* bgColor={yellow} */>Login</MenuItem>
-              <MenuItem /* onClick={()=>toggleClick("skills")} */ >Signup</MenuItem>
-              <MenuItem /* onClick={()=>toggleClick("projects")} */ /* bgColor={yellow} */>Admin</MenuItem>
-              <MenuItem /* onClick={()=>toggleClick("contact")} */ > Cart</MenuItem>
+             <Link to={"/"} > <MenuItem /* onClick={()=>toggleClick("home")} */ > Home</MenuItem> </Link>
+             <Link to={"/login"} > <MenuItem /* onClick={()=>toggleClick("about")} */ /* bgColor={yellow} */>Login</MenuItem> </Link>
+             <Link to={"/signup"} ><MenuItem /* onClick={()=>toggleClick("skills")} */ >Signup</MenuItem> </Link>
+             <Link to={"/admin"} > <MenuItem /* onClick={()=>toggleClick("projects")} */ /* bgColor={yellow} */>Admin</MenuItem> </Link>
+             <Link to={"/cart"}> <MenuItem /* onClick={()=>toggleClick("contact")} */ > Cart</MenuItem> </Link>
             
             </MenuList>
           </Menu>

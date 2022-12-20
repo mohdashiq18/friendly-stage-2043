@@ -15,14 +15,15 @@ export default function Navdar() {
     <div className='mid_nav_main'>
        <div className='mid_nav_mid'>
         <div className='mid_nav_first'>
-            <div style={{width:"30%",paddingLeft:"5%"}} >
-           <img style={{width:"100%"}} src={logo1}/> </div>
+           <div style={{width:"30%",paddingLeft:"5%",marginTop:"-15px"}} >
+          <Link to={"/"}><img style={{width:"100%"}} src={logo1}/>  </Link> 
+            </div>
           <div className='logo_div' >
-           <div className="user" onMouseOver={()=>seloginDropDown2(true)} onMouseOut={doIt}><BsPersonFill/></div>
+           <div className="user" onClick={()=>seloginDropDown2(!loginDropDown2)}><BsPersonFill/></div>
            {
                         loginDropDown2 ?
                             <>
-                                <div id="content_dropdown2"  >
+                                <div id="content_dropdown2" onMouseOut={doIt}  >
                                     <Link to="/login"><div id="login_dropdown">Login</div></Link>
                                     <Link to="/signup"><div id="register_dropdown">Register</div></Link>
                                     <Link to="/admin"> <div id="register_dropdown">Admin</div></Link>
@@ -60,7 +61,7 @@ export default function Navdar() {
             <BsSuitHeartFill/>
           </div>
           <div style={{display:"flex"}} >
-          <div className="user_div" onMouseOver={()=>seloginDropDown(true)} onClick={() => { seloginDropDown(!loginDropDown)}} onMouseOut={doIt}><BsPersonFill/></div>
+          <div className="user_div"  onClick={()=>seloginDropDown(!loginDropDown)} ><BsPersonFill/></div>
           {
                         loginDropDown ?
                             <>

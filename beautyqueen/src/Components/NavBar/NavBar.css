@@ -159,7 +159,7 @@
 #content_dropdown{
     /* border: 1px solid red; */
     position: absolute;
-    top: 150px;
+    top: 125px;
     width: 150px;
     height: 72px;
     display: flex;
