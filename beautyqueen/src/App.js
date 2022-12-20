@@ -13,7 +13,8 @@ function App() {
 
 
     <div className="App">
-      { mediumScreen && <Navbar/>}
+      
+     <Navbar/>
       {/* <Drop/> */}
     <AllRoutes/>
     {mediumScreen && <Footer/> }
