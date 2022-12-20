@@ -11,7 +11,7 @@ A cosmetic items selling website with own Backend server
         <li><a href="https://github.com/Nilesh2697">Nilesh Prajapati</a></li>
     </ul>
 
-<h1>Fron-End</h1>
+<h1>Front-End</h1>
 Summary:- In our website a user can purchase Beauty products and can view products category wise. On landing page they can see trending products & trending offers. To add products to cart, Then the user will have to register/login themselves. After Login, they can access cart and can see items they have added to cart. They can delete items from cart if they want to delete they can delete item otherwise they can continue to checkout. In checkout page a User will have to fill data for such as address, contact. After filling the data they can navigate to payment page. User can pay using multiple payment methods and the order will be placed.
 
 ### Live deployed URL: https://beautyqueen0.netlify.app/
