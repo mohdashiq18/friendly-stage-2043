@@ -6,9 +6,9 @@ A cosmetic items selling website with own Backend server
     <ul>
         <li><a href="https://github.com/sujeetcoder">Sujeet Kumar</a></li>
         <li><a href="https://github.com/Rahulzhp">Rahul Das</a></li>
-        <li><a href="#">@</a></li>
-        <li><a href="#">@</a></li>
-        <li><a href="#">@</a></li>
+        <li><a href="https://github.com/mohdashiq18">Mohd Ashique</a></li>
+        <li><a href="https://github.com/praneeth516">Praneeth K</a></li>
+        <li><a href="https://github.com/Nilesh2697">Nilesh Prajapati</a></li>
     </ul>
 
 <h1>Fron-End</h1>
