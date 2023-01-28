@@ -12,7 +12,7 @@ export default function Navdar() {
     seloginDropDown2(false)
   }
   return (
-    <div className='mid_nav_main'>
+    <div className='mid_nav_main' style={{backgroundColor:"rgb(247,247,247)"}}>
        <div className='mid_nav_mid'>
         <div className='mid_nav_first'>
            <div style={{width:"30%",paddingLeft:"5%",marginTop:"-15px"}} >
@@ -52,7 +52,7 @@ export default function Navdar() {
               <option value="option3">------Makeup Kit</option>
               <option value="option3">------CC Cream</option>
             </select>  
-            <input className='input' type="search" />
+            <input className='input' type="search" style={{border:"none"}}/>
             <div className='search_icon'><FiSearch/></div>
           </div>          
         </div>
@@ -60,7 +60,7 @@ export default function Navdar() {
           <div className='like_div'>
             <BsSuitHeartFill/>
           </div>
-          <div style={{display:"flex"}} >
+          <div style={{display:"flex",cursor:"pointer"}} >
           <div className="user_div"  onClick={()=>seloginDropDown(!loginDropDown)} ><BsPersonFill/></div>
           {
                         loginDropDown ?

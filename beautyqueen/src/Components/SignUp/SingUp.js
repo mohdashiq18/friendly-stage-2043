@@ -60,11 +60,11 @@ export default function SingUp() {
                 <div className='name_div'>
                     <div className='name'>
                         <label>First Name<span> *</span></label><br/>
-                        <input type="text" name="name" onChange={(e)=>setFirstname(e.target.value)} required/>
+                        <input type="text" style={{paddingLeft:"10px"}}  name="name" onChange={(e)=>setFirstname(e.target.value)} required/>
                     </div>
                     <div className='name'>
                         <label>Last Name<span> *</span></label><br/>
-                        <input type="text" onChange={(e)=>setLastname(e.target.value)} required/>
+                        <input type="text" style={{paddingLeft:"10px"}} onChange={(e)=>setLastname(e.target.value)} required/>
                     </div>
                 </div>
                 <div className='checkbox'>
@@ -73,20 +73,20 @@ export default function SingUp() {
                 </div>
                 <div className='input_details'>
                         <label>Email<span> *</span></label><br/>
-                        <input type="email" name="name" onChange={(e)=>setEmail(e.target.value)} required/>
+                        <input type="email" style={{paddingLeft:"10px"}} name="name" onChange={(e)=>setEmail(e.target.value)} required/>
                 </div>
                 <div className='input_details'>
                         <label>Phone<span> *</span></label><br/>
-                        <input type="number" name="number" onChange={(e)=>setPhone(e.target.value)} required/>
+                        <input type="number" style={{paddingLeft:"10px"}} name="number" onChange={(e)=>setPhone(e.target.value)} required/>
                 </div>
                 <div className='input_details'>
                         <label>Password<span> *</span></label><br/>
-                        <input type="password" name="password" onChange={(e)=>setPassword(e.target.value)} required/>
+                        <input type="password" style={{paddingLeft:"10px"}} name="password" onChange={(e)=>setPassword(e.target.value)} required/>
                 </div>
                 <div>Password Strength: No Password</div>
                 <div className='input_details'>
                         <label>Confirm Password<span> *</span></label><br/>
-                        <input type="password"  onChange={(e)=>setConfirmPass(e.target.value)} required/>
+                        <input type="password" style={{paddingLeft:"10px"}} onChange={(e)=>setConfirmPass(e.target.value)} required/>
                 </div>
                 <div className='input_button'>
                     <button onClick={onsubmit}>CREATE AN ACCOUNT </button>
