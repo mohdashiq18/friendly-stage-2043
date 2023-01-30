@@ -108,4 +108,4 @@ Summary:- In our website a user can purchase Beauty products and can view produc
 </ul>
 
 
-<h3> this is built by me in 3 days </h3>
+<h3> this is built in 3 days </h3>
