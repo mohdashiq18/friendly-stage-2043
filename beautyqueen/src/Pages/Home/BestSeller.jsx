@@ -13,14 +13,10 @@ const BestSeller = () => {
     const [pro, setPro] = useState([]);
 
 
-    const getPro = () => {
-        axios.get(`${dataUrl}/products/Ayurveda`, { withCredentials: true })
+    useEffect(() => {
+        axios.get(`${dataUrl}/products/`)
             .then((res) => setPro(res.data))
             .catch((er) => console.log(er))
-    }
-
-    useEffect(() => {
-        getPro()
 
     }, [])
     return (

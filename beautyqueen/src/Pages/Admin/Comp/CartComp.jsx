@@ -6,19 +6,19 @@ const CartComp = ({product,quantity,cartChange,_id,approve}) => {
     
   return (
     <Box textAlign={"center"}  mb="20px" border={"1px solid #9130c2"} >
-        <Text>Name - {product && product.name} </Text>
+        <Text>Name - {product?.name} </Text>
       <Flex flexDirection={["column","row","row","row"]} alignItems='center' >
         <Box w="35%" >
-            <Image w="100%" src={product && product.image} />
+            <Image w="100%" src={product?.image} />
         </Box>
         <Spacer/>
         <SimpleGrid w="60%" mt={"15px"}  columns={[1,2,2,2,2]} spacing={10} >
-            <Text>Price - { product && product.price} </Text>
+            <Text>Price - { product?.price} </Text>
             <Text>Quantity - {quantity} </Text>
-            <Text>Category - {product && product.category} </Text>
-            <Button disabled={approve=="true"} colorScheme={"blue"} onClick={(e)=>{
+            <Text>Category - {product?.category} </Text>
+            <Button disabled={approve==="true"} colorScheme={"blue"} onClick={(e)=>{
                 cartChange(_id)
-            }} > {approve=="true"?"Approved":"Approve"} </Button>
+            }} > {approve==="true"?"Approved":"Approve"} </Button>
         </SimpleGrid>
         </Flex>
     </Box>

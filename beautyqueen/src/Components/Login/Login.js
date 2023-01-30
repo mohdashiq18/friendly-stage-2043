@@ -2,36 +2,39 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { login } from "../AuthReducer/Action";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { dataUrl } from "../../share";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const dispatch = useDispatch();
-  const navigate=useNavigate()
-  const data = useSelector((state) => state.LogReducer);
-  console.log("Data.....", data);
+  const navigate = useNavigate();
+
   const pay = {
     email,
     password,
   };
 
   const onLogin = () => {
-    if (email == "" || password == "") {
-      toast.error("email or password not matched!")
+    if (email === "" || password === "") {
+      toast.error("Wrong Credential!");
     } else {
-      dispatch(login(pay))
+      axios
+        .post(`${dataUrl}/users/login`, pay)
         .then((res) => {
-          toast.success("Login succesfully")
-          navigate("/")
-          
-    })
-        .catch((err) => (
-          toast.error("something went wrong!")
-        ));
+          console.log(res.data);
+          if (res.data.msg === "Login Successfull") {
+            localStorage.setItem("UserToken", JSON.stringify(res.data));
+            toast.success("Login successfully");
+            navigate("/");
+          } else {
+            toast.error("Wrong Credential!");
+          }
+        })
+        .catch((err) => toast.error("Wrong Credential!"));
     }
   };
   return (
@@ -83,8 +86,7 @@ export default function Login() {
           </div>
         </div>
       </div>
-      <ToastContainer position="top-center"
-            autoClose={3000}/>
+      <ToastContainer position="top-center" autoClose={3000} />
     </div>
   );
 }
