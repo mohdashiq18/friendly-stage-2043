@@ -1,100 +1,51 @@
 const express=require("express")
-const adminAuth = require("../middlewares/adminAuth")
-const Product = require("../models/products.model")
-
-const app=express.Router()
-
-
-app.get("/",  async (req, res) => {
-    const {category} = req.query
-    let products;
-    if(category){
-        products = await Product.find({category})
-    } else {
-        products = await Product.find()
+const productRoute=express.Router()
+const { ProductModel}=require("../Models/Produnctus.model")
+productRoute.get('/',async(req,res)=>{
+    try{
+        const data=await ProductModel.find()
+        res.send(data)
     }
-    
-    try {
-        if(products){
-            res.send(JSON.stringify(products))
-        } else {
-            res.status(404).send("product not found")
-        }
-    } catch (e) {
-        res.send(e.message)
+    catch{
+        res.send("err")
     }
 })
 
 
-app.get("/:category", async (req, res) => {
-    const category = req.params.category
-    const {page=1, limit=12} = req.query
-    let products = await Product.find({category}).limit(limit).skip((page-1)*limit)
-    try {
-        if(products){
-            res.send(JSON.stringify(products))
-        } else {
-            res.status(404).send("product not found")
-        }
-    } catch (e) {
-        res.send(e.message)
+productRoute.post("/addproduct",async(req,res)=>{
+    const payload=req.body
+    try{
+        const product=new ProductModel(payload)
+        await product.save()
+        res.send("Product Add successful")
+    }
+    catch{
+       res.send("Err")
     }
 })
 
-
-app.post("/", adminAuth , async (req, res) => {
-    const {name, category, description, image, price, ofPrice, quantity} = req.body
-    
-    try {
-        let existing = await Product.findOne({name})
-        if(existing){
-           let prod = await Product.findOneAndUpdate({name},{quantity:existing.quantity++},{new:true})
-           res.send("Product updated successfully")
-        } else {
-            let pro = await Product.create({
-                user:req.objId, name, category, description, image, price, ofPrice, quantity
-            })
-            res.send("Product added successfully")
-        }
-    } catch (e) {
-        res.send(e.message)
-    }
+productRoute.patch("/update/:id",async(req,res)=>{
+    const updateData=req.body
+    const id=req.params.id
+   try{
+       await ProductModel.findByIdAndUpdate({"_id":id},updateData)
+       res.send("Update successful")
+   }
+   catch{
+     res.send("error")
+   }
 })
 
-
-app.patch("/:_id", adminAuth , async (req, res) => {
-    
-    let _id = req.params._id
-    try {
-        let existing = await Product.findOneAndUpdate({_id},{...req.body},{new: true})
-        if(existing){
-            res.send("Product updated successfully")  
-        } else {
-            res.send("Product not found")
-        }
-    } catch (e) {
-        res.status(404).send(e.message)
+productRoute.delete("/delete/:id",async(req,res)=>{
+    const id=req.params.id
+    try{
+        await ProductModel.findByIdAndDelete({"_id":id})
+        res.send("Delete Successful")
     }
-   
-})
-
-
-app.delete("/:_id", adminAuth ,  async (req, res) => {
-    let _id = req.params._id
-    try {
-        let existing = await Product.findOneAndDelete({_id})
-        if(existing){
-            res.send(`Product deleted successfully`)
-        } else {
-            res.send("Product not found")
-        }
-    } catch (e) {
-        res.status(404).send(e.message)
+    catch{
+        res.send("error")
     }
-   
 })
-
-
-
-
-module.exports=app
+module.exports={
+    productRoute
+}

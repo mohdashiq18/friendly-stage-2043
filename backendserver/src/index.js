@@ -1,44 +1,46 @@
-require("dotenv").config()
-const { config } = require("dotenv");
-const express=require("express")
-const cors=require("cors");
-const { default: mongoose } = require("mongoose");
-const connectMongo = require("./config/db")
-const cookieParser = require('cookie-parser');
-const banAuth = require("./middlewares/banAuth");
-const app = express()
-const userRouter= require("./routes/user.route")
-const productRouter = require("./routes/products.route")
-const cartRouter = require("./routes/cart.route")
+require("dotenv").config();
+const PORT = process.env.port;
+const {productRoute}=require("./Routes/Products.route")
+const express = require("express");
+const app = express();
+const cors = require("cors");
+const { connection } = require("./configs/db");
+
+const { authenticate,AdminAuthenticate} =require("./Middlewares/authenticate");
+const { usersRoute } =require("./Routes/User.Route")
+
+const OrderRouter = require("./Routes/order.route");
 
 
-app.use(express.json())
-app.use(cors({
-    origin: ["http://localhost:3000", "https://beautyqueen0.netlify.app"],
-    credentials: true
-}))
-app.set("trust proxy", 1)
-app.use(cookieParser())
-app.use(banAuth)
+//Middlewares
+app.use(express.json());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+//user Route
+app.use("/users",usersRoute)
+//Order Route
+app.use("/order", OrderRouter)
 
+//Authenticate
+// app.use(authenticate)
+//Admin Authenticate
+// app.use(AdminAuthenticate)
+//Hotels Route
+app.use("/products",productRoute)
 
+app.get("/", (req, res) => {
+  res.send("Welcome Home Page");
+});
 
-app.use("/users", userRouter)
-app.use("/products", productRouter)
-app.use("/carts", cartRouter)
-
-
-
-
-app.get("/",async(req,res)=>{
-    try{
-        res.send("Server started successfully")
-    }catch(e){
-        res.send("bad req")
-    }
-})
-
-app.listen(process.env.PORT, async () => {
-    await connectMongo()
-    console.log("listening to http://localhost:8080");
-})
+app.listen(PORT, async () => {
+  try {
+    await connection;
+    console.log("Connected to the DB");
+  } catch (error) {
+    console.log(error);
+  }
+  console.log(`Server is running at PORT : ${PORT}`);
+});

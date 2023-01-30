@@ -9,7 +9,7 @@ const Latest = () => {
 
 
     const getPro = () => {
-        axios.get(`${dataUrl}/products/Fragrance?limit=3`, { withCredentials: true })
+        axios.get(`${dataUrl}/products/`)
             .then((res) => setPro(res.data))
             .catch((er) => console.log(er))
     }

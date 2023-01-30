@@ -10,25 +10,18 @@ import { IoIosMenu } from "react-icons/io";
 import React from "react";
 import { dataUrl } from "../../share";
 
-
 const Home = () => {
-    const [data, setData] = useState([]);
-
+  const [data, setData] = useState([]);
 
   const [slide, setSlider] = useState(0);
 
-
   const [next, setNext] = useState(slide + 1);
 
-  const getData = () => {
+  useEffect(() => {
     axios
-      .get(`${dataUrl}/products/skin?limit=8`, { withCredentials: true })
+      .get(`${dataUrl}/products/`)
       .then((res) => setData(res.data))
       .catch((er) => console.log(er));
-  };
-
-  useEffect(() => {
-    getData();
   }, []);
 
   if (next === Images.length - 1) {
@@ -54,8 +47,6 @@ const Home = () => {
 
   return (
     <>
-     
-
       <Box
         w="90%"
         m="auto"
@@ -65,98 +56,109 @@ const Home = () => {
         justifyContent="space-between"
         border="0.3px solid grey"
       >
-        <Box ml={["16px","0px","0px"]} display={["none","block",null,null,null]} width={["80%", "35%", "27%"]}>
+        <Box
+          ml={["16px", "0px", "0px"]}
+          display={["none", "block", null, null, null]}
+          width={["80%", "35%", "27%"]}
+        >
           <Box display="flex" p={["5px 10px", "2px 2px", "2px 9px"]}>
-            <Box  >
-            <IoIosMenu size="24px"></IoIosMenu>
+            <Box>
+              <IoIosMenu size="24px"></IoIosMenu>
             </Box>
             <Box>
-            <Text marginLeft="3px" pt={["2px","3px","0px"]} fontWeight="bold" fontSize={["13px","12px","16px"]}>
-              ALL CATEGORIES
-            </Text>
+              <Text
+                marginLeft="3px"
+                pt={["2px", "3px", "0px"]}
+                fontWeight="bold"
+                fontSize={["13px", "12px", "16px"]}
+              >
+                ALL CATEGORIES
+              </Text>
             </Box>
           </Box>
-          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]} >
-            
+          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]}>
             <Box>
-            <Image width={["69%", "68%", "78%"]}
-              marginRight="5px"
-              src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/makeup-small.png"
-            />
+              <Image
+                width={["69%", "68%", "78%"]}
+                marginRight="5px"
+                src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/makeup-small.png"
+              />
             </Box>
             <NavLink to="/skin">
-            <Box>
-           
-            <Text fontSize={["12px","12px","15px"]}>Make Up</Text>
-           
-            </Box>
-            </NavLink>
-           
-          </Box>
-          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]} >
-            <Box>
-            <Image width={["69%", "68%", "78%"]}
-              marginRight="5px"
-              src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/skin-small.png"
-            />
-            </Box>
-            <NavLink to="/skin">
-            <Box>
-            <Text fontSize={["12px","12px","15px"]}>Hair</Text>
-            </Box>
+              <Box>
+                <Text fontSize={["12px", "12px", "15px"]}>Make Up</Text>
+              </Box>
             </NavLink>
           </Box>
-          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]} >
+          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]}>
             <Box>
-            <Image width={["69%", "68%", "78%"]}
-              marginRight="5px"
-              src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/hair-small.png"
-            />
+              <Image
+                width={["69%", "68%", "78%"]}
+                marginRight="5px"
+                src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/skin-small.png"
+              />
             </Box>
             <NavLink to="/skin">
-            <Box>
-            <Text fontSize={["12px","12px","15px"]}>Skin Care</Text>
-            </Box>
+              <Box>
+                <Text fontSize={["12px", "12px", "15px"]}>Hair</Text>
+              </Box>
             </NavLink>
           </Box>
-          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]} >
-           <Box>
-            <Image width={["69%", "68%", "78%"]}
-              marginRight="5px"
-              src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/personal-care-small.png"
-            />
+          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]}>
+            <Box>
+              <Image
+                width={["69%", "68%", "78%"]}
+                marginRight="5px"
+                src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/hair-small.png"
+              />
             </Box>
             <NavLink to="/skin">
-            <Box>
-            <Text fontSize={["12px","12px","15px"]}>Personal Care</Text>
-            </Box>
+              <Box>
+                <Text fontSize={["12px", "12px", "15px"]}>Skin Care</Text>
+              </Box>
             </NavLink>
           </Box>
-          
-          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]} >
+          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]}>
             <Box>
-            <Image width={["69%", "68%", "78%"]}
-              marginRight="5px"
-              src="https://www.beautybebo.com/pub/media/fragrance.png"
-            />
+              <Image
+                width={["69%", "68%", "78%"]}
+                marginRight="5px"
+                src="https://www.beautybebo.com/pub/media/wysiwyg/menu-icons/personal-care-small.png"
+              />
             </Box>
             <NavLink to="/skin">
-            <Box>
-            <Text fontSize={["12px","12px","15px"]}>Fragnance</Text>
-            </Box>
+              <Box>
+                <Text fontSize={["12px", "12px", "15px"]}>Personal Care</Text>
+              </Box>
             </NavLink>
           </Box>
-          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]} >
-           <Box>
-            <Image width={["69%", "68%", "78%"]}
-              marginRight="5px"
-              src="https://www.beautybebo.com/pub/media/ayurveda.png"
-            />
+
+          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]}>
+            <Box>
+              <Image
+                width={["69%", "68%", "78%"]}
+                marginRight="5px"
+                src="https://www.beautybebo.com/pub/media/fragrance.png"
+              />
             </Box>
             <NavLink to="/skin">
+              <Box>
+                <Text fontSize={["12px", "12px", "15px"]}>Fragnance</Text>
+              </Box>
+            </NavLink>
+          </Box>
+          <Box display="flex" p={["1px 10px", "1px 4px", "4px 11px"]}>
             <Box>
-            <Text fontSize={["12px","12px","15px"]}>Ayurveda</Text>
+              <Image
+                width={["69%", "68%", "78%"]}
+                marginRight="5px"
+                src="https://www.beautybebo.com/pub/media/ayurveda.png"
+              />
             </Box>
+            <NavLink to="/skin">
+              <Box>
+                <Text fontSize={["12px", "12px", "15px"]}>Ayurveda</Text>
+              </Box>
             </NavLink>
           </Box>
         </Box>

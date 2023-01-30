@@ -3,6 +3,7 @@ import { AddIcon, ArrowRightIcon, CloseIcon } from '@chakra-ui/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { dataUrl } from '../../share';
+import { Navigate } from "react-router-dom"
 import CartSingleCard from "./CartSingleCard"
 import { ToastContainer, toast } from 'react-toastify';
 const Cart = () => {
@@ -11,7 +12,7 @@ const Cart = () => {
     const [dis,setDis]=useState(10);
     const [sub,setSub]=useState(20);
     const [changeone,setchangeone] = useState(0)
-
+    const {token}=JSON.parse(localStorage.getItem("UserToken"))||false
 
     const getPro = () => {
 
@@ -47,6 +48,10 @@ const Cart = () => {
         })
 
     },[cartData])
+    console.log(token)
+    if(!token){
+        return <Navigate to="/login"/>
+    }
     return (
         <div>
 
