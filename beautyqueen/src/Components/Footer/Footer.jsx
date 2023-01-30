@@ -76,7 +76,7 @@ const Footer = () => {
                   Terms & Conditions
                 </ListItem>
                 <ListItem _hover={{ color: "#dd0285", cursor: "pointer" }}>
-                  Proivacy Policy
+                  Privacy Policy
                 </ListItem>
                 <ListItem _hover={{ color: "#dd0285", cursor: "pointer" }}>
                   Return & Refund Policy
