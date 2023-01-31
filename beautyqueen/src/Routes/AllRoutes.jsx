@@ -8,6 +8,7 @@ import { Profile } from "../Pages/Admin/Profile";
 import { Products } from "../Components/Products/Products";
 import Cart from "../Pages/Home/Cart";
 import Skin from "../Pages/Home/Skin";
+import PaymentPage from "../Pages/Home/PaymentPage";
 
 const AllRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const AllRoutes = () => {
       <Route path="/test" element={<Admin />}></Route>
       <Route path="/cart" element={<Cart />}></Route>
       <Route path="/skin" element={<Skin />}></Route>
+      <Route path="/payment" element={<PaymentPage/>}></Route>
     </Routes>
   );
 };

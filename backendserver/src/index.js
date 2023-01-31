@@ -9,12 +9,12 @@ const { connection } = require("./configs/db");
 const { authenticate,AdminAuthenticate} =require("./Middlewares/authenticate");
 const { usersRoute } =require("./Routes/User.Route")
 
-const OrderRouter = require("./Routes/order.route");
+const {OrderRouter} = require("./Routes/order.route");
 
 
 //Middlewares
 app.use(express.json());
-app.use(
+app.use( 
   cors({
     origin: "*",
   })

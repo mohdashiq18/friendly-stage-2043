@@ -9,9 +9,11 @@ import {
   MenuItem,
   MenuList,
   Text,
+  Image
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import "./App.css";
+ import Navimag from "./Components/NavBar/beautybebo_logo.png"
 import Drop from "./Components/Dropcde/Drop";
 import Footer from "./Components/Footer/Footer";
 import Navdar from "./Components/MyAccount/Navdar";
@@ -36,7 +38,23 @@ function App() {
           w="100%"
           justifyContent={"space-between"}
           p={"5px 5%"}
-        >
+        ><div style={{ width: "35%", paddingLeft: "5%", marginTop: "-18px" }}>
+        <Link to={"/"}>
+          <img style={{ width: "100%",borderRadius:"5px" }} src="http://localhost:3000/static/media/beautybebo_logo.d62a355dd09d371e83e2.png" />{" "}
+        </Link>
+      </div>
+          <Flex gap={5}>
+          <Box>
+            <Button
+              colorScheme="#dd0285"
+              border={"1px solid white"}
+              color="black"
+            >
+              <Link to="/cart">
+                <Text>My Cart</Text>{" "}
+              </Link>
+            </Button>
+          </Box>
           <Menu>
             <MenuButton
               as={IconButton}
@@ -80,17 +98,9 @@ function App() {
               </Link>
             </MenuList>
           </Menu>
-          <Box>
-            <Button
-              colorScheme="#dd0285"
-              border={"1px solid white"}
-              color="black"
-            >
-              <Link to="/cart">
-                <Text>My Cart</Text>{" "}
-              </Link>
-            </Button>
-          </Box>
+          
+          
+          </Flex>
         </Flex>
       )}
       <AllRoutes />

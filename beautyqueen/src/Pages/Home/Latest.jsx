@@ -18,12 +18,20 @@ const Latest = () => {
         getPro()
 
     }, [])
-    const handleCart=(id)=>{
-        axios.post(`${dataUrl}/carts`,{product:id},{withCredentials:true})
-        .then((res)=>(toast.success("Item added to your Cart")))
-        .catch((er)=>(console.log(er)))
+    const addcart=(payload)=>{
+        axios.post(`${dataUrl}/order/add`,payload)
+        .then((res) => toast.success("Item added to your Cart"))
+          .catch((er) => toast.error("something went wrong!"));
+      }
+      const handleCart = (id) => {
         
-       }
+    
+          axios
+          .get(`${dataUrl}/products/${id}`)
+          .then((res) =>addcart(res.data))
+          .catch((er) => console.log(er));
+      
+      };
     return (
         <div>
             {

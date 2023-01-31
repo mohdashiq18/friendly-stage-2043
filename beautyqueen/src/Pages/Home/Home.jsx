@@ -57,7 +57,7 @@ const Home = () => {
         border="0.3px solid grey"
       >
         <Box
-          ml={["16px", "0px", "0px"]}
+          ml={["16px", "16px", "16px"]}
           display={["none", "block", null, null, null]}
           width={["80%", "35%", "27%"]}
         >
