@@ -4,7 +4,7 @@ const {productRoute}=require("./routes/products.route")
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const { connection } = require("./configs/db");
+const { connection } = require("./Configs/db");
 
 const { authenticate,AdminAuthenticate} =require("./Middlewares/authenticate");
 const { usersRoute } =require("./routes/user.route")
