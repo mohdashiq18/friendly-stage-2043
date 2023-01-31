@@ -1,15 +1,15 @@
 require("dotenv").config();
 const PORT = process.env.port;
-const {productRoute}=require("./Routes/Products.route")
+const {productRoute}=require("./routes/products.route")
 const express = require("express");
 const app = express();
 const cors = require("cors");
 const { connection } = require("./configs/db");
 
 const { authenticate,AdminAuthenticate} =require("./Middlewares/authenticate");
-const { usersRoute } =require("./Routes/User.Route")
+const { usersRoute } =require("./routes/user.route")
 
-const {OrderRouter} = require("./Routes/order.route");
+const {OrderRouter} = require("./routes/order.route");
 
 
 //Middlewares
