@@ -154,13 +154,13 @@ function doIt(){
   }
 
   function get(){
-    axios.get(`${dataUrl}/users/getone`,{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+    axios.get(`${dataUrl}/users/`).then((res)=>console.log(res)).catch((e)=>console.log(e))
   }
 
   async function make(){
-    for(let i = 0; i<data.length; i++){
-    axios.post(`${dataUrl}/products`,data[i],{withCredentials:true}).then((res)=>console.log(res)).catch((e)=>console.log(e))
-    }
+    
+    axios.post(`${dataUrl}/products/`).then((res)=>console.log(res)).catch((e)=>console.log(e))
+    
   }
 
   /* axios.get("/users",{withCredentials: true}).then((res)=>console.log(res)).catch((e)=>console.log(e))

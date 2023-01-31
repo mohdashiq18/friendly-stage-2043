@@ -11,7 +11,7 @@ export default function Navdar() {
   const [userNmae, setUserName] = useState("");
   useEffect(() => {
     setUserName(name.name);
-  }, [userNmae]);
+  });
   console.log(name);
   const doIt = () => {
     seloginDropDown(false);
@@ -141,7 +141,7 @@ export default function Navdar() {
                       </div>
                     </Link>
                   )}
-                  <Link to="/admin">
+                  {/* <Link to="/admin">
                     {" "}
                     <div
                       id="register_dropdown"
@@ -149,7 +149,7 @@ export default function Navdar() {
                     >
                       Admin
                     </div>
-                  </Link>
+                  </Link> */}
                 </div>
               </>
             ) : null}

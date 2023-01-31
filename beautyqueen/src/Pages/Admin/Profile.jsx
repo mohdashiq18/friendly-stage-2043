@@ -89,12 +89,12 @@ export const Profile = () => {
   const [carts, setCarts] = useState([])
 
   const getUser = async () => {
-    axios.get(`${dataUrl}/users`,{withCredentials:true}).then((res)=>{
+    axios.get(`${dataUrl}/users/`).then((res)=>{
       setUsers(res.data)
     }).catch((e)=>printF(e?.response?.data || e.message))
   }
   const getProducts = async () => {
-    axios.get(`${dataUrl}/products`,{withCredentials:true}).then((res)=>{
+    axios.get(`${dataUrl}/products`).then((res)=>{
       setProducts(res.data)
     }).catch((e)=>printF(e?.response?.data || e.message))
   }
@@ -109,7 +109,7 @@ export const Profile = () => {
 
   /* user modal start */
   const deleteFun = async (email) => {
-    axios.delete(`${dataUrl}/users/${email}`,{withCredentials:true}).then((res)=>{
+    axios.delete(`${dataUrl}/users/`).then((res)=>{
         console.log(res.data)
         printS(res.data)
         changeIt()
@@ -117,7 +117,7 @@ export const Profile = () => {
   }
 
   const changeRole = async (email,role) => {
-    axios.post(`${dataUrl}/users/changerole`,{email:email,role:role},{withCredentials:true}).then((res)=>{
+    axios.post(`${dataUrl}/users/`).then((res)=>{
         console.log(res.data)
         printS(res.data)
         changeIt()
@@ -137,7 +137,7 @@ export const Profile = () => {
 
     /* product modal start */
     const deletePro = async (id) => {
-      axios.delete(`${dataUrl}/products/${id}`,{withCredentials:true}).then((res)=>{
+      axios.delete(`${dataUrl}/products/delete/${id}`).then((res)=>{
           console.log(res.data)
           printS(res.data)
           changeIt()
