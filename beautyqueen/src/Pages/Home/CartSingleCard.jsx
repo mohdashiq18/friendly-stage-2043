@@ -68,7 +68,7 @@ const CartSingleCard = ({ el, del }) => {
               <Stack direction={{ base: "column", md: "row" }} spacing={35} >
 
 
-                <ButtonGroup size='sm' isAttached variant='outline'>
+                {/* <ButtonGroup size='sm' isAttached variant='outline'>
 
                   <Button fontWeight="bold" fontSize="xl" onClick={() => handleChange(el.quantity, -1)} >-</Button>
 
@@ -77,7 +77,7 @@ const CartSingleCard = ({ el, del }) => {
                   <IconButton
                     onClick={() => handleChange(el.quantity, 1)}
                     aria-label='Add to friends' icon={<AddIcon w={3} h={3} />} />
-                </ButtonGroup>
+                </ButtonGroup> */}
 
 
               </Stack>
