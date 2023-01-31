@@ -35,12 +35,12 @@ app.get("/", (req, res) => {
   res.send("Welcome Home Page");
 });
 
-app.listen(PORT, async () => {
+app.listen(8080, async () => {
   try {
     await connection;
     console.log("Connected to the DB");
   } catch (error) {
     console.log(error);
   }
-  console.log(`Server is running at PORT : ${PORT}`);
+  console.log(`Server is running at PORT : 8080`);
 });
