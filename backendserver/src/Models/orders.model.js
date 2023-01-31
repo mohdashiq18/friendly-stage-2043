@@ -1,22 +1,12 @@
 const mongoose=require("mongoose")
 const orderSchema=mongoose.Schema({
-    name:String,
-    image:String,
-    rating:Number,
-    verified_rating:String,
-    rate:Number,
-    price:Number,
-    tax:Number,
-    star_category:Number,
-    property_type:String,
-    location:String,
-    from:String,
-    to:String,
-    start:String,
-    end:String,
-    type:String,
-    duration:String,
-    email:String
+    name: { type: String, required: true },
+    category: { type: String, required: true },
+    description: { type: String },
+    image: { type: String },
+    price: { type: Number, required: true },
+    ofPrice: { type: Number },
+    quantity: { type: Number, required: true },
 })
 const OrderModel=mongoose.model("order",orderSchema)
 

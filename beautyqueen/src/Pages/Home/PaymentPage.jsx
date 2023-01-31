@@ -1,19 +1,27 @@
-import { Badge, Box, Button, ButtonGroup, Divider, Flex, HStack, IconButton, Image, Spacer, Spinner, Stack, Text, VStack, Wrap } from '@chakra-ui/react';
+import { Badge, Box, Button, ButtonGroup, Divider, Flex, HStack, IconButton, Image, Input, Spacer, Spinner, Stack, Text, VStack, Wrap } from '@chakra-ui/react';
 import { AddIcon, ArrowRightIcon, CloseIcon } from '@chakra-ui/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { dataUrl } from '../../share';
-import { Navigate, useNavigate } from "react-router-dom"
+import { Navigate,useNavigate } from "react-router-dom"
 import CartSingleCard from "./CartSingleCard"
+import "../../Components/SignUp/SignUp.css"
 import { ToastContainer, toast } from 'react-toastify';
-const Cart = () => {
+const PaymentPage = () => {
     const [cartData, setPro] = useState([]);
     const [total,setTotal]=useState(0);
-    const navigate = useNavigate();
     const [dis,setDis]=useState(10);
     const [sub,setSub]=useState(20);
     const [changeone,setchangeone] = useState(0)
     const {token}=JSON.parse(localStorage.getItem("UserToken"))||false
+    const navigate = useNavigate();
+
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [phone, setPhone] = useState("");
+    const [confirmpass, setConfirmPass] = useState("");
   console.log(cartData)
     const getPro = () => {
 
@@ -30,7 +38,19 @@ const Cart = () => {
             .catch((er) => console.log(er))
     }
     const cheakout = () => {
-        navigate("/payment")
+
+        if(firstname==="" || lastname==="" || email==="" || password==="" || phone==="" || confirmpass===""){
+            toast.error("Fill all details")
+        }
+        else{
+            axios.delete(`${dataUrl}/order/delete`)
+            .then((res) => {
+                toast.success("Order Suceccesfull")
+                navigate("/")
+                setchangeone((pre)=>pre+1)
+            })
+            .catch((er) => console.log(er))
+        }
     }
 
     useEffect(() => {
@@ -60,13 +80,96 @@ const Cart = () => {
 
                     <VStack spacing={5}   >
 
-                        <HStack spacing={5} w="full" padding={3} bg="#fcffee" > <Image w={10} src='https://images.bewakoof.com/web/Red-truck.png' /> <Text>Yay! You get FREE delivery on this order</Text></HStack>
-                        {
-                            cartData && cartData.map((el, i) => (
-                                
-                                <CartSingleCard key={i} el={el} del={delPro} />
-                            ))
-                        }
+                      
+                       <div className="input_div_main">
+        <div >
+          <div className="input_heading">PERSONAL INFORMATION</div>
+          <form>
+            <div className="name_div">
+              <div className="name">
+                <label>
+                  First Name<span> *</span>
+                </label>
+                <br />
+                <input
+                  type="text"
+                  style={{ paddingLeft: "10px" }}
+                  name="name"
+                  onChange={(e) => setFirstname(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="name">
+                <label>
+                  Last Name<span> *</span>
+                </label>
+                <br />
+                <input
+                  type="text"
+                  style={{ paddingLeft: "10px" }}
+                  onChange={(e) => setLastname(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+            
+            <div className="input_details">
+              <label>
+                Email<span> *</span>
+              </label>
+              <br />
+              <input
+                type="email"
+                style={{ paddingLeft: "10px" }}
+                name="name"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="input_details">
+              <label>
+                Address<span> *</span>
+              </label>
+              <br />
+              <input
+                type="text"
+                style={{ paddingLeft: "10px" }}
+                name="number"
+                onChange={(e) => setPhone(e.target.value)}
+                required
+              />
+            </div>
+            <div className="input_details">
+              <label>
+                Phone<span> *</span>
+              </label>
+              <br />
+              <input
+                type="number"
+                style={{ paddingLeft: "10px" }}
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            
+            <div className="input_details">
+              <label>
+                Pin Code<span> *</span>
+              </label>
+              <br />
+              <input
+                type="number"
+                style={{ paddingLeft: "10px" }}
+                onChange={(e) => setConfirmPass(e.target.value)}
+                required
+              />
+            </div>
+            
+          </form>
+        </div>
+      </div>
+                      
 
 
                     </VStack>
@@ -74,16 +177,7 @@ const Cart = () => {
 
                     <VStack spacing={5} >
 
-                        <HStack spacing={5} w="full" padding={3} bg="#EB046D" >  <Text fontWeight="bold" color="white" >Save extra ₹140 with TriBe</Text> <Spacer /> <ArrowRightIcon /> </HStack>
-
-                        <Box fontSize="16px" w={{ base: 300, sm: 600 }} spacing={3} borderWidth='1px' borderRadius='lg' overflow='hidden' padding="5" >Get Rs.200 instant discount on your First Purchase above Rs.999. Coupon code -NEW200
-                        </Box>
-
-                        <Box fontSize="16px" w={{ base: 300, sm: 600 }} spacing={3} borderWidth='1px' borderRadius='lg' overflow='hidden' padding="5" >Whistles! Get extra 20% Cashback on prepaid orders above Rs.499. Coupon code - NEW20. Applicable for new customers only!
-                        </Box>
-
-                        <Box bg="#ecf6f5" fontWeight="bold" fontSize="16px" w={{ base: 300, sm: 600 }} spacing={3} borderWidth='1px' borderRadius='lg' overflow='hidden' padding="10px 20px" >Have a Coupon / Referral / Gift Card ?
-                        </Box>
+                        
 
 
                         <Stack bg="gray.200" w={{ base: 300, sm: 600 }} spacing={3} borderWidth='1px' overflow='hidden' padding="5" textAlign="center" >
@@ -129,7 +223,7 @@ const Cart = () => {
                             <Divider w="10%" orientation='vertical' />
 
                             <Button w="full" colorScheme='pink' color="white" size='lg' onClick={()=>cheakout()}>
-                                CheckOut
+                                Pay
                             </Button>
 
                         </Stack>
@@ -153,4 +247,4 @@ const Cart = () => {
         </div>
     )
 }
-export default Cart
+export default PaymentPage

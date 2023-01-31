@@ -5,20 +5,34 @@ const OrderRouter = express.Router();
 OrderRouter.use(express.json());
 
 OrderRouter.get("/", async (req, res) => {
-  const { email } = req.query;
-  if (email) {
-    let data = await OrderModel.find({ email: email });
+
     try {
+      const data = await OrderModel.find();
       res.send(data);
     } catch (err) {
       console.log("err", err);
     }
-  } else {
-    let data = await OrderModel.find();
-    res.send(data);
+  } 
+);
+OrderRouter.delete("/delete",async(req,res)=>{
+  try{
+    await OrderModel.remove()
+    res.send("removed")
   }
-});
-
+  catch{
+    res.send("remove err")
+  }
+})
+OrderRouter.delete("/delete/:id",async(req,res)=>{
+  const id=req.params.id
+  try{
+    await OrderModel.findByIdAndDelete({"_id":id})
+    res.send("removed")
+  }
+  catch{
+    res.send("remove err")
+  }
+})
 OrderRouter.post("/add", async (req, res) => {
   const payload = req.body;
   try {
@@ -31,4 +45,4 @@ OrderRouter.post("/add", async (req, res) => {
   }
 });
 
-module.exports = OrderRouter;
+module.exports = {OrderRouter};

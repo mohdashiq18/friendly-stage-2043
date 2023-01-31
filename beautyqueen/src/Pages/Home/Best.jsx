@@ -16,10 +16,16 @@ const Best = () => {
       .then((res) => setPro(res.data))
       .catch((er) => console.log(er));
   }, []);
+  const addcart=(payload)=>{
+    axios.post(`${dataUrl}/order/add`,payload)
+    .then((res)=>console.log(res))
+    .catch((err)=>console.log(err))
+  }
   const handleCart = (id) => {
+    console.log(id)
     axios
-      .post(`${dataUrl}/carts`, { product: id }, { withCredentials: true })
-      .then((res) => toast.success("Item added to your Cart"))
+      .get(`${dataUrl}/products/${id}`)
+      .then((res) =>addcart(res.data))
       .catch((er) => console.log(er));
   };
   return (

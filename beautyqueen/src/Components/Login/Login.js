@@ -52,7 +52,7 @@ export default function Login() {
               Email<span> *</span>
             </label>
             <br />
-            <input type="email" onChange={(e) => setEmail(e.target.value)} />
+            <input type="email" style={{paddingLeft:"10px"}} onChange={(e) => setEmail(e.target.value)} />
           </div>
 
           <div className="input_details">
@@ -62,6 +62,7 @@ export default function Login() {
             <br />
             <input
               type="password"
+              style={{paddingLeft:"10px"}}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>

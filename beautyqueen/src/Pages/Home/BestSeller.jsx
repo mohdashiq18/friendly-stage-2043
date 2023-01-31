@@ -22,7 +22,7 @@ const BestSeller = () => {
     return (
         <div >
             <Box fontFamily="monospace" w="91%" m="auto" justifyContent="space-between" display={["inline", "inline", "flex"]}>
-                <Box w={["80%","80%","32%"]} m="auto" h="auto"  border=".1px solid gray">
+                <Box w={["80%","80%","32%"]} m="auto" h="auto" p={5}  border=".1px solid gray">
                     <Text textDecoration="underline 2px #EB046D" fontWeight="black" fontSize={["16px", "19px", "19px"]}>BEST SELLER</Text>
                     <Box marginBottom="20px" >
                        
@@ -33,7 +33,7 @@ const BestSeller = () => {
 
 
                 </Box>
-                <Box w={["80%","80%","32%"]} m="auto" h="auto"  border=".1px solid gray">
+                <Box w={["80%","80%","32%"]} m="auto" h="auto" p={5}  border=".1px solid gray">
                     <Text textDecoration="underline 2px #EB046D" fontWeight="black" fontSize={["16px", "19px", "19px"]}>LATEST PRODUCTS</Text>
                     <Box marginBottom="20px" >
                        
@@ -42,8 +42,8 @@ const BestSeller = () => {
 
                     </Box>
                 </Box>
-                <Box w={["80%","80%","32%"]} m="auto"  h="auto"  border=".1px solid gray">
-                    <Text textDecoration="underline 2px #EB046D" fontWeight="black" fontSize={["16px", "19px", "19px"]}>MOST VIEWED</Text>
+                <Box w={["80%","80%","32%"]} m="auto"  h="auto" p={5}  border=".1px solid gray">
+                    <Text textDecoration="underline 2px #EB046D"  fontWeight="black" fontSize={["16px", "19px", "19px"]}>MOST VIEWED</Text>
                     <Box marginBottom="20px">
                        
                         <Most></Most>

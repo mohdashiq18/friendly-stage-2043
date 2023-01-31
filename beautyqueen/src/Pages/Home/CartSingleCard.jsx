@@ -36,7 +36,7 @@ const CartSingleCard = ({ el, del }) => {
 
   }
   const handleRemove = () => {
-
+        
   }
 
 
@@ -53,16 +53,16 @@ const CartSingleCard = ({ el, del }) => {
           <VStack align="revert-layer" spacing={4} >
 
 
-            <Text fontSize={{ base: "15px", md: "xl" }} color="gray.500" >{el.product.name}</Text>
+            <Text fontSize={{ base: "15px", md: "xl" }} color="gray.500" >{el.name}</Text>
 
 
 
             <Stack>
 
               <HStack alignContent="center">
-                <Text fontWeight="bold" fontSize="2xl" >₹{el.product.price}</Text>
+                <Text fontWeight="bold" fontSize="2xl" >₹{el.price}</Text>
 
-                <Text as="s" marginLeft={4} fontSize="l" >₹{el.product.ofPrice}</Text>
+                <Text as="s" marginLeft={4} fontSize="l" >₹{el.ofPrice}</Text>
               </HStack>
 
               <Stack direction={{ base: "column", md: "row" }} spacing={35} >
@@ -72,7 +72,7 @@ const CartSingleCard = ({ el, del }) => {
 
                   <Button fontWeight="bold" fontSize="xl" onClick={() => handleChange(el.quantity, -1)} >-</Button>
 
-                  <Button>{el.quantity * el.product.price}</Button>
+                  <Button>{el.quantity * el.price}</Button>
 
                   <IconButton
                     onClick={() => handleChange(el.quantity, 1)}
@@ -93,7 +93,7 @@ const CartSingleCard = ({ el, del }) => {
           <Spacer />
 
           <Stack w={150}>
-            <Image src={el.product.image} style={{ borderRadius: "5px" }} />
+            <Image src={el.image} style={{ borderRadius: "5px" }} />
 
           </Stack>
         </Box>
@@ -106,7 +106,7 @@ const CartSingleCard = ({ el, del }) => {
 
 
       <HStack w="full" spacing={5} >
-        <Button onClick={() => del(el.product._id)} w="40%" size='md'  colorScheme='teal' color="white" >REMOVE</Button>
+        <Button onClick={() => del(el._id)} w="40%" size='md'  colorScheme='teal' color="white" >REMOVE</Button>
         <Divider orientation='vertical' />
         <Button w="full" size='md'   colorScheme='pink' color="white" >
 

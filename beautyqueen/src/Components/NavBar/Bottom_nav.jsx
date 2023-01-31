@@ -3,7 +3,7 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { GiShoppingBag } from "react-icons/gi";
 import { NavSingle } from "./navSingle";
 import { Link } from "react-router-dom";
-
+import "./cart.css"
 export const BottomNav = () => {
   const [navDropDown, setnavDropDown] = useState(false);
   const [makeup, setMakeup] = useState(false);
@@ -352,8 +352,8 @@ export const BottomNav = () => {
           BRANDS <IoIosArrowDown />
         </div>
         <Link to="/cart">
-          <div>
-            <GiShoppingBag></GiShoppingBag> MY CART<span>-₹0.00</span>{" "}
+          <div id="cart">
+            <GiShoppingBag></GiShoppingBag> MY CART
           </div>
         </Link>
       </div>
