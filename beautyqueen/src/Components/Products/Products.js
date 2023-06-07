@@ -6,7 +6,7 @@ const Products = () => {
   const [data, setData] = useState([]);
   const getData = () => {
     axios
-      .get("/products", { withCredentials: true })
+      .get("http://localhost:8080/products", { withCredentials: true })
       .then((res) => setData(res.data))
       .catch((er) => console.log(er));
   };
